@@ -1,0 +1,88 @@
+/*------------------------------------*\
+  # Base
+\*------------------------------------*/
+
+* {
+  box-sizing: border-box;
+
+  &:focus {
+    outline: 0.2rem solid $clr-royal-blue;
+  }
+}
+
+::selection {
+  background: $clr-perano;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  font-family: $ff-base;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: $clr-bombay;
+  background: $clr-white;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.is-open {
+    overflow: hidden;
+  }
+}
+
+.site-content {
+  overflow-x: hidden;
+
+  /* Unnecessary IMHO, uncomment next line to force hidden behavior */
+
+  /* overflow-x: hidden !important; */
+
+  /* Additional tunning proposed by the community */
+  position: relative;
+  width: 100%;
+}
+
+img {
+  @include img-fluid;
+}
+
+button {
+  @include reset-appearance;
+  cursor: pointer;
+}
+
+.list-unstyled {
+  @include list-unstyled;
+}
+
+.section-spacing {
+  padding-top: 10.4rem;
+
+  @include breakpoint-up(large) {
+    padding-top: 12.8rem;
+  }
+}
+
+.dont-break-out {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}

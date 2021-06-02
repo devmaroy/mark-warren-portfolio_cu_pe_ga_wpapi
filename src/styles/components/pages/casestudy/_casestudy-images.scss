@@ -1,0 +1,18 @@
+/*------------------------------------*\
+  # Case Study Images
+\*------------------------------------*/
+
+.casestudy-images__list {
+  @include breakpoint-up(medium) {
+    max-width: 73.6rem;
+    margin: 0 auto;
+  }
+}
+
+.casestudy-images__img {
+  min-height: 20.8rem;
+
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+}

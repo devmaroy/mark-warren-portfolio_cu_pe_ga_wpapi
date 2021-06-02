@@ -1,0 +1,70 @@
+/*------------------------------------*\
+  # Blog Sidebar Author
+\*------------------------------------*/
+
+.blog-sidebar-author {
+  @include breakpoint-up(medium) {
+    max-width: 20.8rem;
+  }
+}
+
+.blog-sidebar-author-image__img {
+  @media (max-width: 20rem) {
+    height: 27.2rem;
+  }
+
+  max-height: 44rem;
+
+  @include breakpoint-up(medium) {
+    height: 27.2rem;
+  }
+}
+
+.blog-sidebar-author__name {
+  @include typography(
+    $font-size: 1.8rem,
+    $font-weight: $fw-bold,
+    $line-height: 1.2,
+    $color: $clr-white
+  );
+  margin: 0 0 0.8rem 0;
+}
+
+.blog-sidebar-author__info {
+  margin-top: 1.6rem;
+}
+
+.blog-sidebar-author__bio {
+  @include typography(
+    $font-size: 1.4rem,
+    $line-height: 1.6,
+    $color: $clr-geyser
+  );
+
+  p {
+    margin: 0;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+}
+
+.blog-sidebar-author__contact {
+  margin-top: 1.6rem;
+
+  a {
+    @include link-reset;
+    @include link($clr-turquoise, darken($clr-turquoise, 15%));
+    font-size: 1.4rem;
+    font-weight: $fw-semi-bold;
+  }
+}
+
+.blog-sidebar-author__social {
+  margin-top: 1.6rem;
+
+  .social__link {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,75 @@
+/*------------------------------------*\
+  # Form Field
+\*------------------------------------*/
+
+.form-field__group {
+  &:not(:last-child) {
+    margin-bottom: 3.2rem;
+  }
+}
+
+.form-field__label {
+  @include typography(
+    $font-weight: $fw-bold,
+    $line-height: 1,
+    $color: $clr-white
+  );
+
+  @include breakpoint-up(large) {
+    @include typography(
+      $font-size: 1.8rem,
+      $font-weight: $fw-bold,
+      $line-height: 1,
+      $color: $clr-white
+    );
+  }
+}
+
+.form-field__control {
+  @include reset-appearance;
+  @include typography($line-height: 1);
+  display: block;
+  width: 100%;
+  margin-top: 0.8rem;
+  background: $clr-woodsmoke-matt;
+  padding: 1.6rem;
+  border-radius: 0;
+  border: 0.1rem solid $clr-armor-wash;
+
+  @include breakpoint-up(large) {
+    @include typography($font-size: 1.8rem, $line-height: 1);
+  }
+
+  &:focus {
+    border-color: $clr-turquoise;
+  }
+
+  &::placeholder {
+    opacity: 0.5;
+    color: $clr-geyser;
+  }
+
+  &--error {
+    border: 0.1rem solid $clr-danger !important;
+  }
+}
+
+textarea.form-field__control {
+  height: 20rem;
+  line-height: 1.6;
+  resize: vertical;
+
+  @include breakpoint-up(medium) {
+    height: 30.4rem;
+  }
+
+  @include breakpoint-up(large) {
+    height: 20rem;
+  }
+}
+
+.form-field__error {
+  @include typography($color: $clr-danger);
+  display: inline-block;
+  margin-top: 0.8rem;
+}

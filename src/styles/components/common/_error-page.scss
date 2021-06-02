@@ -1,0 +1,103 @@
+/*------------------------------------*\
+  # Error Page
+\*------------------------------------*/
+
+.error-page {
+  margin-top: 6.4rem;
+
+  @include breakpoint-up(large) {
+    margin-top: 10.4rem;
+  }
+}
+
+.error-page__inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.error-page__heading {
+  @include typography(
+    $font-size: 4.6rem,
+    $font-weight: $fw-bold,
+    $line-height: 1.2
+  );
+  margin: 0 0 0.8rem 0;
+
+  @include breakpoint-up(large) {
+    @include typography(
+      $font-size: 7rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.2
+    );
+  }
+
+  &--error {
+    color: $clr-danger;
+  }
+
+  &--warning {
+    color: $clr-warning;
+  }
+
+  &--success {
+    color: $clr-success;
+  }
+
+  &--info {
+    color: $clr-info;
+  }
+}
+
+.error-page__text {
+  p {
+    margin: 0;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 2.4rem;
+
+    @include breakpoint-up(large) {
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  a {
+    @include link-reset;
+    @include link($clr-turquoise, darken($clr-turquoise, 15%));
+    font-weight: $fw-semi-bold;
+    text-decoration: underline;
+  }
+}
+
+.error-page__info {
+  margin-bottom: 2.4rem;
+
+  @include breakpoint-up(large) {
+    margin-bottom: 3.2rem;
+  }
+}
+
+.error-page__info {
+  @include typography($font-size: 1.8rem, $color: $clr-white);
+}
+
+.error-page__text {
+  @include typography($font-size: 1.6rem);
+
+  @include breakpoint-up(large) {
+    @include typography($font-size: 2rem);
+  }
+}
+
+.error-page__social {
+  margin-top: 3.2rem;
+
+  @include breakpoint-up(large) {
+    margin-top: 4rem;
+  }
+
+  .social__link {
+    font-size: 1.8rem;
+  }
+}

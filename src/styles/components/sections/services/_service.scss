@@ -1,0 +1,64 @@
+/*------------------------------------*\
+  # Service
+\*------------------------------------*/
+
+.service {
+  padding: 3.2rem;
+  background: $clr-woodsmoke-matt;
+
+  @include breakpoint-up(large) {
+    padding: 4rem;
+  }
+}
+
+.service-icon {
+  line-height: 1;
+}
+
+.service-icon__img {
+  width: 3.2rem;
+  height: 3.2rem;
+
+  @include breakpoint-up(large) {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+.service__heading {
+  @include typography(
+    $font-size: 2rem,
+    $font-weight: $fw-bold,
+    $line-height: 1.2,
+    $color: $clr-white
+  );
+  margin: 2.4rem 0 0 0;
+
+  @include breakpoint-up(large) {
+    @include typography(
+      $font-size: 2.2rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.2,
+      $color: $clr-white
+    );
+
+    margin: 3.2rem 0 0 0;
+  }
+}
+
+.service__text {
+  @include typography($font-size: 1.6rem, $line-height: 1.4);
+  margin-top: 1.6rem;
+
+  @include breakpoint-up(large) {
+    @include typography($font-size: 1.8rem, $line-height: 1.4);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+}

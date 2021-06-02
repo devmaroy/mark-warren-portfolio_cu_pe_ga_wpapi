@@ -1,0 +1,36 @@
+/*------------------------------------*\
+  # Footer Menu
+\*------------------------------------*/
+
+.footer-menu {
+  @include list-unstyled;
+  margin-top: 1.6rem;
+}
+
+.footer-menu__item {
+  @include typography($font-weight: $fw-medium);
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: 0.8rem;
+  }
+
+  &:not(:last-child)::after {
+    content: '/';
+    position: relative;
+    top: 0.15rem;
+    margin-left: 0.8rem;
+    color: $clr-geyser;
+  }
+
+  & > div {
+    display: inline-block;
+  }
+}
+
+.footer-menu__link {
+  @include link-reset;
+  @include link($clr-geyser, $clr-turquoise);
+  font-weight: $fw-semi-bold;
+  text-decoration: underline;
+}

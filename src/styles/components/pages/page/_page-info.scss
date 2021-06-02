@@ -1,0 +1,39 @@
+/*------------------------------------*\
+  # Page Info
+\*------------------------------------*/
+
+.page-info {
+  margin-top: 4rem;
+
+  @include breakpoint-up(medium) {
+    margin-top: 0;
+  }
+
+  @include breakpoint-up(large) {
+    max-width: 60.8rem;
+  }
+}
+
+.page-info--fw {
+  max-width: initial;
+}
+
+.page-info__title {
+  @include typography(
+    $font-size: 3.6rem,
+    $font-weight: $fw-bold,
+    $line-height: 1.2,
+    $color: $clr-white
+  );
+  margin: 0 0 2.4rem 0;
+
+  @include breakpoint-up(large) {
+    @include typography(
+      $font-size: 4.2rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.2,
+      $color: $clr-white
+    );
+    margin-bottom: 3.2rem;
+  }
+}

@@ -1,0 +1,21 @@
+/*------------------------------------*\
+  # Post
+\*------------------------------------*/
+
+.post__separator {
+  display: block;
+  margin: 5.6rem auto;
+  height: 0.1rem;
+  background: $clr-outer-space;
+
+  width: 24.8rem;
+
+  @include breakpoint-up(medium) {
+    width: 45.6rem;
+  }
+
+  @include breakpoint-up(large) {
+    margin: 6.4rem auto;
+    width: 92.8rem;
+  }
+}

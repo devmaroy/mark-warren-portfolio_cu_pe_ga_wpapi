@@ -1,0 +1,18 @@
+/*------------------------------------*\
+  # Button Info
+\*------------------------------------*/
+
+.button--info {
+  color: $clr-woodsmoke;
+  background: $clr-info;
+
+  &:hover,
+  &:focus {
+    background: darken($clr-info, 10%);
+    color: $clr-woodsmoke;
+  }
+
+  &:disabled {
+    background: lighten($clr-info, 15%);
+  }
+}

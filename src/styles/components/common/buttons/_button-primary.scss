@@ -1,0 +1,35 @@
+/*------------------------------------*\
+  # Button Primary
+\*------------------------------------*/
+
+.button--primary {
+  color: $clr-woodsmoke;
+  background: $clr-turquoise;
+
+  &:hover,
+  &:focus {
+    background: darken($clr-turquoise, 10%);
+    color: $clr-woodsmoke;
+  }
+
+  &:disabled {
+    background: lighten($clr-turquoise, 20%);
+  }
+}
+
+.button--outline-primary {
+  color: $clr-turquoise;
+  background: none;
+  border-radius: 0;
+  border: 0.1rem solid $clr-turquoise;
+
+  &:hover,
+  &:focus {
+    background: darken($clr-turquoise, 10%);
+    color: $clr-woodsmoke;
+  }
+
+  &:disabled {
+    background: lighten($clr-turquoise, 15%);
+  }
+}

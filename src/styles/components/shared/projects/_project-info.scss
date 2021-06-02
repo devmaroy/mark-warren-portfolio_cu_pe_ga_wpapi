@@ -1,0 +1,33 @@
+/*------------------------------------*\
+  # Project Info
+\*------------------------------------*/
+
+.project-info {
+  margin-top: 1.6rem;
+}
+
+.project-info__heading {
+  @include typography(
+    $font-size: 2rem,
+    $font-weight: $fw-bold,
+    $line-height: 1.2,
+    $color: $clr-white
+  );
+  margin: 0 0 0.8rem 0;
+}
+
+.project-info__teaser {
+  @include typography();
+
+  p {
+    margin: 0;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+}
+
+.project-info__meta {
+  margin-top: 2.4rem;
+}

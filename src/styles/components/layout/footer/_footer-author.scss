@@ -1,0 +1,22 @@
+/*------------------------------------*\
+  # Footer Author
+\*------------------------------------*/
+
+.footer-author {
+  @include typography();
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    @include typography($font-weight: $fw-bold);
+    @include link-reset;
+    @include link($clr-turquoise, darken($clr-turquoise, 15%));
+  }
+
+  span {
+    font-weight: $fw-bold;
+    color: $clr-danger;
+  }
+}
