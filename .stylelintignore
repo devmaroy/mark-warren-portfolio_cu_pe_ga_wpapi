@@ -2,8 +2,8 @@ dist
 node_modules
 coverage
 build
+package.json
 package-lock.json
 lint-staged.config.js
 .stylelintrc
-README.md
-fonts
+fonts/**
