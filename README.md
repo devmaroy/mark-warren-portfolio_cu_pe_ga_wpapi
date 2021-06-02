@@ -1,6 +1,6 @@
-<img src="src/images/logo/logo-dark.png" width="144" height="144">
+<img src="src/images/logo/logo.png" width="144" height="144">
 
-# **Marek Matejovic: Professional front-end developer and designer**
+# **Mark Warren: Personal web developer portfolio**
 
 This project is powered by **Gatsby** and is created for a personal use.
 
@@ -19,7 +19,7 @@ Use these commands to install the dependencies and start the server.
 1. **Clone from Github**
 
    ```
-   $ git clone git@github.com:devmaroy/marek-matejovic-portfolio_cu_pe_ga_wpapi.git
+   $ git clone git@github.com:devmaroy/mark-warren-portfolio_cu_pe_ga_wpapi.git
    ```
 
 2. **Install dependencies**
@@ -171,5 +171,5 @@ A quick look at the top-level files and directories you'll see in my project.
 
 ### Live example:
 
-**[marekmatejovic.com](https://marekmatejovic.com)**
-**[marekmatejovic.cz](https://marekmatejovic.cz)**
+**[markwarrenportfolio.marekmatejovic.com](https://markwarrenportfolio.marekmatejovic.com)**
+**[markwarrenportfolio.marekmatejovic.cz](https://markwarrenportfolio.marekmatejovic.cz)**

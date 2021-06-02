@@ -1,0 +1,12 @@
+/*------------------------------------*\
+  # General
+\*------------------------------------*/
+
+@mixin reset-appearance {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  background: none;
+}

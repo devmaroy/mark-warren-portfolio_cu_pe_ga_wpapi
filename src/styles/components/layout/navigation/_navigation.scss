@@ -1,0 +1,104 @@
+/*------------------------------------*\
+  # Navigation
+\*------------------------------------*/
+
+.navigation-wrapper {
+  display: flex;
+}
+
+.navigation-toggle {
+  @include reset-appearance;
+  position: absolute;
+  // top: 2rem;
+  right: 1.2rem;
+  line-height: 1;
+  z-index: 99;
+
+  &:hover {
+    .navigation-toggle__bar--two {
+      width: 3rem;
+    }
+  }
+
+  @include breakpoint-up(xlarge) {
+    display: none;
+  }
+}
+
+.navigation-toggle__bar {
+  width: 3rem;
+  height: 0.3rem;
+  border-radius: $border-radius;
+  background: $clr-white;
+
+  transition: all $transition;
+
+  &.is-open {
+    background: $clr-white;
+  }
+
+  &--one {
+    margin-bottom: 0.4rem;
+
+    &.is-open {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &--two {
+    width: 1.6rem;
+
+    &.is-open {
+      opacity: 0;
+    }
+  }
+
+  &--three {
+    margin-top: 0.4rem;
+
+    &.is-open {
+      width: 3rem;
+      transform: translateY(-14px) rotate(45deg);
+    }
+  }
+}
+
+.navigation-content {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  transform: translateX(100%);
+  overflow-y: scroll;
+  z-index: 98;
+  background: $clr-woodsmoke;
+
+  transition: all $transition;
+
+  &.is-open {
+    transform: translateX(0);
+  }
+
+  @include breakpoint-up(xlarge) {
+    position: relative;
+    transform: none;
+    transition: none;
+    z-index: 0;
+    overflow: initial;
+    background: none;
+
+    display: flex;
+    align-items: center;
+  }
+}
+
+.navigation__cta {
+  margin-top: 4.8rem;
+  margin-bottom: 3.2rem;
+  text-align: center;
+
+  @include breakpoint-up(xlarge) {
+    margin: 0 0 0 4rem;
+  }
+}

@@ -1,0 +1,23 @@
+/*------------------------------------*\
+  # Link
+\*------------------------------------*/
+
+@mixin link($color: $gray, $colorHover: darken($gray, 10%)) {
+  display: inline-block;
+  cursor: pointer;
+  color: $color;
+
+  transition: all $transition;
+
+  &:hover,
+  &:focus,
+  &.active {
+    color: $colorHover;
+  }
+}
+
+@mixin link-reset {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}

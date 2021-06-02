@@ -1,0 +1,53 @@
+/*------------------------------------*\
+  # Blog List
+\*------------------------------------*/
+
+.blog-list {
+  @include breakpoint-up(medium) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5.6rem 3.2rem;
+  }
+
+  @include breakpoint-up(large) {
+    grid-gap: 6.4rem 4rem;
+  }
+
+  .post-teaser:not(:last-child) {
+    margin-bottom: 5.6rem;
+
+    @include breakpoint-up(medium) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.blog-list--lg {
+  @include breakpoint-up(large) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3.2rem;
+  }
+}
+
+@keyframes aniVertical {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.blog-list--dummy {
+  .blog-list__item {
+    animation: aniVertical 4s ease;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+}

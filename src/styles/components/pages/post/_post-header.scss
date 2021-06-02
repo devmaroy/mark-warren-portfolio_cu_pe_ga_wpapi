@@ -1,0 +1,51 @@
+/*------------------------------------*\
+  # Post Header
+\*------------------------------------*/
+
+.post-header {
+  text-align: center;
+}
+
+.post-header-categories {
+  @include list-unstyled;
+  margin-bottom: 0.8rem;
+  line-height: 1;
+}
+
+.post-header-categories__category {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: 0.8rem;
+  }
+}
+
+.post-header-categories__link {
+  @include typography($font-weight: $fw-bold);
+  @include link-reset;
+  @include link($clr-turquoise, darken($clr-turquoise, 15%));
+  line-height: 1;
+
+  @include breakpoint-up(large) {
+    font-size: 1.8rem;
+  }
+}
+
+.post-header__title {
+  @include typography(
+    $font-size: 3.6rem,
+    $font-weight: $fw-bold,
+    $line-height: 1.2,
+    $color: $clr-white
+  );
+  margin: 0;
+
+  @include breakpoint-up(large) {
+    @include typography(
+      $font-size: 4.2rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.2,
+      $color: $clr-white
+    );
+  }
+}

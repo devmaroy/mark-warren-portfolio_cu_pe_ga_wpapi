@@ -1,0 +1,64 @@
+/*------------------------------------*\
+  # Navigation List
+\*------------------------------------*/
+
+.navigation-list {
+  @include list-unstyled;
+  margin-top: 8.6rem;
+  text-align: center;
+
+  @include breakpoint-up(xlarge) {
+    margin-top: 0;
+    text-align: left;
+    display: flex;
+  }
+}
+
+.navigation-list__item {
+  &:not(:last-child) {
+    margin-bottom: 3.2rem;
+
+    @include breakpoint-up(xlarge) {
+      margin-bottom: 0;
+      margin-right: 1.6rem;
+    }
+  }
+
+  @include breakpoint-up(xlarge) {
+    &.language-select {
+      margin-left: 1.6rem;
+      margin-right: 0;
+    }
+  }
+}
+
+.navigation-list__link {
+  @include link-reset;
+  @include link($clr-geyser, $clr-turquoise);
+  font-size: 2.6rem;
+  font-weight: $fw-bold;
+  cursor: pointer;
+
+  @include breakpoint-up(xlarge) {
+    @include link($clr-geyser, $clr-turquoise);
+    font-size: 1.6rem;
+  }
+
+  &.language-select {
+    line-height: 1;
+    background: $clr-turquoise;
+    color: $clr-woodsmoke;
+    padding: 0.4rem 0.6rem;
+
+    border-radius: $border-radius-sm;
+
+    &:hover,
+    &:focus {
+      background: darken($clr-turquoise, 15%);
+    }
+  }
+}
+
+.navigation-list__link--active {
+  color: $clr-turquoise;
+}

@@ -1,0 +1,54 @@
+/*------------------------------------*\
+  # Project  - Personal web developer portfolio Mark Warren
+  # Author   - Marek Matejovic <hello@devmaroy.com>
+  # Website  - https://markwarrenportfolio.marekmatejovic.com/ 
+  # License  - All rights reserved. Do not copy, do not sell, do not distribute.
+\*------------------------------------*/
+
+// Utilities
+// @import '../fonts/fonts.css';
+@import './utilities/variables';
+@import './utilities/mixins';
+
+// Base
+@import 'normalize';
+@include normalize();
+@import './base/base';
+
+// Components
+
+// Common
+// @import './components/common/buttons/buttons';
+// @import './components/common/wordpress-core-styles';
+
+// Shared
+// @import './components/shared/projects/projects-list';
+
+// Layout
+// @import './components/layout/header/header';
+
+// Sections
+//
+// Section - Hero
+// @import './components/sections/hero/hero';
+// @import './components/sections/hero/hero-info';
+// @import './components/sections/hero/hero-image';
+//
+// Section - Services
+// @import './components/sections/services/services';
+// @import './components/sections/services/service';
+//
+// Section - My Projects
+// @import './components/sections/my-projects/my-projects';
+
+//
+
+// Pages
+//
+// Page - About
+// @import './components/pages/page/page';
+// @import './components/pages/page/page-image';
+// @import './components/pages/page/page-info';
+//
+// Page - Projects
+// @import './components/pages/projects/projects';

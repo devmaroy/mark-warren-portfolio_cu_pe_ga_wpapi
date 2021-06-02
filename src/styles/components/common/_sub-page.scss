@@ -1,0 +1,11 @@
+/*------------------------------------*\
+  # Sub Page
+\*------------------------------------*/
+
+.subpage {
+  margin-top: 5.6rem;
+
+  @include breakpoint-up(large) {
+    margin-top: 9.6rem;
+  }
+}

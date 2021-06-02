@@ -1,0 +1,145 @@
+// /*------------------------------------*\
+//   # Text
+// \*------------------------------------*/
+
+// .text {
+//   h1,
+//   h2,
+//   h3,
+//   h4,
+//   h5,
+//   h6 {
+//     @include typography($font-weight: $fw-bold, $color: $clr-white);
+//     margin: 0 0 1.6rem 0;
+
+//     &:not(:first-child) {
+//       margin-top: 4.8rem;
+//     }
+//   }
+
+//   h1 {
+//     font-size: 3.2rem;
+//     line-height: 3.2rem * 1.2;
+
+//     // @include breakpoint-up(large) {
+//     //   font-size: 4rem;
+//     //   line-height: 4rem * 1.2;
+//     // }
+//   }
+
+//   h2 {
+//     font-size: 2.6rem;
+//     line-height: 2.6rem * 1.2;
+
+//     // @include breakpoint-up(large) {
+//     //   font-size: 3.4rem;
+//     //   line-height: 3.4rem * 1.2;
+//     // }
+//   }
+
+//   h3 {
+//     font-size: 2.2rem;
+//     line-height: 2.2rem * 1.2;
+
+//     // @include breakpoint-up(large) {
+//     //   font-size: 3rem;
+//     //   line-height: 3rem * 1.2;
+//     // }
+//   }
+
+//   h4 {
+//     font-size: 1.8rem;
+//     line-height: 1.8rem * 1.2;
+
+//     // @include breakpoint-up(large) {
+//     //   font-size: 2.6rem;
+//     //   line-height: 2.6rem * 1.2;
+//     // }
+//   }
+
+//   h5 {
+//     font-size: 1.6rem;
+//     line-height: 1.6rem * 1.2;
+
+//     // @include breakpoint-up(large) {
+//     //   font-size: 2.2rem;
+//     //   line-height: 2.2rem * 1.2;
+//     // }
+//   }
+
+//   h6 {
+//     font-size: 1.4rem;
+//     line-height: 1.4rem * 1.2;
+
+//     // @include breakpoint-up(large) {
+//     //   font-size: 1.8rem;
+//     //   line-height: 1.8rem * 1.2;
+//     // }
+//   }
+
+//   ul,
+//   ol {
+//     // The padding size of the 1.9rem is aligned right with the text.
+//     // We need to move the list from the side a little bit - e.q. 2.4rem.
+//     // To achieve this we need the following calculation: 19+24=43 --> 4.3rem
+//     padding: 0 0 0 4.3rem;
+//     margin: 0 0 2.4rem 0;
+//   }
+
+//   p,
+//   li {
+//     @include typography($line-height: 1.9);
+//     margin: 0;
+
+//     // @include breakpoint-up(large) {
+//     //   font-size: 1.8rem;
+//     //   line-height: 1.8rem * 1.8;
+//     // }
+//   }
+
+//   li:not(:last-child) {
+//     margin-bottom: 1.6rem;
+//   }
+
+//   p:not(:last-child) {
+//     margin-bottom: 2.4rem;
+//   }
+
+//   p:last-child {
+//     margin: 0;
+//   }
+
+//   a {
+//     @include link-reset;
+//     @include link($clr-turquoise, darken($clr-turquoise, 15%));
+//     font-weight: $fw-bold;
+//   }
+
+//   blockquote {
+//     margin: 0;
+//     padding: 0;
+//   }
+
+//   blockquote p {
+//     font-style: italic;
+
+//     @include typography(
+//       $font-size: 1.8rem,
+//       $font-weight: $fw-bold,
+//       $line-height: 1.9
+//     );
+
+//     @include breakpoint-up(large) {
+//       @include typography(
+//         $font-size: 2.4rem,
+//         $font-weight: $fw-bold,
+//         $line-height: 1.9
+//       );
+//     }
+
+//     &:before,
+//     &:after {
+//       content: '"';
+//     }
+//   }
+// }

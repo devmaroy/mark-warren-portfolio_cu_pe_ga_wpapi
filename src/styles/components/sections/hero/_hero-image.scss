@@ -1,0 +1,40 @@
+/*------------------------------------*\
+  # Hero Image
+\*------------------------------------*/
+
+.hero-image {
+  display: none;
+
+  @include breakpoint-up(large) {
+    display: block;
+  }
+}
+
+.hero-image__content {
+  position: relative;
+
+  @include breakpoint-up(large) {
+    &::before,
+    &::after {
+      content: url('../images/shapes/shape-rectangle.svg');
+      position: absolute;
+      z-index: -1;
+    }
+
+    &::before {
+      top: -2rem;
+      right: -2rem;
+    }
+
+    &::after {
+      bottom: -2.8rem;
+      left: -2rem;
+    }
+  }
+}
+
+.hero-image__img {
+  @include breakpoint-up(large) {
+    height: 42.4rem;
+  }
+}

@@ -1,0 +1,52 @@
+/*------------------------------------*\
+  # Post Teaser
+\*------------------------------------*/
+
+.post-teaser-image {
+  margin-bottom: 1.6rem;
+}
+
+.post-teaser-image__img {
+  min-height: 20rem;
+  transition: all $transition;
+
+  @include breakpoint-up(large) {
+    height: 26.4rem;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.85;
+  }
+}
+
+.post-teaser__title {
+  @include typography(
+    $font-size: 2rem,
+    $font-weight: $fw-bold,
+    $line-height: 1.2
+  );
+  @include link-reset;
+  @include link($clr-white, $clr-turquoise);
+  margin: 0 0 0.8rem 0;
+}
+
+.post-teaser__title-link {
+  @include link-reset;
+}
+
+.post-teaser__text {
+  @include typography();
+
+  p {
+    margin: 0;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+}
+
+.post-teaser__meta {
+  margin-top: 2.4rem;
+}

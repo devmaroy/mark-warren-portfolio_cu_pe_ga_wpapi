@@ -1,0 +1,10 @@
+/*------------------------------------*\
+  # Buttons
+\*------------------------------------*/
+
+@mixin button {
+  @include reset-appearance;
+  @include link-reset;
+
+  display: inline-block;
+}

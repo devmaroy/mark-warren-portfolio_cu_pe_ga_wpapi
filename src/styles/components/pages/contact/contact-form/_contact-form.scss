@@ -1,0 +1,28 @@
+/*------------------------------------*\
+  # Contact Form
+\*------------------------------------*/
+
+.contact-form {
+  margin-top: 8rem;
+
+  @include breakpoint-up(large) {
+    max-width: 44.8rem;
+    margin-top: 0;
+  }
+}
+
+.contact-form__grid {
+  margin-bottom: 3.2rem;
+
+  @include breakpoint-up(medium) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3.2rem;
+    margin-bottom: 0;
+  }
+
+  @include breakpoint-up(large) {
+    display: block;
+    margin-bottom: 3.2rem;
+  }
+}

@@ -1,0 +1,11 @@
+/*------------------------------------*\
+  # Grid
+\*------------------------------------*/
+
+.container {
+  @include grid-container;
+
+  @include breakpoint-up(large) {
+    @include grid-container($padding: 0 1.6rem);
+  }
+}
