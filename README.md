@@ -1,4 +1,4 @@
-<img src="src/images/logo/logo.png" width="144" height="144">
+<img src="src/images/logo/logo.svg" width="144" height="144">
 
 # **Mark Warren: Personal web developer portfolio**
 
