@@ -172,5 +172,3 @@ A quick look at the top-level files and directories you'll see in my project.
 ### Live example:
 
 **[markwarrenportfolio.marekmatejovic.com](https://markwarrenportfolio.marekmatejovic.com)**
-<br>
-**[markwarrenportfolio.marekmatejovic.cz](https://markwarrenportfolio.marekmatejovic.cz)**
