@@ -41,6 +41,17 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        // Arbitrary name for the remote schema Query type
+        typeName: 'WPGraphQL',
+        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+        fieldName: 'wpgraphql',
+        // Url to query from
+        url: process.env.GATSBY_API_URL,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       // This options prop will be overriden inside gatsby-node.js via resolveManifestOptions.js
       options: {

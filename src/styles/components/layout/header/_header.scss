@@ -4,10 +4,6 @@
 
 .header {
   margin-top: 3.2rem;
-
-  @include breakpoint-up(large) {
-    margin-top: 4.8rem;
-  }
 }
 
 .header__inner {

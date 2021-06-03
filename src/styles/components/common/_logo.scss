@@ -13,24 +13,6 @@
 }
 
 .logo__image {
-  height: 3.4rem;
-  width: 3.4rem;
-  object-fit: cover;
-}
-
-.logo__heading {
-  @include typography(
-    $font-size: 1.8rem,
-    $font-weight: bold,
-    $color: $clr-white
-  );
-  margin: 0 0 0 0.8rem;
-
-  @include breakpoint-up(large) {
-    font-size: 2.4rem;
-  }
-}
-
-.logo__heading--highlight {
-  color: $clr-turquoise;
+  height: 2.8rem;
+  width: 11.2rem;
 }
