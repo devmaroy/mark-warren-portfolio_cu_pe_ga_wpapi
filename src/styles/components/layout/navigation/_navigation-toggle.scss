@@ -1,0 +1,20 @@
+/*------------------------------------*\
+  # Navigation Toggle
+\*------------------------------------*/
+
+.navigation-toggle {
+  @include reset-appearance;
+  position: absolute;
+  right: 1.2rem;
+  line-height: 1;
+  z-index: 99;
+
+  @include breakpoint-up(xlarge) {
+    display: none;
+  }
+
+  &--close {
+    top: 3rem;
+    right: 3.2rem;
+  }
+}

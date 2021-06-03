@@ -18,14 +18,18 @@
 // Components
 
 // Common
-// @import './components/common/buttons/buttons';
+@import './components/common/grid';
+@import './components/common/logo';
 // @import './components/common/wordpress-core-styles';
 
 // Shared
 // @import './components/shared/projects/projects-list';
 
 // Layout
-// @import './components/layout/header/header';
+@import './components/layout/header/header';
+@import './components/layout/navigation/navigation';
+@import './components/layout/navigation/navigation-toggle';
+@import './components/layout/navigation/navigation-items';
 
 // Sections
 //

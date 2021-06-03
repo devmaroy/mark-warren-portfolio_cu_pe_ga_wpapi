@@ -4,8 +4,7 @@
 
 .navigation-list {
   @include list-unstyled;
-  margin-top: 8.6rem;
-  text-align: center;
+  padding-top: 5.2rem; // 3.2rem + 2 for offset from the button
 
   @include breakpoint-up(xlarge) {
     margin-top: 0;
@@ -16,7 +15,7 @@
 
 .navigation-list__item {
   &:not(:last-child) {
-    margin-bottom: 3.2rem;
+    margin-bottom: 2.4rem;
 
     @include breakpoint-up(xlarge) {
       margin-bottom: 0;
@@ -34,31 +33,31 @@
 
 .navigation-list__link {
   @include link-reset;
-  @include link($clr-geyser, $clr-turquoise);
-  font-size: 2.6rem;
+  @include link($clr-bombay, $clr-royal-blue);
+  font-size: 2rem;
   font-weight: $fw-bold;
   cursor: pointer;
 
   @include breakpoint-up(xlarge) {
-    @include link($clr-geyser, $clr-turquoise);
+    @include link(red, red);
     font-size: 1.6rem;
   }
 
   &.language-select {
     line-height: 1;
-    background: $clr-turquoise;
-    color: $clr-woodsmoke;
+    background: red;
+    color: red;
     padding: 0.4rem 0.6rem;
 
     border-radius: $border-radius-sm;
 
     &:hover,
     &:focus {
-      background: darken($clr-turquoise, 15%);
+      background: darken(red, 15%);
     }
   }
 }
 
 .navigation-list__link--active {
-  color: $clr-turquoise;
+  color: $clr-royal-blue;
 }
