@@ -19,6 +19,7 @@
 
 // Common
 @import './components/common/grid';
+@import './components/common/buttons/buttons';
 @import './components/common/logo';
 // @import './components/common/wordpress-core-styles';
 
@@ -34,9 +35,9 @@
 // Sections
 //
 // Section - Hero
-// @import './components/sections/hero/hero';
-// @import './components/sections/hero/hero-info';
-// @import './components/sections/hero/hero-image';
+@import './components/sections/hero/hero';
+@import './components/sections/hero/hero-info';
+@import './components/sections/hero/hero-image';
 //
 // Section - Services
 // @import './components/sections/services/services';

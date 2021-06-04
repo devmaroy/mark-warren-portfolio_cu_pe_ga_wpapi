@@ -1,9 +1,10 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
+import Hero from '../components/sections/hero/Hero';
 
 const IndexPage = () => (
   <Layout>
-    <div />
+    <Hero />
   </Layout>
 );
 

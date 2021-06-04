@@ -1,0 +1,48 @@
+/*------------------------------------*\
+  # Hero Info
+\*------------------------------------*/
+
+.hero-info__heading {
+  @include typography(
+    $font-family: $ff-heading,
+    $font-size: 4.2rem,
+    $font-weight: $fw-bold,
+    $line-height: 1.2,
+    $color: $clr-outer-space
+  );
+  margin: 0 0 1.6rem 0;
+}
+
+.hero-info__subheading {
+  @include typography(
+    $font-size: 1.8rem,
+    $font-weight: $fw-bold,
+    $line-height: 1.4
+  );
+  margin: 0;
+
+  span {
+    display: block;
+  }
+}
+
+.hero-info__text {
+  @include typography($font-size: 1.6rem, $line-height: 1.6);
+  margin-top: 3.2rem;
+
+  p {
+    margin: 0;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 3.2rem;
+  }
+}
+
+.hero-info-cta {
+  margin-top: 4.8rem;
+}
+
+.hero-info-cta__first {
+  margin-bottom: 2.4rem;
+}

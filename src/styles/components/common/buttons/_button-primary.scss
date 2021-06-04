@@ -1,0 +1,23 @@
+/*------------------------------------*\
+  # Button Primary
+\*------------------------------------*/
+
+.button--primary {
+  background: $clr-royal-blue;
+  color: $clr-white;
+
+  @include button-shadow($clr-royal-blue);
+
+  &:hover {
+    background: darken($clr-royal-blue, 10%);
+  }
+}
+
+.button--outline-primary {
+  border: 0.1rem solid $clr-royal-blue;
+  color: $clr-royal-blue;
+
+  &:hover {
+    background: lighten($clr-royal-blue, 40%);
+  }
+}

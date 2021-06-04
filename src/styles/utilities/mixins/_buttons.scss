@@ -5,6 +5,22 @@
 @mixin button {
   @include reset-appearance;
   @include link-reset;
+  @include typography(
+    $font-size: 1.6rem,
+    $font-weight: $fw-bold,
+    $line-height: 1,
+    $color: $clr-outer-space
+  );
 
+  position: relative;
   display: inline-block;
+  cursor: pointer;
+  border-radius: $border-radius;
+  text-transform: uppercase;
+
+  transition: all $transition;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }

@@ -4,8 +4,6 @@ import navigationItemsType from '../../../types/components/layout/navigation/nav
 
 const NavigationItems = ({ items, toggleNavigation }) => (
   <ul className="navigation-list">
-    {console.log(items)}
-
     {items.map(({ id, label, path, cssClasses, acf }) => (
       <li key={id} className={`navigation-list__item ${cssClasses.join(' ')}`}>
         <DynamicLink
