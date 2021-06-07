@@ -10,3 +10,22 @@
   outline: none;
   background: none;
 }
+
+@mixin pseudo-dot(
+  $clr: $clr-perano,
+  $size: 0.6rem,
+  $ml: 1.6rem,
+  $offset: -0.1rem
+) {
+  &::after {
+    content: '';
+    position: relative;
+    top: $offset;
+    display: inline-block;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    margin-left: $ml;
+    background: $clr;
+  }
+}
