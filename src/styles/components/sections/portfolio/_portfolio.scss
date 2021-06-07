@@ -1,0 +1,55 @@
+/*------------------------------------*\
+  # Portfolio
+\*------------------------------------*/
+
+.portfolio-menu {
+  @include list-unstyled;
+  text-align: center;
+  margin-top: 2.4rem;
+}
+
+.portfolio-menu__item {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: 1.6rem;
+    @include pseudo-dot($offset: -0.2rem);
+  }
+}
+
+.portfolio-menu__link {
+  @include typography($font-weight: $fw-bold, $line-height: 1.8);
+  @include link-reset;
+  @include link($clr-bombay, $clr-royal-blue);
+
+  &--active {
+    color: $clr-royal-blue;
+  }
+}
+
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2.4rem;
+}
+
+.portfolio-gallery__item {
+  img {
+    height: 20.8rem;
+    border-radius: $border-radius;
+  }
+
+  &:first-child,
+  &:last-child {
+    grid-column: 1 / -1;
+
+    img {
+      height: 29.6rem;
+    }
+  }
+}
+
+.portfolio-gallery__meta {
+  margin-top: 5.6rem;
+  text-align: center;
+}
