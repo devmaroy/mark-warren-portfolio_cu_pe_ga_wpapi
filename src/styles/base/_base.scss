@@ -56,14 +56,6 @@ img {
   @include list-unstyled;
 }
 
-.section-spacing {
-  padding-top: 10.4rem;
-
-  @include breakpoint-up(large) {
-    padding-top: 12.8rem;
-  }
-}
-
 .dont-break-out {
   /* These are technically the same, but use both */
   overflow-wrap: break-word;
