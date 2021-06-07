@@ -1,0 +1,53 @@
+/*------------------------------------*\
+  # About Info
+\*------------------------------------*/
+
+.about-info {
+  margin-top: 3.2rem;
+}
+
+.about-info-technologies {
+  margin-top: 4rem;
+}
+
+.about-info-technologies__heading {
+  @include typography(
+    $font-family: $ff-heading,
+    $font-size: 2rem,
+    $font-weight: $fw-medium,
+    $line-height: 1.2,
+    $color: $clr-outer-space
+  );
+  margin: 0;
+}
+
+.about-info-technologies-list {
+  @include list-unstyled;
+  margin-top: 1.6rem;
+}
+
+.about-info-technologies-list__item {
+  @include typography(
+    $font-size: 1.4rem,
+    $font-weight: $fw-bold,
+    $line-height: 1,
+    $color: $clr-royal-blue
+  );
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: 1.6rem;
+
+    &::after {
+      content: '';
+      position: relative;
+      top: -0.1rem;
+      display: inline-block;
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 50%;
+      margin-left: 1.6rem;
+      background: $clr-perano;
+    }
+  }
+}

@@ -21,6 +21,9 @@
 @import './components/common/grid';
 @import './components/common/buttons/buttons';
 @import './components/common/logo';
+@import './components/common/text/text';
+@import './components/common/section';
+@import './components/common/section-header';
 // @import './components/common/wordpress-core-styles';
 
 // Shared
@@ -40,8 +43,8 @@
 @import './components/sections/hero/hero-image';
 //
 // Section - Services
-// @import './components/sections/services/services';
-// @import './components/sections/services/service';
+@import './components/sections/about/about-image';
+@import './components/sections/about/about-info';
 //
 // Section - My Projects
 // @import './components/sections/my-projects/my-projects';

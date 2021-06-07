@@ -1,0 +1,24 @@
+/*------------------------------------*\
+  # Section Header
+\*------------------------------------*/
+
+.section-header {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.section-header__subheading {
+  @include typography($font-size: 1.8rem, $font-weight: $fw-bold);
+  margin: 0;
+}
+
+.section-header__heading {
+  @include typography(
+    $font-family: $ff-heading,
+    $font-size: 3rem,
+    $font-weight: $fw-bold,
+    $line-height: 1.2,
+    $color: $clr-outer-space
+  );
+  margin: 0.8rem 0 0 0;
+}

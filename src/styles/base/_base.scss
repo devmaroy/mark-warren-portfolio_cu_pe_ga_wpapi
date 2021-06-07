@@ -44,15 +44,12 @@ body {
   /* Additional tunning proposed by the community */
   position: relative;
   width: 100%;
+
+  padding-bottom: 100rem;
 }
 
 img {
   @include img-fluid;
-}
-
-button {
-  // @include reset-appearance;
-  // cursor: pointer;
 }
 
 .list-unstyled {

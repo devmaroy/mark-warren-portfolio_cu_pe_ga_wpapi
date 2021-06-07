@@ -1,0 +1,96 @@
+/*------------------------------------*\
+  # Text
+\*------------------------------------*/
+
+@mixin text {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0 0 1.6rem 0;
+  }
+
+  ul,
+  ol,
+  p,
+  li,
+  blockquote,
+  figure,
+  figcaption {
+    @include typography();
+    margin: 0;
+    padding: 0;
+  }
+
+  p:not(:last-child),
+  ul,
+  ol {
+    margin-bottom: 2.4rem;
+  }
+
+  ul {
+    padding-left: calc(2rem + 2.4rem);
+  }
+
+  ol {
+    padding-left: calc(1.8rem + 2.4rem);
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 1.6rem;
+  }
+
+  .quote {
+    padding: 2.4rem;
+    margin: 4.8rem 0;
+    text-align: center;
+    background: $clr-white-lilac;
+
+    blockquote p {
+      @include typography(
+        $font-size: 2rem,
+        $font-weight: $fw-bold,
+        $font-style: italic,
+        $color: $clr-rock-blue
+      );
+      margin: 0;
+    }
+
+    blockquote p:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+
+    blockquote p::before {
+      content: '\201C';
+    }
+
+    blockquote p::after {
+      content: '\201D';
+    }
+
+    figcaption {
+      @include typography(
+        $font-weight: $fw-bold,
+        $line-height: 1,
+        $color: $clr-perano
+      );
+      margin-top: 1.6rem;
+
+      &::before {
+        content: '';
+        position: relative;
+        top: -0.1rem;
+        display: inline-block;
+        width: 1.6rem;
+        height: 0.1rem;
+        margin-right: 0.8rem;
+        vertical-align: middle;
+        background: $clr-perano;
+      }
+    }
+  }
+}
+
+@import './text-basic.scss';
