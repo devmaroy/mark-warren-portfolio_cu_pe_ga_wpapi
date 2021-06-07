@@ -21,6 +21,7 @@
 @import './components/common/grid';
 @import './components/common/buttons/buttons';
 @import './components/common/logo';
+@import './components/common/card';
 @import './components/common/text/text';
 @import './components/common/section';
 @import './components/common/section-header';
@@ -42,12 +43,12 @@
 @import './components/sections/hero/hero-info';
 @import './components/sections/hero/hero-image';
 //
-// Section - Services
+// Section - About
 @import './components/sections/about/about-image';
 @import './components/sections/about/about-info';
 //
-// Section - My Projects
-// @import './components/sections/my-projects/my-projects';
+// Section - Services
+@import './components/sections/services/services';
 
 //
 

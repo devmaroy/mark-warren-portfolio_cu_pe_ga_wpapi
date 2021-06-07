@@ -1,0 +1,57 @@
+/*------------------------------------*\
+  # Card
+\*------------------------------------*/
+
+.card {
+  padding: 3.2rem;
+  box-shadow: 0.1rem 0.4rem 2rem rgba($clr-rock-blue, 0.25);
+  border-radius: $border-radius;
+  background: $clr-white;
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__number {
+  @include typography(
+    $font-family: $ff-heading,
+    $font-size: 3.8rem,
+    $font-weight: $fw-bold,
+    $line-height: 1,
+    $color: $clr-perano
+  );
+}
+
+.card__icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.card__heading {
+  @include typography(
+    $font-family: $ff-heading,
+    $font-size: 2.2rem,
+    $font-weight: $fw-bold,
+    $line-height: 1.2,
+    $color: $clr-outer-space
+  );
+  margin: 0 0 1.6rem 0;
+}
+
+.card__body {
+  margin-top: 3.2rem;
+}
+
+.card__text {
+  @include typography;
+
+  p {
+    margin: 0;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+}

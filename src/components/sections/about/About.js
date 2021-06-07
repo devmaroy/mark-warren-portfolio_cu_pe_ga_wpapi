@@ -53,10 +53,13 @@ const About = () => {
   return (
     <section className="section about">
       <div className="container">
-        <div className="about__inner">
+        <div className="section__inner about__inner">
           <SectionHeader heading="Just a Little" subHeading="About" />
-          <AboutImage image={aboutImage} />
-          <AboutInfo text={aboutText} technologies={aboutTechnologies} />
+
+          <div className="section__content">
+            <AboutImage image={aboutImage} />
+            <AboutInfo text={aboutText} technologies={aboutTechnologies} />
+          </div>
         </div>
       </div>
     </section>
