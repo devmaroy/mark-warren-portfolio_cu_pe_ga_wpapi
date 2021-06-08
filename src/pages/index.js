@@ -5,6 +5,7 @@ import About from '../components/sections/about/About';
 import Services from '../components/sections/services/Services';
 import Portfolio from '../components/sections/portfolio/Portfolio';
 import Available from '../components/sections/available/Available';
+import Reviews from '../components/sections/reviews/Reviews';
 
 const IndexPage = () => (
   <Layout>
@@ -13,6 +14,7 @@ const IndexPage = () => (
     <Services />
     <Portfolio />
     <Available />
+    <Reviews />
   </Layout>
 );
 

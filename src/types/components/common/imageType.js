@@ -1,4 +1,4 @@
-import { shape, string, number, arrayOf, object } from 'prop-types';
+import { shape, string, number, arrayOf } from 'prop-types';
 
 // Image Fluid Type
 export default {
@@ -17,11 +17,3 @@ export default {
     }).isRequired,
   }).isRequired,
 };
-
-// fluid: shape({
-//   aspectRatio: number.isRequired,
-//   base64: string.isRequired,
-//   sizes: string.isRequired,
-//   src: string.isRequired,
-//   srcSet: string.isRequired,
-// }).isRequired,
