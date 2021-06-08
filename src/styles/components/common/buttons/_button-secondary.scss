@@ -1,0 +1,13 @@
+/*------------------------------------*\
+  # Button Secondary
+\*------------------------------------*/
+
+.button--secondary {
+  background: $clr-white;
+  color: $clr-royal-blue;
+
+  &:hover {
+    background: darken($clr-royal-blue, 10%);
+    color: $clr-white;
+  }
+}

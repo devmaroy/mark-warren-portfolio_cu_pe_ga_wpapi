@@ -1,0 +1,41 @@
+/*------------------------------------*\
+  # Info Banner
+\*------------------------------------*/
+
+.info-banner {
+  padding: 4rem;
+  border-radius: $border-radius;
+  background: url('../images/shapes/info-banner.svg');
+  text-align: center;
+}
+
+.info-banner__heading {
+  @include typography(
+    $font-family: $ff-heading,
+    $font-size: 3rem,
+    $font-weight: $fw-bold,
+    $line-height: 1.2,
+    $color: $clr-white
+  );
+  margin: 0 0 1.6rem 0;
+}
+
+.info-banner__text {
+  @include typography(
+    $font-size: 1.6rem,
+    $line-height: 1.6,
+    $color: rgba($clr-white, 0.85)
+  );
+
+  p {
+    margin: 0;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+}
+
+.info-banner__content {
+  margin-top: 4rem;
+}
