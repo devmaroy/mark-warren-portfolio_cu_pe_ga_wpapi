@@ -11,6 +11,10 @@
   &:hover {
     background: darken($clr-royal-blue, 10%);
   }
+
+  &:disabled {
+    background: lighten($clr-royal-blue, 25%);
+  }
 }
 
 .button--outline-primary {
@@ -18,6 +22,10 @@
   color: $clr-royal-blue;
 
   &:hover {
+    background: lighten($clr-royal-blue, 40%);
+  }
+
+  &:disabled {
     background: lighten($clr-royal-blue, 40%);
   }
 }
