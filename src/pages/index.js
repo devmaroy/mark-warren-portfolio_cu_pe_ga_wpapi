@@ -7,6 +7,7 @@ import Portfolio from '../components/sections/portfolio/Portfolio';
 import Available from '../components/sections/available/Available';
 import Reviews from '../components/sections/reviews/Reviews';
 import Contact from '../components/sections/contact/Contact';
+import RecentBlog from '../components/sections/recent-blog/RecentBlog';
 
 const IndexPage = () => (
   <Layout>
@@ -17,6 +18,7 @@ const IndexPage = () => (
     <Available />
     <Reviews />
     <Contact />
+    <RecentBlog />
   </Layout>
 );
 
