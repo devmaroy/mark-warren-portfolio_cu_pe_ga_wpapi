@@ -20,6 +20,8 @@
 // Common
 @import './components/common/grid';
 @import './components/common/buttons/buttons';
+@import './components/common/form/form';
+@import './components/common/form/form-field';
 @import './components/common/logo';
 @import './components/common/card';
 @import './components/common/info-banner';
@@ -53,6 +55,12 @@
 //
 // Section - Portfolio
 @import './components/sections/portfolio/portfolio';
+//
+// Section - Contact
+@import './components/sections/contact/contact-form/contact-form';
+@import './components/sections/contact/contact-form/contact-form-loading';
+@import './components/sections/contact/contact-form/contact-form-info';
+@import './components/sections/contact/contact-image';
 
 //
 
