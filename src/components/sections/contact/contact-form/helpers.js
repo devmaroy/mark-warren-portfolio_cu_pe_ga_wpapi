@@ -1,9 +1,7 @@
 // Few helper functions for the Contact Form.
 // We don't want to bloat the component too much.
 
-import validator from 'validator';
-
-export const getFormRequiredFields = (formData) => ({
+const getFormRequiredFields = (formData) => ({
   firstName: formData.contactFormFirstName.contactFormFirstNameRequired,
   lastName: formData.contactFormLastName.contactFormLastNameRequired,
   email: formData.contactFormEmail.contactFormEmailRequired,
@@ -11,7 +9,7 @@ export const getFormRequiredFields = (formData) => ({
   message: formData.contactFormMessage.contactFormMessageRequired,
 });
 
-export const getFormFieldErrorMessages = (messages) => ({
+const getFormFieldErrorMessages = (messages) => ({
   firstName: messages.contactFormFieldErrorMessagesFirstName,
   lastName: messages.contactFormFieldErrorMessagesLastName,
   email: messages.contactFormFieldErrorMessagesEmail,
@@ -19,14 +17,14 @@ export const getFormFieldErrorMessages = (messages) => ({
   message: messages.contactFormFieldErrorMessagesMessage,
 });
 
-export const getSubmittedErrorMessages = (messages) => ({
+const getSubmittedErrorMessages = (messages) => ({
   title: messages.contactFormSubmittedMessagesErrorTitle,
   text: messages.contactFormSubmittedMessagesErrorText,
   infoText: messages.contactFormSubmittedMessagesErrorInfoText,
   infoTextLink: messages.contactFormSubmittedMessagesErrorInfoTextLink,
 });
 
-export const getSubmittedSuccessMessages = (messages) => ({
+const getSubmittedSuccessMessages = (messages) => ({
   title: messages.contactFormSubmittedMessagesSuccessTitle,
   text: messages.contactFormSubmittedMessagesSuccessText,
   infoText: messages.contactFormSubmittedMessagesSuccessInfoText,
@@ -49,23 +47,5 @@ const getFormFieldData = (formData) => ({
       .contactFormSubmittedMessagesSuccess,
   ),
 });
-
-export const getValidatedField = (name, value, type, errorText, isRequired) => {
-  const conditions = {
-    text: value.length > 0,
-    email: value.length > 0 && validator.isEmail(value),
-    textarea: value.length > 0,
-    checkbox: value === true,
-  };
-
-  if (!isRequired) {
-    return { isValid: true, errorText: '' };
-  }
-
-  return {
-    isValid: conditions[type],
-    errorText: conditions[type] ? '' : errorText,
-  };
-};
 
 export default getFormFieldData;
