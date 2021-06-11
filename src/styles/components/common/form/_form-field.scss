@@ -51,6 +51,20 @@
   &--error {
     border: 0.1rem solid $clr-danger !important;
   }
+
+  &--outline {
+    background: none;
+    border-color: $clr-portage;
+
+    &:focus {
+      color: $clr-white;
+      border-color: $clr-white;
+    }
+
+    &:focus::placeholder {
+      color: $clr-white !important;
+    }
+  }
 }
 
 textarea.form-field__control {

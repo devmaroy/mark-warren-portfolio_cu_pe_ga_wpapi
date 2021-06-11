@@ -9,6 +9,7 @@ import Reviews from '../components/sections/reviews/Reviews';
 import Contact from '../components/sections/contact/Contact';
 import RecentBlog from '../components/sections/recent-blog/RecentBlog';
 import InstagramFeed from '../components/sections/instagram-feed/InstagramFeed';
+import Newsletter from '../components/sections/newsletter/Newsletter';
 
 const IndexPage = () => (
   <Layout>
@@ -21,6 +22,7 @@ const IndexPage = () => (
     <Contact />
     <RecentBlog />
     <InstagramFeed />
+    <Newsletter />
   </Layout>
 );
 

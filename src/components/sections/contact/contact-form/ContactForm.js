@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import URIEncode from '../../../../utils/URIEncode';
-import getFormFieldData, { getValidatedField } from './helpers';
+import getFormFieldData from './helpers';
+import getValidatedField from '../../../../utils/validateForm';
 import Form from '../../../common/form/Form';
 import FormField from '../../../common/form/FormField';
 import ContactFormLoading from './ContactFormLoading';
