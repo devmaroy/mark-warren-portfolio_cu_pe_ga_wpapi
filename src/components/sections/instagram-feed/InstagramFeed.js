@@ -35,27 +35,26 @@ const InstagramFeed = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    variableWidth: true,
     centerMode: true,
   };
 
   return (
     <section className="section instagram-feed">
-      <div className="container">
-        <div className="section__inner instagram-feed__inner">
-          <SectionHeader heading="Follow Me" subHeading="Instagram" />
+      <div className="section__inner instagram-feed__inner">
+        <SectionHeader heading="Follow Me" subHeading="Instagram" />
 
-          <div className="section__content">
-            <Slider {...sliderSettings}>
-              {APISectionInstagramFeedData.map(({ id, childImageSharp }) => (
-                <div key={id} className="instagram-feed__item">
-                  <GatsbyImage
-                    image={childImageSharp.gatsbyImageData}
-                    alt="Portfolio image"
-                  />
-                </div>
-              ))}
-            </Slider>
-          </div>
+        <div className="section__content">
+          <Slider {...sliderSettings}>
+            {APISectionInstagramFeedData.map(({ id, childImageSharp }) => (
+              <div key={id} className="instagram-feed__item">
+                <GatsbyImage
+                  image={childImageSharp.gatsbyImageData}
+                  alt="Portfolio image"
+                />
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
     </section>
