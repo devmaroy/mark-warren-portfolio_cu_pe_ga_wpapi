@@ -44,6 +44,14 @@ body {
   /* Additional tunning proposed by the community */
   position: relative;
   width: 100%;
+
+  &::before {
+    @include shape-dots($top: 42rem, $right: -6.2rem, $secondary: true);
+  }
+
+  &:after {
+    @include shape-dots($top: 50rem, $right: -8rem, $secondary: true);
+  }
 }
 
 img {

@@ -57,3 +57,24 @@
     border-radius: $border-radius * 2;
   }
 }
+
+@mixin shape-dots(
+  $top: initial,
+  $right: initial,
+  $left: initial,
+  $bottom: initial,
+  $zIndex: 1,
+  $secondary: false
+) {
+  content: if(
+    $secondary,
+    url('../images/shapes/shape-dots-secondary.svg'),
+    url('../images/shapes/shape-dots.svg')
+  );
+  position: absolute;
+  top: $top;
+  bottom: $bottom;
+  right: $right;
+  left: $left;
+  z-index: $zIndex;
+}
