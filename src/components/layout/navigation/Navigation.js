@@ -30,12 +30,7 @@ const Navigation = ({ items, cta, isOpen, toggleNavigation }) => (
         </nav>
 
         <div className="navigation__cta">
-          <Button
-            to={cta.url}
-            variant="outline-primary"
-            size="lg"
-            showIcon={false}
-          >
+          <Button to={cta.url} variant="primary" size="lg" showIcon={false}>
             {cta.text}
           </Button>
         </div>
