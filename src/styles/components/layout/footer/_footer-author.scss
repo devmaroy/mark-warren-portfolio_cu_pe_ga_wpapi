@@ -1,0 +1,25 @@
+/*------------------------------------*\
+  # Footer Author
+\*------------------------------------*/
+
+.footer-author {
+  margin-top: 1.6rem;
+
+  p {
+    margin: 0;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+
+  strong {
+    @include typography($font-weight: $fw-bold, $color: $clr-danger);
+  }
+
+  a {
+    @include typography($font-weight: $fw-bold);
+    @include link-reset;
+    @include link($clr-royal-blue, darken($clr-royal-blue, 10%));
+  }
+}
