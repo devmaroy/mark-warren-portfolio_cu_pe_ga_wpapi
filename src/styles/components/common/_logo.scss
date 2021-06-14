@@ -13,6 +13,13 @@
 }
 
 .logo__image {
-  height: 2.8rem;
-  width: 11.2rem;
+  &--md {
+    height: 2.8rem;
+    width: 11.2rem;
+  }
+
+  &--sm {
+    height: 2.4rem;
+    width: 7.2rem;
+  }
 }

@@ -20,6 +20,7 @@
 // Common
 @import './components/common/grid';
 @import './components/common/buttons/buttons';
+@import './components/common/social/social';
 @import './components/common/form/form';
 @import './components/common/form/form-field';
 @import './components/common/logo';
@@ -38,6 +39,10 @@
 @import './components/layout/navigation/navigation';
 @import './components/layout/navigation/navigation-toggle';
 @import './components/layout/navigation/navigation-items';
+@import './components/layout/footer/footer';
+@import './components/layout/footer/footer-copyright';
+@import './components/layout/footer/footer-author';
+@import './components/layout/footer/footer-menu';
 
 // Sections
 //
