@@ -4,4 +4,9 @@
 
 .about-image {
   @include bordered-image;
+  position: relative;
+
+  &::before {
+    @include shape-dots($top: -2.5rem, $right: -0.7rem, $zIndex: -1);
+  }
 }

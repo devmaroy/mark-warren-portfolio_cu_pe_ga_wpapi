@@ -5,4 +5,9 @@
 .contact-image {
   margin-top: 4.8rem;
   @include bordered-image($height: 41.6rem);
+  position: relative;
+
+  &::before {
+    @include shape-dots($top: -2.5rem, $left: -1.6rem, $zIndex: -1);
+  }
 }
