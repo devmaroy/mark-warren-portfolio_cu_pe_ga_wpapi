@@ -10,5 +10,6 @@ export default {
   showIcon: bool,
   className: string,
   isDisabled: bool,
+  disableShadow: bool,
   children: node,
 };

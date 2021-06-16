@@ -11,7 +11,7 @@ const APIQuery = graphql`
     allFile(
       filter: {
         sourceInstanceName: { eq: "images" }
-        relativeDirectory: { eq: "sections/instagram-feed" }
+        relativeDirectory: { eq: "instagram-feed/items" }
       }
       sort: { fields: base, order: ASC }
     ) {
@@ -50,7 +50,7 @@ const InstagramFeed = () => {
               <div key={id} className="instagram-feed__item">
                 <GatsbyImage
                   image={childImageSharp.gatsbyImageData}
-                  alt="Portfolio image"
+                  alt="Instagram feed image"
                 />
               </div>
             ))}

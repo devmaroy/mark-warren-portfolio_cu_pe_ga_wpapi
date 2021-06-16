@@ -2,7 +2,7 @@
   # Newsletter
 \*------------------------------------*/
 
-.newsletter {
+.newsletter__form {
   .form-field__group {
     &:not(:last-child) {
       margin-bottom: 1.6rem;
@@ -11,6 +11,11 @@
 
   .form-field__control {
     text-align: center;
+
+    &:focus {
+      color: $clr-white;
+      border-color: $clr-white;
+    }
   }
 
   .form__meta {

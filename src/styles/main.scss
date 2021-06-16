@@ -29,6 +29,8 @@
 @import './components/common/text/text';
 @import './components/common/section';
 @import './components/common/section-header';
+@import './components/common/subpage';
+@import './components/common/pagination/pagination';
 // @import './components/common/wordpress-core-styles';
 
 // Shared
@@ -77,10 +79,11 @@
 
 // Pages
 //
-// Page - About
-// @import './components/pages/page/page';
-// @import './components/pages/page/page-image';
-// @import './components/pages/page/page-info';
-//
-// Page - Projects
-// @import './components/pages/projects/projects';
+// Page - Blog
+@import './components/pages/blog/blog-main';
+@import './components/pages/blog/sidebar/blog-sidebar';
+@import './components/pages/blog/sidebar/blog-sidebar-header';
+@import './components/pages/blog/sidebar/blog-sidebar-recent-articles';
+@import './components/pages/blog/sidebar/blog-sidebar-categories';
+@import './components/pages/blog/sidebar/blog-sidebar-tags';
+@import './components/pages/blog/sidebar/blog-sidebar-instagram-feed';

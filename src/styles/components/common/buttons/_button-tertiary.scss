@@ -1,0 +1,16 @@
+/*------------------------------------*\
+  # Button Tertiary
+\*------------------------------------*/
+
+.button--tertiary {
+  background: $clr-portage;
+  color: $clr-white;
+
+  &:hover {
+    background: darken($clr-portage, 10%);
+  }
+
+  &:disabled {
+    background: lighten($clr-portage, 10%);
+  }
+}

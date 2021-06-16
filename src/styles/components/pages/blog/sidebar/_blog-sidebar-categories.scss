@@ -1,0 +1,32 @@
+/*------------------------------------*\
+  # Blog Sidebar Categories
+\*------------------------------------*/
+
+.blog-sidebar-categories-list {
+  @include list-unstyled;
+}
+
+.blog-sidebar-categories-list__category {
+  @include typography(
+    $font-size: 1.6rem,
+    $font-weight: $fw-bold,
+    $line-height: 1,
+    $color: $clr-iron
+  );
+
+  &:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+
+  &::before {
+    content: url('../images/icons/polygon.svg');
+    margin-right: 0.8rem;
+    vertical-align: middle;
+  }
+}
+
+.blog-sidebar-categories-list__category-link {
+  @include link-reset;
+  @include link($clr-iron, $clr-perano);
+  text-transform: uppercase;
+}

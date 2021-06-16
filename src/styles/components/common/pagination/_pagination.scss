@@ -1,0 +1,37 @@
+/*------------------------------------*\
+  # Pagination
+\*------------------------------------*/
+
+.pagination {
+  @include list-unstyled;
+}
+
+.pagination__item {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: 0.8rem;
+  }
+}
+
+.pagination__link {
+  @include typography($font-weight: $fw-bold, $line-height: 1);
+  @include link-reset;
+  @include link($clr-iron, darken($clr-perano, 10%));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: $border-radius;
+}
+
+.pagination__link--active {
+  background: $clr-perano;
+  color: $clr-white;
+
+  &:hover {
+    background: darken($clr-perano, 10%);
+    color: $clr-white;
+  }
+}

@@ -1,15 +1,19 @@
 import React from 'react';
 import Button from '../Button';
-import formButtonIcon from '../../../images/icons/submit.svg';
+import formButtonIconImg from '../../../images/icons/submit.svg';
 import formType from '../../../types/components/common/form/formType';
 
 const Form = ({
   className = '',
   children,
   showButton = true,
-  buttonText = 'Submit',
+  showButtonIcon = false,
+  buttonIcon = formButtonIconImg,
+  buttonText = '',
   buttonDisabled = false,
   buttonClassName = '',
+  buttonDisableShadow = false,
+  buttonSize = 'md',
   method = 'GET',
   name = 'contact',
   onSubmit,
@@ -34,10 +38,12 @@ const Form = ({
       <div className="form__meta">
         <Button
           type="submit"
-          iconImg={formButtonIcon}
-          showIcon={false}
+          iconImg={buttonIcon}
+          showIcon={showButtonIcon}
           isDisabled={buttonDisabled}
           className={`form__button ${buttonClassName}`}
+          disableShadow={buttonDisableShadow}
+          size={buttonSize}
         >
           {buttonText}
         </Button>
