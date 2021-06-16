@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import SectionHeader from '../../common/SectionHeader';
-import BlogPostTeaser from '../../shared/blog/BlogPostTeaser';
+import BlogPostTeaser from '../../pages/blog/BlogPostTeaser';
 
 // API Query
 const APIQuery = graphql`
