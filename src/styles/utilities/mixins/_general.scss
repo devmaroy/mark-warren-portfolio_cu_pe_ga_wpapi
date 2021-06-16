@@ -125,6 +125,11 @@
   }
 
   .slick-arrow {
+    &.slick-prev,
+    &.slick-next {
+      top: 45px;
+    }
+
     &.slick-prev {
       left: -50px;
     }

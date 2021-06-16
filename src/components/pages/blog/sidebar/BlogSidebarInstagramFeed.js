@@ -13,6 +13,7 @@ const BlogSidebarInstagramFeed = ({ items }) => {
     slidesToShow: 1,
     slidesToScroll: 3,
     variableWidth: true,
+    arrows: false,
   };
 
   return (

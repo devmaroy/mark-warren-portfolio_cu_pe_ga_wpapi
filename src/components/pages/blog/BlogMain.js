@@ -1,5 +1,5 @@
 import React from 'react';
-import BlogPostTeaser from '../../shared/blog/BlogPostTeaser';
+import BlogPostTeaser from './BlogPostTeaser';
 import Pagination from '../../common/pagination/Pagination';
 import blogMainType from '../../../types/components/pages/blog/blogMainType';
 
