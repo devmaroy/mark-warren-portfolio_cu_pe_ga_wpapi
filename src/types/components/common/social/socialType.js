@@ -1,12 +1,11 @@
-import { arrayOf, shape, bool, string } from 'prop-types';
+import { arrayOf, shape, bool } from 'prop-types';
+import socialInnerType from './socialInnerType';
 
 // Social Type
 export default {
   items: arrayOf(
     shape({
-      type: string.isRequired,
-      url: string.isRequired,
-      name: string.isRequired,
+      socialInnerType,
     }),
   ),
   fixedWidth: bool,

@@ -1,5 +1,6 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
+import footerAuthorType from '../../../types/components/layout/footer/footerAuthorType';
 
 const FooterAuthor = ({ text }) => (
   <div className="footer-author">
@@ -9,5 +10,9 @@ const FooterAuthor = ({ text }) => (
     />
   </div>
 );
+
+FooterAuthor.propTypes = {
+  ...footerAuthorType,
+};
 
 export default FooterAuthor;

@@ -34,26 +34,31 @@ const Footer = () => {
       id: '3c875173-a80b-4b3f-ad6b-7788b5a61734',
       url: 'https://facebook.com/',
       name: 'facebook',
+      type: 'normal',
     },
     {
       id: 'd8cb31af-7fed-425d-8f03-2a54b7bff0ed',
       url: 'https://twitter.com/',
       name: 'twitter',
+      type: 'normal',
     },
     {
       id: '96798ca6-9560-4ff9-be3c-4c2f01c94490',
       url: 'https://instagram.com/',
       name: 'instagram',
+      type: 'normal',
     },
     {
       id: '631187ff-23fd-4d4d-a3e3-fa03921a7575',
       url: 'https://linkedin.com/',
       name: 'linkedin',
+      type: 'normal',
     },
     {
       id: 'b3d304b3-cfd8-43ed-a117-a3a4ff5b8539',
       url: 'https://youtube.com/',
       name: 'youtube',
+      type: 'normal',
     },
   ];
 

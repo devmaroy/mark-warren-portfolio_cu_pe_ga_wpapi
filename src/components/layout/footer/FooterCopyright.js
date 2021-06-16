@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from '../../common/Logo';
+import footerCopyrightType from '../../../types/components/layout/footer/footerCopyrightType';
 
 const FooterCopyright = ({ logo, textCopyright, textRights }) => (
   <div className="footer-copyright">
@@ -12,5 +13,9 @@ const FooterCopyright = ({ logo, textCopyright, textRights }) => (
     </div>
   </div>
 );
+
+FooterCopyright.propTypes = {
+  ...footerCopyrightType,
+};
 
 export default FooterCopyright;
