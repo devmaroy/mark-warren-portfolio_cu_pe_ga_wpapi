@@ -1,5 +1,6 @@
 import React from 'react';
 import DynamicLink from '../../common/DynamicLink';
+import footerMenuType from '../../../types/components/layout/footer/footerMenuType';
 
 const FooterMenu = ({ menu }) => (
   <ul className="footer-menu">
@@ -12,5 +13,9 @@ const FooterMenu = ({ menu }) => (
     ))}
   </ul>
 );
+
+FooterMenu.propTypes = {
+  ...footerMenuType,
+};
 
 export default FooterMenu;
