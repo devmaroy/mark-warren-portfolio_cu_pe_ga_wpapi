@@ -63,7 +63,6 @@
   $right: initial,
   $left: initial,
   $bottom: initial,
-  $zIndex: 1,
   $secondary: false
 ) {
   content: if(
@@ -76,5 +75,68 @@
   bottom: $bottom;
   right: $right;
   left: $left;
-  z-index: $zIndex;
+  z-index: -1;
+}
+
+@mixin slick-item(
+  $width: 18.4rem,
+  $height: 18.4rem,
+  $dotsMargin: 5.6rem 0 0 0,
+  $dotsSize: 1.6rem
+) {
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.8rem;
+  }
+
+  .slick-slide > div {
+    width: $width;
+  }
+
+  img {
+    object-fit: cover;
+    border-radius: 0.6rem;
+    height: $height;
+  }
+
+  .slick-dots {
+    position: static;
+    line-height: 0;
+    margin: $dotsMargin;
+
+    li.slick-active button::before {
+      background: $clr-royal-blue;
+    }
+
+    li button::before {
+      content: '';
+      border-radius: 50%;
+      width: $dotsSize;
+      height: $dotsSize;
+      transition: all $transition;
+      background: $clr-perano;
+    }
+  }
+
+  .slick-arrow {
+    &.slick-prev {
+      left: -50px;
+    }
+
+    &.slick-next {
+      right: -50px;
+    }
+
+    &::before {
+      font-size: 2rem;
+      color: $clr-royal-blue;
+      transition: all $transition;
+    }
+  }
 }

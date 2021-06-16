@@ -1,0 +1,17 @@
+/*------------------------------------*\
+  # Blog Sidebar Instagram Feed
+\*------------------------------------*/
+
+.blog-sidebar-instagram-feed {
+  @include slick-item(
+    $width: 8rem,
+    $height: 8rem,
+    $dotsSize: 0.8rem,
+    $dotsMargin: 2.4rem 0 0 0
+  );
+
+  .slick-slide {
+    padding: 0rem;
+    padding-right: 1.6rem;
+  }
+}

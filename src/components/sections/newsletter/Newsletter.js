@@ -1,9 +1,8 @@
 /* eslint-disable no-alert */
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import InfoBanner from '../../common/InfoBanner';
 import Form from '../../common/form/Form';
 import FormField from '../../common/form/FormField';
-import getValidatedField from '../../../utils/validateForm';
 
 const Newsletter = () => {
   const newsletterData = {
@@ -16,32 +15,10 @@ const Newsletter = () => {
       errorText: 'Please enter your valid email.',
     },
   };
+  const [email, setEmail] = useState('');
 
-  const initialState = useRef({
-    email: '',
-    error: '',
-    valid: false,
-  });
-
-  const [newsletterFields, setNewsletterFields] = useState(
-    () => initialState.current,
-  );
-
-  const handleChange = (name, value, type) => {
-    const { isValid, errorText } = getValidatedField(
-      name,
-      value,
-      type,
-      newsletterData.form.errorText,
-      true,
-    );
-
-    setNewsletterFields((prevState) => ({
-      ...prevState,
-      email: value,
-      error: errorText,
-      valid: isValid,
-    }));
+  const handleChange = (name, value) => {
+    setEmail(value);
   };
 
   return (
@@ -53,8 +30,8 @@ const Newsletter = () => {
             text={newsletterData.text}
           >
             <Form
-              name="contact"
-              className="contact-form"
+              name="newsletter"
+              className="newsletter__form"
               buttonText={newsletterData.form.buttonText}
               buttonDisabled={false}
               buttonClassName="button--secondary"
@@ -65,10 +42,9 @@ const Newsletter = () => {
                 id="email"
                 name="email"
                 placeholder={newsletterData.form.placeholder}
-                value={newsletterFields.email}
+                value={email}
                 className="form-field__control--outline"
                 onChange={handleChange}
-                error={newsletterFields.error}
               />
             </Form>
           </InfoBanner>

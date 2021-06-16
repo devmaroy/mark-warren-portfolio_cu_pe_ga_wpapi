@@ -6,3 +6,29 @@
   margin-top: 2.4rem;
   text-align: right;
 }
+
+.form--2cols {
+  display: flex;
+  align-items: stretch;
+
+  .form-field__group,
+  .form-field__control,
+  .form__meta {
+    margin: 0 !important;
+  }
+
+  .form-field__group {
+    flex: 1;
+  }
+
+  .form-field__control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .form__button {
+    height: 100%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}

@@ -1,0 +1,21 @@
+/*------------------------------------*\
+  # Blog Sidebar Tags
+\*------------------------------------*/
+
+.blog-sidebar-tags-list {
+  @include list-unstyled;
+}
+
+.blog-sidebar-tags-list__tag {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: 0.8rem;
+    margin-bottom: 1.6rem;
+  }
+}
+
+.blog-sidebar-tags-list__tag-link {
+  font-size: 1.4rem;
+  line-height: 1;
+}

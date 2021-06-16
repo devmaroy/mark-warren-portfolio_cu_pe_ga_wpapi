@@ -7,6 +7,6 @@
   position: relative;
 
   &::before {
-    @include shape-dots($top: -2.5rem, $right: -0.7rem, $zIndex: -1);
+    @include shape-dots($top: -2.5rem, $right: -0.7rem);
   }
 }

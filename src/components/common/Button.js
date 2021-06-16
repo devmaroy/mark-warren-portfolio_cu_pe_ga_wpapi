@@ -1,5 +1,6 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
+import classNames from 'classnames';
 import DynamicLink from './DynamicLink';
 import buttonType from '../../types/components/common/buttonType';
 import buttonIcon from '../../images/icons/arrow-right.svg';
@@ -12,6 +13,7 @@ const Button = ({
   iconImg = buttonIcon,
   showIcon = true,
   isDisabled = false,
+  disableShadow = false,
   className = '',
   children,
 }) => (
@@ -34,7 +36,10 @@ const Button = ({
       <button
         type={type}
         disabled={type !== 'link' && isDisabled}
-        className={`button button--${variant} button--${size} ${className}`}
+        className={classNames(
+          `button button--${variant} button--${size} ${className}`,
+          { 'button--disable-shadow': disableShadow },
+        )}
       >
         <div className="button__content">
           {showIcon && (
