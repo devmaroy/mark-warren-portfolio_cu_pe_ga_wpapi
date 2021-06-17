@@ -27,24 +27,27 @@
     transform: translateX(0);
   }
 
-  // @include breakpoint-up(xlarge) {
-  //   position: relative;
-  //   transform: none;
-  //   transition: none;
-  //   z-index: 0;
-  //   overflow: initial;
-  //   background: none;
+  @include breakpoint-up(xlarge) {
+    position: relative;
+    transform: none;
+    transition: none;
+    z-index: 0;
+    overflow: initial;
+    background: none;
+    box-shadow: none;
+    width: initial;
+    padding: 0;
 
-  //   display: flex;
-  //   align-items: center;
-  // }
+    display: flex;
+    align-items: center;
+  }
 }
 
 .navigation__cta {
   margin-top: 4.8rem;
   margin-bottom: 3.2rem;
 
-  // @include breakpoint-up(xlarge) {
-  //   margin: 0 0 0 4rem;
-  // }
+  @include breakpoint-up(xlarge) {
+    margin: 0 0 0 4.8rem;
+  }
 }

@@ -7,7 +7,7 @@
   padding-top: 5.2rem; // 3.2rem + 2 for offset from the button
 
   @include breakpoint-up(xlarge) {
-    margin-top: 0;
+    padding-top: 0;
     text-align: left;
     display: flex;
   }
@@ -39,21 +39,21 @@
   cursor: pointer;
 
   @include breakpoint-up(xlarge) {
-    @include link(red, red);
+    @include link($clr-bombay, $clr-royal-blue);
     font-size: 1.6rem;
   }
 
   &.language-select {
     line-height: 1;
-    background: red;
-    color: red;
+    background: $clr-royal-blue;
+    color: $clr-white;
     padding: 0.4rem 0.6rem;
 
     border-radius: $border-radius-sm;
 
     &:hover,
     &:focus {
-      background: darken(red, 15%);
+      background: darken($clr-royal-blue, 10%);
     }
   }
 }

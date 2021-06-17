@@ -30,7 +30,7 @@ const Header = () => {
 
   const items = [
     {
-      id: '1',
+      id: 'd00e536d-e120-4a24-8f56-a627332427ff',
       path: '/',
       label: 'Home',
       cssClasses: [],
@@ -39,7 +39,7 @@ const Header = () => {
       },
     },
     {
-      id: '2',
+      id: 'a1b80555-efe4-4592-979f-54449afd216c',
       path: '#about',
       label: 'About',
       cssClasses: [],
@@ -48,7 +48,7 @@ const Header = () => {
       },
     },
     {
-      id: '3',
+      id: '41d300fc-cb3c-4fd7-8821-457f5a40ee20',
       path: '#services',
       label: 'Services',
       cssClasses: [],
@@ -57,7 +57,7 @@ const Header = () => {
       },
     },
     {
-      id: '4',
+      id: '6c5c0e08-02c8-44c2-b45c-5bfdd97ef2bf',
       path: '#portfolio',
       label: 'Portfolio',
       cssClasses: [],
@@ -66,7 +66,7 @@ const Header = () => {
       },
     },
     {
-      id: '5',
+      id: '0f52f4b0-fa93-401d-b7db-1d4dcd352ca4',
       path: '#reviews',
       label: 'Reviews',
       cssClasses: [],
@@ -75,7 +75,7 @@ const Header = () => {
       },
     },
     {
-      id: '6',
+      id: 'cbc73e38-3c19-4ef7-94da-18fdfb7ed709',
       path: '#contact',
       label: 'Contact',
       cssClasses: [],
@@ -84,7 +84,7 @@ const Header = () => {
       },
     },
     {
-      id: '7',
+      id: 'fe785b35-9d86-4697-a33a-faccaabbceda',
       path: '/blog',
       label: 'Blog',
       cssClasses: [],
