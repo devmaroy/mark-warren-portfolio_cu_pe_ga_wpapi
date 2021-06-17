@@ -4,7 +4,7 @@ import footerSocialType from '../../../types/components/layout/footer/footerSoci
 
 const FooterSocial = ({ social }) => (
   <div className="footer-social">
-    <Social items={social} />
+    <Social items={social} fixedWidth={false} />
   </div>
 );
 

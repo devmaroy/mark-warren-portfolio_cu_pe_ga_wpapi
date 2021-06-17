@@ -46,8 +46,6 @@ const BlogSidebar = () => {
   const blogSidebarRecentPostsQuery = data.posts.nodes;
   const blogSidebarInstagramFeedQuery = data.instagramFeed.nodes;
 
-  console.log();
-
   const blogSidebarRecentPosts = [
     {
       id: '070fc551-ef20-4b26-ac4c-d70f4216e519',
