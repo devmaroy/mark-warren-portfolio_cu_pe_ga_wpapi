@@ -1,0 +1,67 @@
+/*------------------------------------*\
+  # Text Full
+\*------------------------------------*/
+
+.text-full {
+  @include text;
+
+  h1 {
+    @include typography(
+      $font-family: $ff-heading,
+      $font-size: 3.2rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.2,
+      $color: $clr-outer-space
+    );
+  }
+
+  h2 {
+    @include typography(
+      $font-family: $ff-heading,
+      $font-size: 2.8rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.2,
+      $color: $clr-outer-space
+    );
+  }
+
+  h3 {
+    @include typography(
+      $font-family: $ff-heading,
+      $font-size: 2.4rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.2,
+      $color: $clr-outer-space
+    );
+  }
+
+  h4 {
+    @include typography(
+      $font-family: $ff-heading,
+      $font-size: 2rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.2,
+      $color: $clr-outer-space
+    );
+  }
+
+  h5 {
+    @include typography(
+      $font-family: $ff-heading,
+      $font-size: 1.6rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.2,
+      $color: $clr-outer-space
+    );
+  }
+
+  h6 {
+    @include typography(
+      $font-family: $ff-heading,
+      $font-size: 1.4rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.2,
+      $color: $clr-outer-space
+    );
+  }
+}

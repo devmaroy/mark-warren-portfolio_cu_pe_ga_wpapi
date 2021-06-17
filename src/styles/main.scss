@@ -34,7 +34,7 @@
 // @import './components/common/wordpress-core-styles';
 
 // Shared
-@import './components/shared/blog/blog-post-teaser';
+// @import './components/shared/blog/blog-post-teaser';
 
 // Layout
 @import './components/layout/header/header';
@@ -81,6 +81,8 @@
 //
 // Page - Blog
 @import './components/pages/blog/blog-main';
+@import './components/pages/blog/blog-post-teaser';
+@import './components/pages/blog/blog-post';
 @import './components/pages/blog/sidebar/blog-sidebar';
 @import './components/pages/blog/sidebar/blog-sidebar-header';
 @import './components/pages/blog/sidebar/blog-sidebar-recent-articles';
