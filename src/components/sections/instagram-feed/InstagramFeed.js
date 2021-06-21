@@ -31,12 +31,33 @@ const InstagramFeed = () => {
 
   const sliderSettings = {
     dots: true,
+    arrows: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    variableWidth: true,
+    slidesToShow: 10,
+    slidesToScroll: 10,
     centerMode: true,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 10,
+          slidesToScroll: 10,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 10,
+          slidesToScroll: 10,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ],
   };
 
   return (
