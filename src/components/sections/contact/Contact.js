@@ -16,7 +16,7 @@ const APIQuery = graphql`
     ) {
       nodes {
         childImageSharp {
-          gatsbyImageData(quality: 100)
+          gatsbyImageData(width: 1200, quality: 100)
         }
       }
     }

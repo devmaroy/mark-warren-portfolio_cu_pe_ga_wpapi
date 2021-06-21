@@ -14,7 +14,7 @@ const APIQuery = graphql`
     ) {
       nodes {
         childImageSharp {
-          gatsbyImageData(width: 600, quality: 100)
+          gatsbyImageData(width: 1200, quality: 100)
         }
       }
     }
@@ -35,8 +35,6 @@ const Hero = () => {
       altText: 'Hero image',
     },
   };
-
-  console.log(APISectionHeroData);
 
   return (
     <section className="hero">
