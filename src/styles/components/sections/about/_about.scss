@@ -1,15 +1,11 @@
 /*------------------------------------*\
-  # Section
+  # About
 \*------------------------------------*/
 
-.section {
-  padding-top: 9.6rem;
-}
-
-.section__content {
-  margin-top: 4rem;
-
+.about__content {
   @include breakpoint-up(large) {
-    margin-top: 6.4rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-gap: 6.4rem;
   }
 }

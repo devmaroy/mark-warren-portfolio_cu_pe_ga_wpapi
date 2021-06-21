@@ -12,6 +12,15 @@
       $line-height: 1.2,
       $color: $clr-outer-space
     );
+
+    @include breakpoint-up(large) {
+      @include typography(
+        $font-size: 3.6rem,
+        $font-weight: $fw-bold,
+        $line-height: 1.2,
+        $color: $clr-outer-space
+      );
+    }
   }
 
   h2 {
@@ -21,6 +30,15 @@
       $line-height: 1.2,
       $color: $clr-outer-space
     );
+
+    @include breakpoint-up(large) {
+      @include typography(
+        $font-size: 3.2rem,
+        $font-weight: $fw-bold,
+        $line-height: 1.2,
+        $color: $clr-outer-space
+      );
+    }
   }
 
   h3 {
@@ -30,6 +48,15 @@
       $line-height: 1.2,
       $color: $clr-outer-space
     );
+
+    @include breakpoint-up(large) {
+      @include typography(
+        $font-size: 2.8rem,
+        $font-weight: $fw-bold,
+        $line-height: 1.2,
+        $color: $clr-outer-space
+      );
+    }
   }
 
   h4 {
@@ -39,6 +66,15 @@
       $line-height: 1.2,
       $color: $clr-outer-space
     );
+
+    @include breakpoint-up(large) {
+      @include typography(
+        $font-size: 2.4rem,
+        $font-weight: $fw-bold,
+        $line-height: 1.2,
+        $color: $clr-outer-space
+      );
+    }
   }
 
   h5 {
@@ -48,6 +84,15 @@
       $line-height: 1.2,
       $color: $clr-outer-space
     );
+
+    @include breakpoint-up(large) {
+      @include typography(
+        $font-size: 2rem,
+        $font-weight: $fw-bold,
+        $line-height: 1.2,
+        $color: $clr-outer-space
+      );
+    }
   }
 
   h6 {
@@ -57,5 +102,14 @@
       $line-height: 1.2,
       $color: $clr-outer-space
     );
+
+    @include breakpoint-up(large) {
+      @include typography(
+        $font-size: 1.8rem,
+        $font-weight: $fw-bold,
+        $line-height: 1.2,
+        $color: $clr-outer-space
+      );
+    }
   }
 }

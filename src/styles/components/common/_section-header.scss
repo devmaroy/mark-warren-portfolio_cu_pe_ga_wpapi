@@ -21,4 +21,14 @@
     $color: $clr-outer-space
   );
   margin: 0.8rem 0 0 0;
+
+  @include breakpoint-up(large) {
+    @include typography(
+      $font-family: $ff-heading,
+      $font-size: 4.2rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.2,
+      $color: $clr-outer-space
+    );
+  }
 }
