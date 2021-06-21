@@ -10,4 +10,9 @@
   &::before {
     @include shape-dots($top: -2.5rem, $left: -1.6rem);
   }
+
+  @include breakpoint-up(large) {
+    @include bordered-image($height: 51.2rem);
+    margin: 0;
+  }
 }

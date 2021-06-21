@@ -1,0 +1,16 @@
+/*------------------------------------*\
+  # Contact
+\*------------------------------------*/
+
+.contact__inner {
+  @include breakpoint-up(large) {
+    display: grid;
+    grid-gap: 8rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint-up(xlarge) {
+    grid-gap: 12.8rem;
+    grid-template-columns: 54.4rem 1fr;
+  }
+}

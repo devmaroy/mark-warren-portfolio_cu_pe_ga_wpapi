@@ -14,15 +14,6 @@
     $line-height: 1,
     $color: $clr-danger
   );
-
-  // @include breakpoint-up(large) {
-  //   @include typography(
-  //     $font-size: 1.8rem,
-  //     $font-weight: $fw-bold,
-  //     $line-height: 1,
-  //     $color: $clr-danger
-  //   );
-  // }
 }
 
 .form-field__control {
@@ -68,14 +59,6 @@ textarea.form-field__control {
   height: 18.4rem;
   line-height: 1.6;
   resize: vertical;
-
-  // @include breakpoint-up(medium) {
-  //   height: 30.4rem;
-  // }
-
-  // @include breakpoint-up(large) {
-  //   height: 20rem;
-  // }
 }
 
 .form-field__error {

@@ -172,40 +172,44 @@ const ContactForm = ({ formData }) => {
         buttonDisabled={!fields.formValid}
         onSubmit={handleSubmit}
       >
-        <FormField
-          id="firstName"
-          name="firstName"
-          placeholder={formData.contactFormFirstName.contactFormFirstNameLabel}
-          value={fields.firstName}
-          onChange={handleChange}
-          error={fields.errors && fields.errors.firstName}
-        />
-        <FormField
-          id="lastName"
-          name="lastName"
-          placeholder={formData.contactFormLastName.contactFormLastNameLabel}
-          value={fields.lastName}
-          onChange={handleChange}
-          error={fields.errors && fields.errors.lastName}
-        />
-        <FormField
-          id="email"
-          name="email"
-          type="email"
-          placeholder={formData.contactFormEmail.contactFormEmailLabel}
-          value={fields.email}
-          onChange={handleChange}
-          error={fields.errors && fields.errors.email}
-        />
+        <div className="contact-form__layout">
+          <FormField
+            id="firstName"
+            name="firstName"
+            placeholder={
+              formData.contactFormFirstName.contactFormFirstNameLabel
+            }
+            value={fields.firstName}
+            onChange={handleChange}
+            error={fields.errors && fields.errors.firstName}
+          />
+          <FormField
+            id="lastName"
+            name="lastName"
+            placeholder={formData.contactFormLastName.contactFormLastNameLabel}
+            value={fields.lastName}
+            onChange={handleChange}
+            error={fields.errors && fields.errors.lastName}
+          />
+          <FormField
+            id="email"
+            name="email"
+            type="email"
+            placeholder={formData.contactFormEmail.contactFormEmailLabel}
+            value={fields.email}
+            onChange={handleChange}
+            error={fields.errors && fields.errors.email}
+          />
 
-        <FormField
-          id="subject"
-          name="subject"
-          placeholder={formData.contactFormSubject.contactFormSubjectLabel}
-          value={fields.subject}
-          onChange={handleChange}
-          error={fields.errors && fields.errors.subject}
-        />
+          <FormField
+            id="subject"
+            name="subject"
+            placeholder={formData.contactFormSubject.contactFormSubjectLabel}
+            value={fields.subject}
+            onChange={handleChange}
+            error={fields.errors && fields.errors.subject}
+          />
+        </div>
         <FormField
           id="message"
           name="message"
