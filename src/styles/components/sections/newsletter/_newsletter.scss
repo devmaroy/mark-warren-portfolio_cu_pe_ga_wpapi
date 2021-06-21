@@ -16,6 +16,10 @@
       color: $clr-white;
       border-color: $clr-white;
     }
+
+    @include breakpoint-up(medium) {
+      text-align: left;
+    }
   }
 
   .form__meta {
@@ -25,5 +29,10 @@
 
   .form__button {
     width: 100%;
+  }
+
+  @include breakpoint-up(medium) {
+    max-width: 36.8rem;
+    margin: 0 auto;
   }
 }
