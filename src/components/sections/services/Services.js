@@ -37,7 +37,7 @@ const Services = () => {
           <SectionHeader heading="What I Do" subHeading="Services" />
 
           <div className="section__content">
-            <div className="services__cards">
+            <div className="card__responsive-layout services__cards">
               {cards.map(({ id, icon, heading, text }, i) => (
                 <Card
                   key={id}

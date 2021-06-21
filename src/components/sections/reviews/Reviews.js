@@ -72,7 +72,7 @@ const Reviews = () => {
           <SectionHeader heading="What My Clients Say" subHeading="Reviews" />
 
           <div className="section__content">
-            <div className="services__cards">
+            <div className="card__responsive-layout reviews__cards">
               {cards.map(({ id, icon, text, author }) => (
                 <Card
                   key={id}
