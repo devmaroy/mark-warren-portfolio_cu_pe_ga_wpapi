@@ -31,10 +31,10 @@ const Newsletter = () => {
           >
             <Form
               name="newsletter"
-              className="newsletter__form"
+              className="form--2cols newsletter__form"
               buttonText={newsletterData.form.buttonText}
               buttonDisabled={false}
-              buttonClassName="button--secondary"
+              buttonClassName="button--secondary button--lg"
               onSubmit={() => alert('Hello')}
             >
               <FormField
