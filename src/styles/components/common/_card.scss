@@ -119,3 +119,23 @@
 .card-author__position {
   @include typography($font-size: 1.2rem, $line-height: 1.2);
 }
+
+.card__responsive-layout {
+  .card:not(:last-child) {
+    margin-bottom: 3.2rem;
+
+    @include breakpoint-up(medium) {
+      margin-bottom: 0;
+    }
+  }
+
+  @include breakpoint-up(medium) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3.2rem;
+  }
+
+  @include breakpoint-up(large) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
