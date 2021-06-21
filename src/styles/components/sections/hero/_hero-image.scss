@@ -2,6 +2,61 @@
   # Hero Image
 \*------------------------------------*/
 
-.hero-image {
+.hero-image__lg {
   display: none;
+
+  @include breakpoint-up(large) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    img {
+      width: 40rem;
+    }
+
+    &::before {
+      @include shape-dots($top: 5rem, $left: 15rem, $secondary: true);
+    }
+
+    &::after {
+      @include shape-dots($bottom: 8rem, $left: 8.5rem, $secondary: true);
+    }
+  }
+
+  @include breakpoint-up(xlarge) {
+    img {
+      width: 50rem;
+    }
+
+    &::before {
+      @include shape-dots($top: 5rem, $left: 19.5rem, $secondary: true);
+    }
+
+    &::after {
+      @include shape-dots($bottom: 10rem, $left: 13rem, $secondary: true);
+    }
+  }
+
+  @media (min-width: 1700px) {
+    display: none;
+  }
+}
+
+.hero-image__xl {
+  position: relative;
+  display: none;
+
+  @media (min-width: 1701px) {
+    display: block;
+    margin-left: 6.4rem;
+
+    &::before {
+      @include shape-dots($top: 5rem, $left: 14rem, $secondary: true);
+    }
+
+    &::after {
+      @include shape-dots($bottom: 4rem, $left: 10rem, $secondary: true);
+    }
+  }
 }

@@ -2,6 +2,12 @@
   # Hero Info
 \*------------------------------------*/
 
+.hero-info {
+  @include breakpoint-up(medium) {
+    max-width: 54.4rem;
+  }
+}
+
 .hero-info__heading {
   @include typography(
     $font-family: $ff-heading,
@@ -11,6 +17,16 @@
     $color: $clr-outer-space
   );
   margin: 0 0 1.6rem 0;
+
+  @include breakpoint-up(large) {
+    @include typography(
+      $font-family: $ff-heading,
+      $font-size: 5.8rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.2,
+      $color: $clr-outer-space
+    );
+  }
 }
 
 .hero-info__subheading {
@@ -21,14 +37,30 @@
   );
   margin: 0;
 
+  @include breakpoint-up(medium) {
+    @include typography(
+      $font-size: 2.2rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.4
+    );
+  }
+
   span {
     display: block;
+
+    @include breakpoint-up(medium) {
+      display: inline-block;
+    }
   }
 }
 
 .hero-info__text {
   @include typography($font-size: 1.6rem, $line-height: 1.6);
   margin-top: 3.2rem;
+
+  @include breakpoint-up(large) {
+    @include typography($font-size: 1.8rem, $line-height: 1.6);
+  }
 
   p {
     margin: 0;
@@ -41,6 +73,18 @@
 
 .hero-info-cta {
   margin-top: 4.8rem;
+
+  @include breakpoint-up(medium) {
+    display: flex;
+
+    div:not(:last-child) {
+      margin-right: 2.4rem;
+    }
+  }
+
+  @include breakpoint-up(large) {
+    margin-top: 5.6rem;
+  }
 }
 
 .hero-info-cta__first {

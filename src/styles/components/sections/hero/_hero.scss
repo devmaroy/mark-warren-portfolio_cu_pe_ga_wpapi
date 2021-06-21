@@ -3,5 +3,16 @@
 \*------------------------------------*/
 
 .hero {
+  position: relative;
   margin-top: 5.6rem;
+
+  @include breakpoint-up(large) {
+    margin-top: 9.6rem;
+  }
+}
+
+.hero__inner {
+  @media (min-width: 1701px) {
+    display: flex;
+  }
 }

@@ -41,16 +41,24 @@ body {
 
   /* overflow-x: hidden !important; */
 
-  /* Additional tunning proposed by the community */
+  /* Additional tunning proposed by the community - */
   position: relative;
   width: 100%;
 
   &::before {
     @include shape-dots($top: 42rem, $right: -6.2rem, $secondary: true);
+
+    @include breakpoint-up(xlarge) {
+      @include shape-dots($top: 52rem, $left: -7rem, $secondary: true);
+    }
   }
 
   &:after {
     @include shape-dots($top: 50rem, $right: -8rem, $secondary: true);
+
+    @include breakpoint-up(xlarge) {
+      @include shape-dots($top: 60rem, $left: -5.2rem, $secondary: true);
+    }
   }
 }
 
