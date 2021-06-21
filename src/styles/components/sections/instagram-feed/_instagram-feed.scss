@@ -4,4 +4,16 @@
 
 .instagram-feed {
   @include slick-item;
+
+  @include breakpoint-up(medium) {
+    @include slick-item($width: 28.8rem, $height: 28.8rem);
+  }
+
+  @include breakpoint-up(large) {
+    @include slick-item($width: 35.2rem, $height: 35.2rem);
+  }
+
+  @include breakpoint-up(xlarge) {
+    @include slick-item($width: 38.4rem, $height: 38.4rem);
+  }
 }
