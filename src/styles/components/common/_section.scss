@@ -4,6 +4,10 @@
 
 .section {
   padding-top: 9.6rem;
+
+  @include breakpoint-up(large) {
+    padding-top: 12rem;
+  }
 }
 
 .section__content {
