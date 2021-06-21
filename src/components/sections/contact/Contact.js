@@ -16,7 +16,7 @@ const APIQuery = graphql`
     ) {
       nodes {
         childImageSharp {
-          gatsbyImageData(width: 600, quality: 100)
+          gatsbyImageData(quality: 100)
         }
       }
     }
@@ -102,8 +102,10 @@ const Contact = () => {
     <section className="section contact">
       <div className="container">
         <div className="section__inner contact__inner">
-          <ContactInfo text={contactInfoData.text} />
-          <ContactForm formData={contactFormData} />
+          <div className="contact__wrapper">
+            <ContactInfo text={contactInfoData.text} />
+            <ContactForm formData={contactFormData} />
+          </div>
           <ContactImage image={contactImage} />
         </div>
       </div>

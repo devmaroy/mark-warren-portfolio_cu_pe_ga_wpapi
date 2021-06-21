@@ -11,8 +11,6 @@
   }
 
   @include breakpoint-up(medium) {
-    img {
-      height: 52rem;
-    }
+    @include bordered-image($height: 52rem);
   }
 }
