@@ -15,7 +15,7 @@ const APIQuery = graphql`
     ) {
       nodes {
         childImageSharp {
-          gatsbyImageData(width: 600, quality: 100)
+          gatsbyImageData(quality: 100)
         }
       }
     }
@@ -56,7 +56,7 @@ const About = () => {
         <div className="section__inner about__inner">
           <SectionHeader heading="Just a Little" subHeading="About" />
 
-          <div className="section__content">
+          <div className="section__content about__content">
             <AboutImage image={aboutImage} />
             <AboutInfo text={aboutText} technologies={aboutTechnologies} />
           </div>

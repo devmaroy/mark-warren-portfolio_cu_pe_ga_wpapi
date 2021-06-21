@@ -9,4 +9,10 @@
   &::before {
     @include shape-dots($top: -2.5rem, $right: -0.7rem);
   }
+
+  @include breakpoint-up(medium) {
+    img {
+      height: 52rem;
+    }
+  }
 }
