@@ -39,30 +39,6 @@
 }
 
 .portfolio-gallery__item {
-  // img {
-  //   height: 20.8rem;
-  //   border-radius: $border-radius;
-
-  //   @include breakpoint-up(medium) {
-  //     height: 24.8rem;
-  //   }
-  // }
-
-  // &:first-child,
-  // &:last-child {
-  //   grid-column: 1 / -1;
-
-  //   img {
-  //     height: 29.6rem;
-  //   }
-
-  //   @include breakpoint-up(large) {
-  //     grid-column: 1 / -2;
-  //   }
-  // }
-
-  /* Large */
-
   img {
     height: 20.8rem;
     border-radius: $border-radius;
