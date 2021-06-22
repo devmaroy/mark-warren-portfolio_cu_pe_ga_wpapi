@@ -66,14 +66,19 @@ const Footer = () => {
     <footer className="footer">
       <div className="container">
         <div className="footer__inner">
-          <FooterCopyright
-            logo={footerCopyrightData.logo}
-            textCopyright={footerCopyrightData.textCopyright}
-            textRights={footerCopyrightData.textRights}
-          />
-          <FooterAuthor text={footerAuthorData.text} />
-          <FooterMenu menu={footerMenu} />
-          <FooterSocial social={footerSocial} />
+          <div className="footer__group">
+            <FooterCopyright
+              logo={footerCopyrightData.logo}
+              textCopyright={footerCopyrightData.textCopyright}
+              textRights={footerCopyrightData.textRights}
+            />
+            <FooterAuthor text={footerAuthorData.text} />
+          </div>
+
+          <div className="footer__group">
+            <FooterMenu menu={footerMenu} />
+            <FooterSocial social={footerSocial} />
+          </div>
         </div>
       </div>
     </footer>
