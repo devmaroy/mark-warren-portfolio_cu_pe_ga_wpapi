@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
-// import contactFormInfoType from '../../../../types/components/sections/contact/contact-form/contactFormInfoType';
+import contactFormInfoType from '../../../../types/components/sections/contact/contact-form/contactFormInfoType';
 
 const ContactFormInfo = ({
   type = 'success',
@@ -39,8 +39,8 @@ const ContactFormInfo = ({
   </div>
 );
 
-// ContactFormInfo.propTypes = {
-//   ...contactFormInfoType,
-// };
+ContactFormInfo.propTypes = {
+  ...contactFormInfoType,
+};
 
 export default ContactFormInfo;

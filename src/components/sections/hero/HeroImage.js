@@ -1,5 +1,6 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import heroImageType from '../../../types/components/sections/hero/heroImageType';
 
 const HeroImage = ({ image }) => (
   <div className="hero-image">
@@ -18,5 +19,9 @@ const HeroImage = ({ image }) => (
     </div>
   </div>
 );
+
+HeroImage.propTypes = {
+  ...heroImageType,
+};
 
 export default HeroImage;

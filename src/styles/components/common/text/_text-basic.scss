@@ -112,4 +112,16 @@
       );
     }
   }
+
+  ul,
+  ol,
+  p,
+  li,
+  blockquote,
+  figure,
+  figcaption {
+    @include breakpoint-up(large) {
+      @include typography($font-size: 1.8rem, $line-height: 1.6);
+    }
+  }
 }

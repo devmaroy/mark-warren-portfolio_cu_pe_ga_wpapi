@@ -144,7 +144,7 @@ const PostPage = () => {
         <li>Toffee pie marshmallow topping astry bonbon</li>
         <li>Marshmallow ice cream tootsie macaroon pudding</li>
         <li>Donut wafer cotton candy cake bear claw cookie</li>
-      </ul
+      </ul>
       <p>Brownie cake marzipan tart powder liquorice cheesecake liquorice 
       dessert. Cake halvah caramels chocolate chocolate. Donut liquorice 
       tiramisu topping. Bear claw jujubes marzipan wafer lemon drops jujubes 
@@ -181,7 +181,7 @@ const PostPage = () => {
       Soufflé cotton candy lollipop candy canes. Pie gingerbread cake. 
       Chupa sugar plum powder caramels bonbon. Jelly marshmallow topping 
       croissant marshmallow cake cupcakes jujubes.</p>
-      <img src=${APISubPageBlogPostData[2].childImageSharp.gatsbyImageData.images.fallback.src} alt="Post image" class="second">
+      <img src=${APISubPageBlogPostData[2].childImageSharp.gatsbyImageData.images.fallback.src} alt="Post image" class="second alignleft">
       <p>Tootsie roll toffee toffee dessert sweet lollipop pies tiramisu cookie 
       icing. Macaroon macaroon sweet cheesecake bonbon donut carrot brownie.</p>
       <p>Sweet roll sweet roll marshmallow chocolate cake cake. Jelly beans 
