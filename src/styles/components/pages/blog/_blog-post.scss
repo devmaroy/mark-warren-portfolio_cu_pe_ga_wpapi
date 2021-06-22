@@ -12,6 +12,16 @@
   );
   margin: 0;
   text-align: center;
+
+  @include breakpoint-up(large) {
+    @include typography(
+      $font-family: $ff-heading,
+      $font-size: 3.8rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.2,
+      $color: $clr-outer-space
+    );
+  }
 }
 
 .blog-post__meta {
@@ -67,32 +77,72 @@
 .blog-post__image {
   margin-top: 4.8rem;
 
+  @include breakpoint-up(large) {
+    margin-top: 6.4rem;
+  }
+
   img {
     height: 22.4rem;
     border-radius: $border-radius;
+
+    @media (min-width: 400px) {
+      height: 35.2rem;
+    }
+
+    @include breakpoint-up(medium) {
+      height: 41.6rem;
+    }
   }
 }
 
 .blog-post__content {
   margin-top: 4rem;
   margin-bottom: 5.6rem;
-}
 
+  @include breakpoint-up(large) {
+    margin-top: 5.6rem;
+  }
+}
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // TODO: REMOVE WHEN WE HAVE DYNAMIC DATA
 .blog-post__text {
   img {
     width: 100%;
-    height: 18.4rem;
+    height: 22.4rem;
     object-fit: cover;
     border-radius: $border-radius;
+
+    @include breakpoint-up(large) {
+      height: 29.6rem;
+    }
   }
 
   img.second {
     height: 25.6rem;
+
+    @include breakpoint-up(large) {
+      height: 29.6rem;
+    }
   }
 }
 // END TODO: REMOVE WHEN WE HAVE DYNAMIC DATA
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
 .blog-post-tags {
   @include list-unstyled;
 }
@@ -138,6 +188,16 @@
     $color: $clr-iron
   );
   margin: 0;
+
+  @include breakpoint-up(medium) {
+    @include typography(
+      $font-family: $ff-heading,
+      $font-size: 1.8rem,
+      $font-weight: $fw-medium,
+      $line-height: 1.2,
+      $color: $clr-iron
+    );
+  }
 }
 
 .blog-post-share__social {
@@ -147,6 +207,10 @@
 
 .blog-post-recent-articles {
   margin-top: 9.6rem;
+
+  @include breakpoint-up(large) {
+    margin-top: 12rem;
+  }
 }
 
 .blog-post-recent-articles__heading {
@@ -158,4 +222,21 @@
     $color: $clr-outer-space
   );
   margin: 0 0 3.2rem 0;
+
+  @include breakpoint-up(large) {
+    @include typography(
+      $font-family: $ff-heading,
+      $font-size: 2.4rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.2,
+      $color: $clr-outer-space
+    );
+  }
+}
+
+.blog-post__layout {
+  @include breakpoint-up(medium) {
+    max-width: 73.6rem;
+    margin: 0 auto;
+  }
 }

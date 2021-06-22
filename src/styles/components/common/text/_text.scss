@@ -14,6 +14,10 @@
     &:first-child {
       margin-top: 0;
     }
+
+    @include breakpoint-up(large) {
+      margin: 5.6rem 0 1.6rem 0;
+    }
   }
 
   ul,
@@ -26,10 +30,22 @@
     @include typography();
     margin: 0;
     padding: 0;
+
+    @include breakpoint-up(large) {
+      @include typography($font-size: 2rem, $line-height: 1.6);
+    }
   }
 
   figure {
     margin-top: 4.8rem;
+
+    @include breakpoint-up(large) {
+      margin-top: 5.6rem;
+    }
+
+    img {
+      margin-bottom: 0;
+    }
   }
 
   figcaption {
@@ -41,6 +57,15 @@
     );
     margin-top: 1.6rem;
     text-align: center;
+
+    @include breakpoint-up(large) {
+      @include typography(
+        $font-size: 1.6rem,
+        $font-weight: $fw-bold,
+        $line-height: 1.4,
+        $color: $clr-iron
+      );
+    }
   }
 
   p:not(:last-child),
@@ -55,10 +80,18 @@
 
   ul {
     padding-left: calc(2rem + 2.4rem);
+
+    @include breakpoint-up(large) {
+      padding-left: calc(2rem + 3.2rem);
+    }
   }
 
   ol {
     padding-left: calc(1.8rem + 2.4rem);
+
+    @include breakpoint-up(large) {
+      padding-left: calc(1.8rem + 3.2rem);
+    }
   }
 
   li:not(:last-child) {
@@ -76,6 +109,11 @@
     text-align: center;
     background: $clr-white-lilac;
 
+    @include breakpoint-up(medium) {
+      padding: 4rem;
+      margin: 5.6rem 0;
+    }
+
     blockquote p {
       @include typography(
         $font-size: 2rem,
@@ -84,6 +122,24 @@
         $color: $clr-rock-blue
       );
       margin: 0;
+
+      @include breakpoint-up(medium) {
+        @include typography(
+          $font-size: 2.4rem,
+          $font-weight: $fw-bold,
+          $font-style: italic,
+          $color: $clr-rock-blue
+        );
+      }
+
+      @include breakpoint-up(large) {
+        @include typography(
+          $font-size: 2.8rem,
+          $font-weight: $fw-bold,
+          $font-style: italic,
+          $color: $clr-rock-blue
+        );
+      }
     }
 
     blockquote p:not(:last-child) {
