@@ -159,12 +159,20 @@ const BlogSidebar = () => {
 
   return (
     <div className="blog-sidebar">
-      <BlogSidebarRecentArticles posts={blogSidebarRecentPosts} />
-      <BlogSidebarSearch />
-      <BlogSidebarCategories categories={blogSidebarCategories} />
-      <BlogSidebarTags tags={blogSidebarTags} />
-      <BlogSidebarNewsletter />
-      <BlogSidebarInstagramFeed items={blogSidebarInstagramFeedQuery} />
+      <div className="blog-sidebar__layout">
+        <BlogSidebarRecentArticles posts={blogSidebarRecentPosts} />
+        <BlogSidebarSearch />
+      </div>
+
+      <div className="blog-sidebar__layout">
+        <BlogSidebarCategories categories={blogSidebarCategories} />
+        <BlogSidebarTags tags={blogSidebarTags} />
+      </div>
+
+      <div className="blog-sidebar__layout">
+        <BlogSidebarNewsletter />
+        <BlogSidebarInstagramFeed items={blogSidebarInstagramFeedQuery} />
+      </div>
     </div>
   );
 };
