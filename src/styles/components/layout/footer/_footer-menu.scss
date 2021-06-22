@@ -6,6 +6,10 @@
   @include list-unstyled;
   margin-top: 3.2rem;
   margin-bottom: 1.6rem;
+
+  @include breakpoint-up(large) {
+    margin: 0;
+  }
 }
 
 .footer-menu__item {
