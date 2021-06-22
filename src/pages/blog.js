@@ -90,8 +90,10 @@ const BlogPage = () => {
     <SubPage className="blog" classNameInner="blog__inner">
       <SectionHeader heading="All my Articles" subHeading="Blog" />
 
-      <BlogMain posts={blogPosts} />
-      <BlogSidebar />
+      <div className="blog__layout">
+        <BlogMain posts={blogPosts} />
+        <BlogSidebar />
+      </div>
     </SubPage>
   );
 };

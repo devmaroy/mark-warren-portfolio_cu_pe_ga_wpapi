@@ -2,11 +2,11 @@
   # Blog Main
 \*------------------------------------*/
 
-.blog-main__list {
-  margin-top: 4rem;
-}
-
 .blog-main__pagination {
   margin-top: 7.2rem;
   text-align: right;
+
+  @include breakpoint-up(large) {
+    margin-top: 8.8rem;
+  }
 }

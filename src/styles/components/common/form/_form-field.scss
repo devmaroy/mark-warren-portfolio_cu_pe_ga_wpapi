@@ -29,10 +29,6 @@
 
   transition: all $transition;
 
-  @include breakpoint-up(large) {
-    @include typography($font-size: 1.8rem, $line-height: 1);
-  }
-
   &:focus {
     border-color: $clr-royal-blue;
   }

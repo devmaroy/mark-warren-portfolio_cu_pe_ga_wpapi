@@ -4,8 +4,39 @@
 
 .blog-sidebar {
   margin-top: 9.6rem;
+  overflow: hidden;
+
+  @include breakpoint-up(medium) {
+    display: grid;
+    grid-gap: 7.2rem;
+  }
+
+  @include breakpoint-up(large) {
+    display: block;
+    margin-top: 0;
+  }
 }
 
 .blog-sidebar__panel {
   margin-bottom: 7.2rem;
+
+  @include breakpoint-up(medium) {
+    margin-bottom: 0;
+  }
+
+  @include breakpoint-up(large) {
+    margin-bottom: 8rem;
+  }
+}
+
+.blog-sidebar__layout {
+  @include breakpoint-up(medium) {
+    display: grid;
+    grid-gap: 6.4rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include breakpoint-up(large) {
+    display: block;
+  }
 }
