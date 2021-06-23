@@ -66,7 +66,7 @@ const Reviews = () => {
   ];
 
   return (
-    <section className="section reviews">
+    <section id="reviews" className="section reviews">
       <div className="container">
         <div className="section__inner reviews__inner">
           <SectionHeader heading="What My Clients Say" subHeading="Reviews" />

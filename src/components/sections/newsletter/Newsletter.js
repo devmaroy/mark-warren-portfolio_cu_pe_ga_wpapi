@@ -22,7 +22,7 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="section newsletter">
+    <section id="newsletter" className="section newsletter">
       <div className="container">
         <div className="section__inner newsletter__inner">
           <InfoBanner

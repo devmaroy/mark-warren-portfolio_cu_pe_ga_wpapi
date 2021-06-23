@@ -11,7 +11,7 @@ const Available = () => {
   };
 
   return (
-    <section className="section available">
+    <section id="available" className="section available">
       <div className="container">
         <div className="section__inner available__inner">
           <InfoBanner heading={availableData.heading} text={availableData.text}>

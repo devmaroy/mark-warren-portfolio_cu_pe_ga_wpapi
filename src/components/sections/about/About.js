@@ -51,7 +51,7 @@ const About = () => {
   ];
 
   return (
-    <section className="section about">
+    <section id="about" className="section about">
       <div className="container">
         <div className="section__inner about__inner">
           <SectionHeader heading="Just a Little" subHeading="About" />
