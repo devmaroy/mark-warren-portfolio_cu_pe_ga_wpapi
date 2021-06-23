@@ -31,7 +31,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="section services">
+    <section id="services" className="section services">
       <div className="container">
         <div className="section__inner services__inner">
           <SectionHeader heading="What I Do" subHeading="Services" />

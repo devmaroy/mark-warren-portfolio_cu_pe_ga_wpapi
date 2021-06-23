@@ -9,7 +9,7 @@ export default {
       path: string.isRequired,
       cssCLasses: arrayOf(string),
       acf: shape({
-        menuItemPartiallyActive: bool.isRequired,
+        menusItemPartiallyActive: bool,
       }).isRequired,
     }).isRequired,
   ).isRequired,

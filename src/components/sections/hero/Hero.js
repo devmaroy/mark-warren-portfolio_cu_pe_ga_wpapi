@@ -37,7 +37,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero">
+    <section id="hero" className="hero">
       <div className="container">
         <div className="hero__inner">
           <HeroInfo />

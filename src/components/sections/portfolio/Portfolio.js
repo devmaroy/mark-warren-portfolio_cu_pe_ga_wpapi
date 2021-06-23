@@ -49,7 +49,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <section className="section portfolio">
+    <section id="portfolio" className="section portfolio">
       <div className="container">
         <div className="section__inner portfolio__inner">
           <SectionHeader heading="My Latest Projects" subHeading="Portfolio" />

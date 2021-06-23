@@ -61,7 +61,7 @@ const InstagramFeed = () => {
   };
 
   return (
-    <section className="section instagram-feed">
+    <section id="instagram-feed" className="section instagram-feed">
       <div className="section__inner instagram-feed__inner">
         <SectionHeader heading="Follow Me" subHeading="Instagram" />
 

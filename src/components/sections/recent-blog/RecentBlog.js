@@ -3,7 +3,7 @@ import SectionHeader from '../../common/SectionHeader';
 import BlogPostsRecent from '../../pages/blog/BlogPostsRecent';
 
 const RecentBlog = () => (
-  <section className="section recent-blog">
+  <section id="recent-blog" className="section recent-blog">
     <div className="container">
       <div className="section__inner recent-blog__inner">
         <SectionHeader heading="My Recent Articles" subHeading="Blog" />
