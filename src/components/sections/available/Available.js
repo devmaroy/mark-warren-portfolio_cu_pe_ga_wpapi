@@ -1,27 +1,46 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import Button from '../../common/Button';
 import InfoBanner from '../../common/InfoBanner';
 
+// API Query
+const APIQuery = graphql`
+  query SectionAvailableQuery {
+    wpgraphql {
+      sectionAvailable(id: "cG9zdDoxMDM=") {
+        acf {
+          heading
+          text
+          button {
+            text
+            url
+            variant
+          }
+        }
+      }
+    }
+  }
+`;
+
 const Available = () => {
-  const availableData = {
-    heading: 'I’m available for freelance job',
-    text: `<p>Lemon drops apple pie marshmallow caramels carrot cake cookie 
-    cotton candy. Marshmallow sugar plum chocolate.</p>`,
-    buttonText: 'Hire Me',
-  };
+  const data = useStaticQuery(APIQuery);
+  const APISectionAvailableData = data.wpgraphql.sectionAvailable;
 
   return (
     <section id="available" className="section available">
       <div className="container">
         <div className="section__inner available__inner">
-          <InfoBanner heading={availableData.heading} text={availableData.text}>
+          <InfoBanner
+            heading={APISectionAvailableData.acf.heading}
+            text={APISectionAvailableData.acf.text}
+          >
             <Button
               size="lg"
               variant="secondary"
-              to="#portfolio"
+              to={APISectionAvailableData.acf.button.url}
               showIcon={false}
             >
-              {availableData.buttonText}
+              {APISectionAvailableData.acf.button.text}
             </Button>
           </InfoBanner>
         </div>
