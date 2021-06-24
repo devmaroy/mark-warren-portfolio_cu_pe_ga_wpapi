@@ -6,15 +6,37 @@ import HeroImage from './HeroImage';
 // API Query
 const APIQuery = graphql`
   query SectionHeroQuery {
-    allFile(
-      filter: {
-        sourceInstanceName: { eq: "images" }
-        relativeDirectory: { eq: "sections/hero" }
-      }
-    ) {
-      nodes {
-        childImageSharp {
-          gatsbyImageData(width: 1200, quality: 100)
+    wpgraphql {
+      sectionHero(id: "cG9zdDozNA==") {
+        acf {
+          title
+          tagline
+          text
+          cta {
+            text
+            url
+            variant
+          }
+          images {
+            lg {
+              altText
+              sourceUrl
+              imageFile {
+                childImageSharp {
+                  gatsbyImageData(width: 1200, quality: 100)
+                }
+              }
+            }
+            xl {
+              altText
+              sourceUrl
+              imageFile {
+                childImageSharp {
+                  gatsbyImageData(width: 1200, quality: 100)
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -23,25 +45,22 @@ const APIQuery = graphql`
 
 const Hero = () => {
   const data = useStaticQuery(APIQuery);
-  const APISectionHeroData = data.allFile.nodes;
-
-  const heroImage = {
-    lg: {
-      imageFile: APISectionHeroData[0],
-      altText: 'Hero image',
-    },
-    xl: {
-      imageFile: APISectionHeroData[1],
-      altText: 'Hero image',
-    },
-  };
+  const APISectionHeroData = data.wpgraphql.sectionHero.acf;
 
   return (
-    <section id="hero" className="hero">
+    <section className="hero">
       <div className="container">
         <div className="hero__inner">
-          <HeroInfo />
-          <HeroImage image={heroImage} />
+          <HeroInfo
+            title={APISectionHeroData.title}
+            tagline={APISectionHeroData.tagline}
+            text={APISectionHeroData.text}
+            cta={APISectionHeroData.cta}
+          />
+          <HeroImage
+            lg={APISectionHeroData.images.lg}
+            xl={APISectionHeroData.images.xl}
+          />
         </div>
       </div>
     </section>

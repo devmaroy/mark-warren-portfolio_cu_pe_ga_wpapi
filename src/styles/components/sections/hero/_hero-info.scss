@@ -29,7 +29,7 @@
   }
 }
 
-.hero-info__subheading {
+.hero-info__tagline {
   @include typography(
     $font-size: 1.8rem,
     $font-weight: $fw-bold,
@@ -50,6 +50,14 @@
 
     @include breakpoint-up(medium) {
       display: inline-block;
+    }
+  }
+
+  p {
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 2.4rem;
     }
   }
 }
@@ -76,10 +84,6 @@
 
   @include breakpoint-up(medium) {
     display: flex;
-
-    div:not(:last-child) {
-      margin-right: 2.4rem;
-    }
   }
 
   @include breakpoint-up(large) {
@@ -87,6 +91,18 @@
   }
 }
 
-.hero-info-cta__first {
-  margin-bottom: 2.4rem;
+.hero-info-cta__item {
+  &:first-child {
+    margin-bottom: 2.4rem;
+  }
+
+  @include breakpoint-up(medium) {
+    &:first-child {
+      margin-bottom: 0;
+    }
+
+    &:not(:last-child) {
+      margin-right: 2.4rem;
+    }
+  }
 }

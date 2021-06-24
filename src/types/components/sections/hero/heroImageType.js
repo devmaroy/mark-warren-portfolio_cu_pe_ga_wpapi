@@ -3,22 +3,20 @@ import imageType from '../../common/imageType';
 
 // Hero Image Type
 export default {
-  image: shape({
-    lg: shape({
-      imageFile: shape({
-        childImageSharp: shape({
-          ...imageType,
-        }).isRequired,
+  lg: shape({
+    imageFile: shape({
+      childImageSharp: shape({
+        ...imageType,
       }).isRequired,
-      altText: string.isRequired,
     }).isRequired,
-    xl: shape({
-      imageFile: shape({
-        childImageSharp: shape({
-          ...imageType,
-        }).isRequired,
+    altText: string.isRequired,
+  }).isRequired,
+  xl: shape({
+    imageFile: shape({
+      childImageSharp: shape({
+        ...imageType,
       }).isRequired,
-      altText: string.isRequired,
     }).isRequired,
+    altText: string.isRequired,
   }).isRequired,
 };
