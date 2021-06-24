@@ -1,6 +1,5 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import cardType from '../../types/components/common/cardType';
 
 const Card = ({ number, icon, iconSize = 'md', heading, text, author }) => (
@@ -38,10 +37,7 @@ const Card = ({ number, icon, iconSize = 'md', heading, text, author }) => (
     {author && (
       <div className="card-author">
         <div className="card-author__image">
-          <GatsbyImage
-            image={author.image.childImageSharp.gatsbyImageData}
-            alt={author.name}
-          />
+          <img src={author.image.sourceUrl} alt={author.image.altText} />
         </div>
 
         <div className="card-author__info">
@@ -51,9 +47,19 @@ const Card = ({ number, icon, iconSize = 'md', heading, text, author }) => (
           />
 
           <span
-            className="card-author__position"
+            className="card-author__career"
             dangerouslySetInnerHTML={{ __html: author.position }}
           />
+
+          {author.company && (
+            <>
+              {' '}
+              <span
+                className="card-author__career card-author__career--highlight"
+                dangerouslySetInnerHTML={{ __html: author.company }}
+              />
+            </>
+          )}
         </div>
       </div>
     )}
