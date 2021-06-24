@@ -4,7 +4,8 @@ import imageType from './imageType';
 // Card Type
 export default {
   number,
-  icon: string.isRequired,
+  icon: shape({ sourceUrl: string.isRequired, altText: string.isRequired })
+    .isRequired,
   iconSize: string,
   heading: string,
   text: string,

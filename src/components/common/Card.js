@@ -13,10 +13,11 @@ const Card = ({ number, icon, iconSize = 'md', heading, text, author }) => (
       )}
 
       <img
-        src={icon}
+        src={icon.sourceUrl}
         alt={heading ? `Card icon for ${heading}` : 'Card icon'}
         className={`card__icon card__icon--${iconSize}`}
       />
+      {console.log(icon)}
     </div>
 
     <div className="card__body">
