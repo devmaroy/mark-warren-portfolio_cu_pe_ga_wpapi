@@ -17,7 +17,6 @@ const Card = ({ number, icon, iconSize = 'md', heading, text, author }) => (
         alt={heading ? `Card icon for ${heading}` : 'Card icon'}
         className={`card__icon card__icon--${iconSize}`}
       />
-      {console.log(icon)}
     </div>
 
     <div className="card__body">
