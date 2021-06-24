@@ -13,4 +13,10 @@
   @include breakpoint-up(medium) {
     @include bordered-image($height: 52rem);
   }
+
+  @include breakpoint-up(large) {
+    &::before {
+      @include shape-dots($top: -2.5rem, $right: -1.5rem);
+    }
+  }
 }

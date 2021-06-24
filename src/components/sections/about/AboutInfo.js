@@ -8,18 +8,24 @@ const AboutInfo = ({ text, technologies }) => (
       className="about-info__text text-basic"
       dangerouslySetInnerHTML={{ __html: text }}
     />
+    {technologies && (
+      <div className="about-info-technologies">
+        <h4
+          className="about-info-technologies__heading"
+          dangerouslySetInnerHTML={{ __html: technologies.heading }}
+        />
 
-    <div className="about-info-technologies">
-      <h4 className="about-info-technologies__heading">Technologies I use</h4>
-
-      <ul className="about-info-technologies-list">
-        {technologies.map(({ id, name }) => (
-          <li key={id} className="about-info-technologies-list__item">
-            {name}
-          </li>
-        ))}
-      </ul>
-    </div>
+        {technologies.list.length !== 0 && (
+          <ul className="about-info-technologies-list">
+            {technologies.list.map(({ name }) => (
+              <li key={name} className="about-info-technologies-list__item">
+                {name}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    )}
   </div>
 );
 
