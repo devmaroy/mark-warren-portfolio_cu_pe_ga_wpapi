@@ -21,8 +21,10 @@ const BlogPostTeaser = ({ post, large }) => (
       >
         <Link to={post.slug}>
           <GatsbyImage
-            image={post.image.childImageSharp.gatsbyImageData}
-            alt={post.title}
+            image={
+              post.featuredImage.node.imageFile.childImageSharp.gatsbyImageData
+            }
+            alt={post.featuredImage.node.altText}
           />
         </Link>
       </div>
@@ -33,8 +35,9 @@ const BlogPostTeaser = ({ post, large }) => (
         })}
       >
         <ul className="blog-post-teaser-categories">
-          {post.categories.length !== 0 &&
-            post.categories.map(({ id, name, slug }) => (
+          {post.categories &&
+            post.categories.nodes.length !== 0 &&
+            post.categories.nodes.map(({ id, name, slug }) => (
               <li
                 key={id}
                 className={classNames('blog-post-teaser-categories__category', {
