@@ -18,6 +18,7 @@ const APIQuery = graphql`
             }
             author {
               image {
+                id
                 altText
                 sourceUrl
               }
@@ -44,18 +45,15 @@ const Reviews = () => {
 
           <div className="section__content">
             <div className="card__responsive-layout reviews__cards">
-              {APISectionReviewsData.map(
-                ({ id, acf }) =>
-                  console.log(acf) || (
-                    <Card
-                      key={id}
-                      icon={acf.icon}
-                      iconSize="lg"
-                      text={acf.text}
-                      author={acf.author}
-                    />
-                  ),
-              )}
+              {APISectionReviewsData.map(({ id, acf }) => (
+                <Card
+                  key={id}
+                  icon={acf.icon}
+                  iconSize="lg"
+                  text={acf.text}
+                  author={acf.author}
+                />
+              ))}
             </div>
           </div>
         </div>
