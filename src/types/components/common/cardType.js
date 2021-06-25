@@ -12,6 +12,8 @@ export default {
   author: shape({
     image: shape({
       id: string.isRequired,
+      sourceUrl: string.isRequired,
+      altText: string.isRequired,
       childImageSharp: shape({ ...imageType }),
     }).isRequired,
     name: string.isRequired,

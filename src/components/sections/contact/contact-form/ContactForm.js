@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import URIEncode from '../../../../utils/URIEncode';
-import getFormFieldData from './helpers';
 import getValidatedField from '../../../../utils/validateForm';
 import Form from '../../../common/form/Form';
 import FormField from '../../../common/form/FormField';
@@ -33,14 +32,26 @@ const ContactForm = ({ formData }) => {
 
   const [fields, setFields] = useState(() => initialState.current);
 
+  // Required fields
+  const requiredFields = {
+    firstName: formData.firstName.required,
+    lastName: formData.lastName.required,
+    email: formData.emailAddress.required,
+    subject: formData.subject.required,
+    message: formData.message.required,
+  };
+
+  // Error messages
+  const errorMessages = {
+    firstName: formData.formFieldErrorMessages.firstName,
+    lastName: formData.formFieldErrorMessages.lastName,
+    email: formData.formFieldErrorMessages.emailAddress,
+    subject: formData.formFieldErrorMessages.subject,
+    message: formData.formFieldErrorMessages.message,
+  };
+
   // Get data
-  const {
-    requiredFields,
-    errorMessages,
-    submittedLoadingIcon,
-    submittedErrorMessages,
-    submittedSuccessMessages,
-  } = getFormFieldData(formData);
+  const { loadingIcon, messages } = formData.afterFormSubmit;
 
   // Handle reseting state to the defaults
   const handleReset = () => {
@@ -126,24 +137,27 @@ const ContactForm = ({ formData }) => {
     }
   };
 
+  // Render loading component
   if (loading) {
-    return <ContactFormLoading loadingIcon={submittedLoadingIcon} />;
+    return <ContactFormLoading loadingIcon={loadingIcon} />;
   }
 
+  // Render error component
   if (error) {
     return (
       <ContactFormError
-        messages={submittedErrorMessages}
+        messages={messages.error}
         type="error"
         handleReset={handleReset}
       />
     );
   }
 
+  // Render success component
   if (success) {
     return (
       <ContactFormSuccess
-        messages={submittedSuccessMessages}
+        messages={messages.success}
         type="success"
         handleReset={handleReset}
       />
@@ -168,7 +182,7 @@ const ContactForm = ({ formData }) => {
       <Form
         name="contact"
         className="contact-form"
-        buttonText={formData.contactFormButton.contactFormButtonText}
+        buttonText={formData.button.text}
         buttonDisabled={!fields.formValid}
         onSubmit={handleSubmit}
       >
@@ -176,9 +190,7 @@ const ContactForm = ({ formData }) => {
           <FormField
             id="firstName"
             name="firstName"
-            placeholder={
-              formData.contactFormFirstName.contactFormFirstNameLabel
-            }
+            placeholder={formData.firstName.label}
             value={fields.firstName}
             onChange={handleChange}
             error={fields.errors && fields.errors.firstName}
@@ -186,7 +198,7 @@ const ContactForm = ({ formData }) => {
           <FormField
             id="lastName"
             name="lastName"
-            placeholder={formData.contactFormLastName.contactFormLastNameLabel}
+            placeholder={formData.lastName.label}
             value={fields.lastName}
             onChange={handleChange}
             error={fields.errors && fields.errors.lastName}
@@ -195,7 +207,7 @@ const ContactForm = ({ formData }) => {
             id="email"
             name="email"
             type="email"
-            placeholder={formData.contactFormEmail.contactFormEmailLabel}
+            placeholder={formData.emailAddress.label}
             value={fields.email}
             onChange={handleChange}
             error={fields.errors && fields.errors.email}
@@ -204,7 +216,7 @@ const ContactForm = ({ formData }) => {
           <FormField
             id="subject"
             name="subject"
-            placeholder={formData.contactFormSubject.contactFormSubjectLabel}
+            placeholder={formData.subject.label}
             value={fields.subject}
             onChange={handleChange}
             error={fields.errors && fields.errors.subject}
@@ -214,7 +226,7 @@ const ContactForm = ({ formData }) => {
           id="message"
           name="message"
           type="textarea"
-          placeholder={formData.contactFormMessage.contactFormMessageLabel}
+          placeholder={formData.message.label}
           value={fields.message}
           onChange={handleChange}
           error={fields.errors && fields.errors.message}

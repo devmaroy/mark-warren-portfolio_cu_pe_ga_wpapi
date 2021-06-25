@@ -2,6 +2,8 @@ import validator from 'validator';
 
 // Helper function for validating form field.
 const getValidatedField = (name, value, type, errorText, isRequired) => {
+  console.log(name, value, type, errorText, isRequired);
+
   const conditions = {
     text: value.length > 0,
     email: value.length > 0 && validator.isEmail(value),
