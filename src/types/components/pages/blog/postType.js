@@ -8,15 +8,22 @@ export default {
   title: string.isRequired,
   excerpt: string,
   date: string.isRequired,
-  categories: arrayOf(
-    shape({
-      id: string.isRequired,
-      name: string.isRequired,
-      slug: string.isRequired,
+  featuredImage: shape({
+    node: shape({
+      altText: string.isRequired,
+      sourceUrl: string.isRequired,
+      imageFile: shape({
+        childImageSharp: shape({ ...imageType }).isRequired,
+      }).isRequired,
     }).isRequired,
-  ),
-  image: shape({
-    id: string.isRequired,
-    childImageSharp: shape({ ...imageType }).isRequired,
   }).isRequired,
+  categories: shape({
+    nodes: arrayOf(
+      shape({
+        id: string.isRequired,
+        name: string.isRequired,
+        slug: string.isRequired,
+      }),
+    ).isRequired,
+  }),
 };
