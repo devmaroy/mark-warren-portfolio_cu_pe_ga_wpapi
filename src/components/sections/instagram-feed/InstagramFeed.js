@@ -55,7 +55,6 @@ const InstagramFeed = () => {
                         }
                         alt="Instagram feed image"
                       />
-                      {console.log(items)}
                     </div>
                   ))}
                 </Slider>

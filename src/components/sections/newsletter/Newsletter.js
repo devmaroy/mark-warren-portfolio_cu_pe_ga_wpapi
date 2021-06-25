@@ -1,20 +1,36 @@
 /* eslint-disable no-alert */
 import React, { useState } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import InfoBanner from '../../common/InfoBanner';
 import Form from '../../common/form/Form';
 import FormField from '../../common/form/FormField';
 
+// API Query
+const APIQuery = graphql`
+  query SectionNewsletterQuery {
+    wpgraphql {
+      sectionNewsletter(id: "cG9zdDoyMTM=") {
+        acf {
+          heading
+          text
+          form {
+            emailAddress {
+              label
+            }
+            button {
+              text
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 const Newsletter = () => {
-  const newsletterData = {
-    heading: 'Let’s stay in touch',
-    text: `<p>Tootsie roll sweet apple pie jelly-o donut muffin lemon drops. 
-    Brownie gingerbread halvah cupcake jelly beans toffee cotton.</p>`,
-    form: {
-      placeholder: 'Email Address',
-      buttonText: 'Subscribe',
-      errorText: 'Please enter your valid email.',
-    },
-  };
+  const data = useStaticQuery(APIQuery);
+  const APISectionNewsletterData = data.wpgraphql.sectionNewsletter;
+
   const [email, setEmail] = useState('');
 
   const handleChange = (name, value) => {
@@ -26,13 +42,13 @@ const Newsletter = () => {
       <div className="container">
         <div className="section__inner newsletter__inner">
           <InfoBanner
-            heading={newsletterData.heading}
-            text={newsletterData.text}
+            heading={APISectionNewsletterData.acf.heading}
+            text={APISectionNewsletterData.acf.text}
           >
             <Form
               name="newsletter"
               className="form--2cols newsletter__form"
-              buttonText={newsletterData.form.buttonText}
+              buttonText={APISectionNewsletterData.acf.form.button.text}
               buttonDisabled={false}
               buttonClassName="button--secondary button--lg"
               onSubmit={() => alert('Hello')}
@@ -41,7 +57,9 @@ const Newsletter = () => {
                 type="email"
                 id="email"
                 name="email"
-                placeholder={newsletterData.form.placeholder}
+                placeholder={
+                  APISectionNewsletterData.acf.form.emailAddress.label
+                }
                 value={email}
                 className="form-field__control--outline"
                 onChange={handleChange}
