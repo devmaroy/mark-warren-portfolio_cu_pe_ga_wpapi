@@ -4,7 +4,7 @@ import BlogPostTeaser from './BlogPostTeaser';
 
 // API Query
 const APIQuery = graphql`
-  query SectionRecentBlogQuery {
+  query BlogPostsRecentQuery {
     wpgraphql {
       posts(where: { orderby: { field: DATE, order: DESC } }, first: 3) {
         nodes {

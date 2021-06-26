@@ -8,6 +8,16 @@ import Button from '../../common/Button';
 const APIQuery = graphql`
   query SectionPortfolioQuery {
     wpgraphql {
+      themeHeadingsSettings {
+        themeHeadingsSettings {
+          sections {
+            portfolio {
+              heading
+              subHeading
+            }
+          }
+        }
+      }
       sectionPortfolios {
         nodes {
           id
@@ -38,6 +48,9 @@ const APIQuery = graphql`
 
 const Portfolio = () => {
   const data = useStaticQuery(APIQuery);
+  const APISectionHeadingsData =
+    data.wpgraphql.themeHeadingsSettings.themeHeadingsSettings.sections
+      .portfolio;
   const APISectionPortfolioData = data.wpgraphql.sectionPortfolios.nodes;
   const APISectionPortfolioCategoriesData =
     data.wpgraphql.sectionPortfoliosCategories.nodes;
@@ -46,7 +59,10 @@ const Portfolio = () => {
     <section id="portfolio" className="section portfolio">
       <div className="container">
         <div className="section__inner portfolio__inner">
-          <SectionHeader heading="My Latest Projects" subHeading="Portfolio" />
+          <SectionHeader
+            heading={APISectionHeadingsData.heading}
+            subHeading={APISectionHeadingsData.subHeading}
+          />
 
           <ul className="portfolio-menu">
             {APISectionPortfolioCategoriesData.map(({ id, name }) => (
