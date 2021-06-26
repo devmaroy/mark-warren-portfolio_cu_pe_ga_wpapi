@@ -4,8 +4,8 @@ import footerMenuType from '../../../types/components/layout/footer/footerMenuTy
 
 const FooterMenu = ({ menu }) => (
   <ul className="footer-menu">
-    {menu.map(({ id, url, text }) => (
-      <li key={id} className="footer-menu__item">
+    {menu.map(({ url, text }) => (
+      <li key={url} className="footer-menu__item">
         <DynamicLink to={url} className="footer-menu__link">
           {text}
         </DynamicLink>

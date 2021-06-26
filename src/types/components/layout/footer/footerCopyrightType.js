@@ -4,6 +4,6 @@ import { shape, string } from 'prop-types';
 export default {
   logo: shape({ sourceUrl: string.isRequired, altText: string.isRequired })
     .isRequired,
-  textCopyright: string.isRequired,
-  textRights: string.isRequired,
+  copyrightText: string.isRequired,
+  copyrightRights: string.isRequired,
 };
