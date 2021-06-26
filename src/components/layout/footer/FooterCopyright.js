@@ -2,14 +2,14 @@ import React from 'react';
 import Logo from '../../common/Logo';
 import footerCopyrightType from '../../../types/components/layout/footer/footerCopyrightType';
 
-const FooterCopyright = ({ logo, textCopyright, textRights }) => (
+const FooterCopyright = ({ logo, copyrightText, copyrightRights }) => (
   <div className="footer-copyright">
     <div className="footer-copyright__logo">
       <Logo logo={logo} size="sm" />
     </div>
 
     <div className="footer-copyright__text">
-      {textCopyright} {new Date().getFullYear()} {textRights}
+      {copyrightText} {new Date().getFullYear()} {copyrightRights}
     </div>
   </div>
 );
