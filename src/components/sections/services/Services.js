@@ -7,6 +7,16 @@ import Card from '../../common/Card';
 const APIQuery = graphql`
   query SectionServicesQuery {
     wpgraphql {
+      themeHeadingsSettings {
+        themeHeadingsSettings {
+          sections {
+            services {
+              heading
+              subHeading
+            }
+          }
+        }
+      }
       sectionServices(where: { orderby: { field: DATE, order: DESC } }) {
         nodes {
           id
@@ -26,13 +36,19 @@ const APIQuery = graphql`
 
 const Services = () => {
   const data = useStaticQuery(APIQuery);
+  const APISectionHeadingsData =
+    data.wpgraphql.themeHeadingsSettings.themeHeadingsSettings.sections
+      .services;
   const APISectionServicesData = data.wpgraphql.sectionServices.nodes;
 
   return (
     <section id="services" className="section services">
       <div className="container">
         <div className="section__inner services__inner">
-          <SectionHeader heading="What I Do" subHeading="Services" />
+          <SectionHeader
+            heading={APISectionHeadingsData.heading}
+            subHeading={APISectionHeadingsData.subHeading}
+          />
 
           <div className="section__content">
             <div className="card__responsive-layout services__cards">

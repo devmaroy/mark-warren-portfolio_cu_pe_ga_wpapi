@@ -7,6 +7,16 @@ import Card from '../../common/Card';
 const APIQuery = graphql`
   query SectionReviewsQuery {
     wpgraphql {
+      themeHeadingsSettings {
+        themeHeadingsSettings {
+          sections {
+            reviews {
+              heading
+              subHeading
+            }
+          }
+        }
+      }
       sectionReviews {
         nodes {
           id
@@ -35,13 +45,18 @@ const APIQuery = graphql`
 
 const Reviews = () => {
   const data = useStaticQuery(APIQuery);
+  const APISectionHeadingsData =
+    data.wpgraphql.themeHeadingsSettings.themeHeadingsSettings.sections.reviews;
   const APISectionReviewsData = data.wpgraphql.sectionReviews.nodes;
 
   return (
     <section id="reviews" className="section reviews">
       <div className="container">
         <div className="section__inner reviews__inner">
-          <SectionHeader heading="What My Clients Say" subHeading="Reviews" />
+          <SectionHeader
+            heading={APISectionHeadingsData.heading}
+            subHeading={APISectionHeadingsData.subHeading}
+          />
 
           <div className="section__content">
             <div className="card__responsive-layout reviews__cards">

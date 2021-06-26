@@ -8,6 +8,16 @@ import AboutInfo from './AboutInfo';
 const APIQuery = graphql`
   query SectionAboutQuery {
     wpgraphql {
+      themeHeadingsSettings {
+        themeHeadingsSettings {
+          sections {
+            about {
+              heading
+              subHeading
+            }
+          }
+        }
+      }
       sectionAbout(id: "cG9zdDo0Nw==") {
         content
         acf {
@@ -34,13 +44,18 @@ const APIQuery = graphql`
 
 const About = () => {
   const data = useStaticQuery(APIQuery);
+  const APISectionHeadingsData =
+    data.wpgraphql.themeHeadingsSettings.themeHeadingsSettings.sections.about;
   const APISectionAboutData = data.wpgraphql.sectionAbout;
 
   return (
     <section id="about" className="section about">
       <div className="container">
         <div className="section__inner about__inner">
-          <SectionHeader heading="Just a Little" subHeading="About" />
+          <SectionHeader
+            heading={APISectionHeadingsData.heading}
+            subHeading={APISectionHeadingsData.subHeading}
+          />
 
           <div className="section__content about__content">
             <AboutImage image={APISectionAboutData.acf.image} />

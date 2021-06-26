@@ -1,11 +1,35 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Slider from 'react-slick';
 import SectionHeader from '../../common/SectionHeader';
 import InstagramFeedMock from '../../common/InstagramFeedMock';
 
+// API Query
+const APIQuery = graphql`
+  query SectionInstagramFeedQuery {
+    wpgraphql {
+      themeHeadingsSettings {
+        themeHeadingsSettings {
+          sections {
+            instagram {
+              heading
+              subHeading
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 const InstagramFeed = () => {
+  const data = useStaticQuery(APIQuery);
+  const APISectionHeadingsData =
+    data.wpgraphql.themeHeadingsSettings.themeHeadingsSettings.sections
+      .instagram;
+
   const sliderSettings = {
     dots: true,
     arrows: false,
@@ -40,7 +64,10 @@ const InstagramFeed = () => {
   return (
     <section id="instagram-feed" className="section instagram-feed">
       <div className="section__inner instagram-feed__inner">
-        <SectionHeader heading="Follow Me" subHeading="Instagram" />
+        <SectionHeader
+          heading={APISectionHeadingsData.heading}
+          subHeading={APISectionHeadingsData.subHeading}
+        />
 
         <div className="section__content">
           <InstagramFeedMock>
