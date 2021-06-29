@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GlobalContext } from '../../../context/GlobalContextProvider';
 import SectionHeader from '../../common/SectionHeader';
-import Button from '../../common/Button';
+import PortfolioMenu from './PortfolioMenu';
+import PortfolioContent from './PortfolioContent';
 
 // API Query
 const APIQuery = graphql`
@@ -21,6 +22,11 @@ const APIQuery = graphql`
       sectionPortfolios {
         nodes {
           id
+          categories: sectionPortfoliosCategories {
+            nodes {
+              slug
+            }
+          }
           acf {
             image {
               altText
@@ -34,7 +40,7 @@ const APIQuery = graphql`
           }
         }
       }
-      sectionPortfoliosCategories {
+      sectionPortfoliosCategories(where: { orderby: COUNT, order: DESC }) {
         nodes {
           id
           name
@@ -55,6 +61,14 @@ const Portfolio = () => {
   const APISectionPortfolioCategoriesData =
     data.wpgraphql.sectionPortfoliosCategories.nodes;
 
+  const globalContextData = useContext(GlobalContext);
+  const { categoriesListingWord, buttonText, perPage } =
+    globalContextData.sections.portfolio;
+
+  const [activeCategory, setActiveCategory] = useState(
+    categoriesListingWord.toLowerCase(),
+  );
+
   return (
     <section id="portfolio" className="section portfolio">
       <div className="container">
@@ -64,37 +78,21 @@ const Portfolio = () => {
             subHeading={APISectionHeadingsData.subHeading}
           />
 
-          <ul className="portfolio-menu">
-            {APISectionPortfolioCategoriesData.map(({ id, name }) => (
-              <li key={id} className="portfolio-menu__item">
-                <a href="/" className="portfolio-menu__link">
-                  {name}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <PortfolioMenu
+            categories={APISectionPortfolioCategoriesData}
+            defaultCategory={categoriesListingWord}
+            activeCategory={activeCategory}
+            setActiveCategory={setActiveCategory}
+          />
 
           <div className="section__content">
-            {APISectionPortfolioData && APISectionPortfolioData.length !== 0 && (
-              <div className="portfolio-gallery">
-                {APISectionPortfolioData.map(({ id, acf }) => (
-                  <div key={id} className="portfolio-gallery__item">
-                    <GatsbyImage
-                      image={
-                        acf.image.imageFile.childImageSharp.gatsbyImageData
-                      }
-                      alt={acf.image.altText}
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
-
-            <div className="portfolio-gallery__meta">
-              <Button variant="primary" to="#" showIcon={false}>
-                Load More
-              </Button>
-            </div>
+            <PortfolioContent
+              items={APISectionPortfolioData}
+              selectedCategory={activeCategory}
+              showAll={activeCategory === categoriesListingWord.toLowerCase()}
+              buttonText={buttonText}
+              perPage={perPage}
+            />
           </div>
         </div>
       </div>

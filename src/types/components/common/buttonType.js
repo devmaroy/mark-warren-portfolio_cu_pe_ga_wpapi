@@ -1,4 +1,4 @@
-import { string, bool, node } from 'prop-types';
+import { string, bool, node, func } from 'prop-types';
 
 // Button Type
 export default {
@@ -11,5 +11,6 @@ export default {
   className: string,
   isDisabled: bool,
   disableShadow: bool,
+  onClick: func,
   children: node,
 };

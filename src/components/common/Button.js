@@ -15,6 +15,7 @@ const Button = ({
   isDisabled = false,
   disableShadow = false,
   className = '',
+  onClick,
   children,
 }) => (
   <>
@@ -36,6 +37,7 @@ const Button = ({
       <button
         type={type}
         disabled={type !== 'link' && isDisabled}
+        onClick={onClick}
         className={classNames(
           `button button--${variant} button--${size} ${className}`,
           { 'button--disable-shadow': disableShadow },
