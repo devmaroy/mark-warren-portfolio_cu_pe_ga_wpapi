@@ -1,12 +1,12 @@
 /*------------------------------------*\
-  # Blog Main
+  # Blog Post Content
 \*------------------------------------*/
 
-.blog-main__pagination {
-  margin-top: 7.2rem;
-  text-align: right;
+.blog-post-content {
+  margin-top: 4rem;
+  margin-bottom: 5.6rem;
 
   @include breakpoint-up(large) {
-    margin-top: 8.8rem;
+    margin-top: 5.6rem;
   }
 }

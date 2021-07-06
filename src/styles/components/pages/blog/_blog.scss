@@ -2,13 +2,27 @@
   # Blog
 \*------------------------------------*/
 
-.blog__layout {
+.blog__content {
   margin-top: 4rem;
 
+  @include breakpoint-up(large) {
+    margin-top: 6.4rem;
+  }
+}
+
+.blog__layout {
   @include breakpoint-up(large) {
     display: grid;
     grid-gap: 6.4rem;
     grid-template-columns: 70.4rem 1fr;
-    margin-top: 6.4rem;
+  }
+}
+
+.blog__pagination {
+  margin-top: 7.2rem;
+  text-align: right;
+
+  @include breakpoint-up(large) {
+    margin-top: 8.8rem;
   }
 }

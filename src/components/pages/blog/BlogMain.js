@@ -1,21 +1,17 @@
 import React from 'react';
-import BlogPostTeaser from './BlogPostTeaser';
+import BlogList from './BlogList';
 import Pagination from '../../common/pagination/Pagination';
 import blogMainType from '../../../types/components/pages/blog/blogMainType';
 
-const BlogMain = ({ posts }) => (
+const BlogMain = ({ posts, pagination }) => (
   <div className="blog-main">
-    <div className="blog-main__list">
-      {posts.map((post) => (
-        <BlogPostTeaser key={post.id} post={post} large />
-      ))}
-    </div>
+    <BlogList posts={posts} />
 
-    <div className="blog-main__pagination">
+    <div className="blog__pagination">
       <Pagination
-        totalPages={3}
-        currentPage={1}
-        prefix="blog"
+        totalPages={pagination.totalPages}
+        currentPage={pagination.currentPage}
+        prefix={pagination.slug}
         containerClassName="gsp"
         listClassName="pagination"
         listItemClassName="pagination__item"

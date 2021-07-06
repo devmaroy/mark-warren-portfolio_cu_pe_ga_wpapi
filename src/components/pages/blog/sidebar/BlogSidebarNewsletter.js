@@ -1,9 +1,11 @@
+/* eslint-disable no-alert */
 import React, { useState } from 'react';
 import BlogSidebarHeader from './BlogSidebarHeader';
 import Form from '../../../common/form/Form';
 import FormField from '../../../common/form/FormField';
+import blogSidebarNewsletterType from '../../../../types/components/pages/blog/sidebar/blogSidebarNewsletterType';
 
-const BlogSidebarNewsletter = () => {
+const BlogSidebarNewsletter = ({ heading, form }) => {
   const [email, setEmail] = useState('');
 
   const handleChange = (name, value) => {
@@ -12,8 +14,7 @@ const BlogSidebarNewsletter = () => {
 
   return (
     <div className="blog-sidebar__panel blog-sidebar-newsletter">
-      <BlogSidebarHeader heading="Newsletter" />
-
+      <BlogSidebarHeader heading={heading} />
       <Form
         name="search"
         className="form--2cols"
@@ -22,13 +23,16 @@ const BlogSidebarNewsletter = () => {
         buttonClassName="button--primary"
         buttonDisableShadow
         buttonSize="lg"
-        onSubmit={() => console.log('submitted')}
+        onSubmit={(e) => {
+          e.preventDefault();
+          alert('Submitted! Yay!');
+        }}
       >
         <FormField
           type="email"
           id="keywords"
           name="email"
-          placeholder="Email Address"
+          placeholder={form.placeholder}
           value={email}
           className="form-field__control--outline"
           onChange={handleChange}
@@ -36,6 +40,10 @@ const BlogSidebarNewsletter = () => {
       </Form>
     </div>
   );
+};
+
+BlogSidebarNewsletter.propTypes = {
+  ...blogSidebarNewsletterType,
 };
 
 export default BlogSidebarNewsletter;

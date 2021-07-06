@@ -1,0 +1,23 @@
+/*------------------------------------*\
+  # Blog Post
+\*------------------------------------*/
+
+.blog-post__separator {
+  background-image: linear-gradient(
+    to right,
+    $clr-mercury 33%,
+    rgba(255, 255, 255, 0) 0%
+  );
+  background-position: bottom;
+  background-size: 2rem 0.1rem;
+  background-repeat: repeat-x;
+  height: 0.1rem;
+  margin-bottom: 4rem;
+}
+
+.blog-post__layout {
+  @include breakpoint-up(medium) {
+    max-width: 73.6rem;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,49 @@
+/*------------------------------------*\
+  # Blog Post Share
+\*------------------------------------*/
+
+.blog-post-share {
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.blog-post-share__heading {
+  @include typography(
+    $font-family: $ff-heading,
+    $font-size: 1.6rem,
+    $font-weight: $fw-medium,
+    $line-height: 1.2,
+    $color: $clr-iron
+  );
+  margin: 0;
+
+  @include breakpoint-up(medium) {
+    @include typography(
+      $font-family: $ff-heading,
+      $font-size: 1.8rem,
+      $font-weight: $fw-medium,
+      $line-height: 1.2,
+      $color: $clr-iron
+    );
+  }
+}
+
+.blog-post-share__social {
+  @include list-unstyled;
+  margin-left: 2.4rem;
+
+  li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 1.6rem;
+    }
+  }
+
+  span {
+    @include link-reset;
+    @include link($clr-outer-space, $clr-royal-blue);
+    font-size: 1.6rem;
+  }
+}

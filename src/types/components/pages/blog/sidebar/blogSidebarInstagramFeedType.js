@@ -1,12 +1,6 @@
-import { arrayOf, shape, string } from 'prop-types';
-import imageType from '../../../common/imageType';
+import { string } from 'prop-types';
 
 // Blog Sidebar Instagram Feed Type
 export default {
-  items: arrayOf(
-    shape({
-      id: string.isRequired,
-      childImageSharp: shape({ ...imageType }).isRequired,
-    }).isRequired,
-  ).isRequired,
+  heading: string.isRequired,
 };

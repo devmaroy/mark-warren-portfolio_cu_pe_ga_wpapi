@@ -1,0 +1,21 @@
+/*------------------------------------*\
+  # Search Result
+\*------------------------------------*/
+
+.search-result {
+  .ais-Highlight-highlighted {
+    color: $clr-royal-blue;
+  }
+}
+
+.search-result__link {
+  @include typography(
+    $font-size: 1.4rem,
+    $font-weight: $fw-medium,
+    $line-height: 1.6
+  );
+  @include link-reset;
+  @include link($clr-rock-blue, $clr-royal-blue);
+
+  margin: 0;
+}

@@ -1,0 +1,32 @@
+/*------------------------------------*\
+  # Blog Post Recent Articles
+\*------------------------------------*/
+
+.blog-post-recent-articles {
+  margin-top: 9.6rem;
+
+  @include breakpoint-up(large) {
+    margin-top: 12rem;
+  }
+}
+
+.blog-post-recent-articles__heading {
+  @include typography(
+    $font-family: $ff-heading,
+    $font-size: 2.2rem,
+    $font-weight: $fw-bold,
+    $line-height: 1.2,
+    $color: $clr-outer-space
+  );
+  margin: 0 0 3.2rem 0;
+
+  @include breakpoint-up(large) {
+    @include typography(
+      $font-family: $ff-heading,
+      $font-size: 2.4rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.2,
+      $color: $clr-outer-space
+    );
+  }
+}

@@ -1,0 +1,20 @@
+/*------------------------------------*\
+  # Blog Post Tags
+\*------------------------------------*/
+
+.blog-post-tags {
+  @include list-unstyled;
+}
+
+.blog-post-tags__tag {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: 0.8rem;
+  }
+}
+
+.blog-post-tags__tag-link {
+  font-size: 1.4rem;
+  line-height: 1;
+}

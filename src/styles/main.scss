@@ -23,6 +23,9 @@
 @import './components/common/social/social';
 @import './components/common/form/form';
 @import './components/common/form/form-field';
+@import './components/common/search/search-form';
+@import './components/common/search/search-results';
+@import './components/common/search/search-result';
 @import './components/common/logo';
 @import './components/common/card';
 @import './components/common/info-banner';
@@ -31,7 +34,7 @@
 @import './components/common/section-header';
 @import './components/common/subpage';
 @import './components/common/pagination/pagination';
-// @import './components/common/wordpress-core-styles';
+@import './components/common/wordpress-core-styles';
 
 // Shared
 // @import './components/shared/blog/blog-post-teaser';
@@ -81,13 +84,24 @@
 //
 // Page - Blog
 @import './components/pages/blog/blog';
-@import './components/pages/blog/blog-main';
-@import './components/pages/blog/blog-post-teaser';
-@import './components/pages/blog/blog-post';
 @import './components/pages/blog/blog-posts-recent';
+@import './components/pages/blog/blog-list';
+@import './components/pages/blog/blog-sub-heading';
+//
+// Page - Blog - Sidebar
 @import './components/pages/blog/sidebar/blog-sidebar';
 @import './components/pages/blog/sidebar/blog-sidebar-header';
 @import './components/pages/blog/sidebar/blog-sidebar-recent-articles';
 @import './components/pages/blog/sidebar/blog-sidebar-categories';
 @import './components/pages/blog/sidebar/blog-sidebar-tags';
 @import './components/pages/blog/sidebar/blog-sidebar-instagram-feed';
+//
+// Page - Blog - Post
+@import './components/pages/blog/post/blog-post';
+@import './components/pages/blog/post/blog-post-teaser';
+@import './components/pages/blog/post/blog-post-content';
+@import './components/pages/blog/post/blog-post-featured-image';
+@import './components/pages/blog/post/blog-post-header';
+@import './components/pages/blog/post/blog-post-recent-articles';
+@import './components/pages/blog/post/blog-post-share';
+@import './components/pages/blog/post/blog-post-tags';
