@@ -20,6 +20,7 @@ html {
 }
 
 body {
+  position: relative;
   font-family: $ff-base;
   font-size: 1.6rem;
   line-height: 1.6;
@@ -35,6 +36,8 @@ body {
 }
 
 .site-content {
+  // background: gray !important;
+
   overflow-x: hidden;
 
   /* Unnecessary IMHO, uncomment next line to force hidden behavior */
@@ -42,7 +45,7 @@ body {
   /* overflow-x: hidden !important; */
 
   /* Additional tunning proposed by the community */
-  position: relative;
+
   width: 100%;
 
   &::before {
