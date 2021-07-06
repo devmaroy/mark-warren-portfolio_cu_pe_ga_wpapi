@@ -41,7 +41,8 @@
     }
   }
 
-  span {
+  span,
+  .social-icon__img {
     @include link-reset;
     @include link($clr-outer-space, $clr-royal-blue);
     font-size: 1.6rem;

@@ -4,5 +4,6 @@ import { string, bool } from 'prop-types';
 export default {
   icon: string.isRequired,
   type: string,
+  className: string,
   fixedWidth: bool,
 };

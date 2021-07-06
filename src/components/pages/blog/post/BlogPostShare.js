@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 /* eslint-disable object-curly-newline */
 import React from 'react';
 import {
