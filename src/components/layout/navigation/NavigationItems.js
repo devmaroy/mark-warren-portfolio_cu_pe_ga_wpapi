@@ -8,7 +8,7 @@ const NavigationItems = ({ items, toggleNavigation }) => (
       <li key={id} className={`navigation-list__item ${cssClasses.join(' ')}`}>
         <DynamicLink
           to={path}
-          partiallyActive={acf.menuItemPartiallyActive}
+          partiallyActive={acf.menusItemPartiallyActive}
           onClick={toggleNavigation}
           className={`navigation-list__link ${cssClasses.join(' ')}`}
           activeClassName="navigation-list__link--active"
