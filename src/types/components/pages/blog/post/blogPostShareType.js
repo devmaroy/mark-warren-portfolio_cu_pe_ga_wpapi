@@ -8,4 +8,5 @@ export default {
       quote: string,
     }).isRequired,
   ).isRequired,
+  heading: string.isRequired,
 };

@@ -25,7 +25,7 @@ import {
 import SocialIcon from '../../../common/social/SocialIcon';
 import blogPostShareType from '../../../../types/components/pages/blog/post/blogPostShareType';
 
-const BlogPostShare = ({ share }) => {
+const BlogPostShare = ({ share, heading }) => {
   const shareUrl = window && window.location.href;
 
   const shareButtons = {
@@ -61,7 +61,10 @@ const BlogPostShare = ({ share }) => {
   return (
     share && (
       <div className="blog-post-share">
-        <h5 className="blog-post-share__heading">Share this article</h5>
+        <h5
+          className="blog-post-share__heading"
+          dangerouslySetInnerHTML={{ __html: heading }}
+        />
 
         <ul className="blog-post-share__social">
           {getShare().map(({ name, component: ShareComponent, quote }) => (

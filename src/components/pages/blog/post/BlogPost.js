@@ -8,7 +8,7 @@ import BlogPostShare from './BlogPostShare';
 import BlogPostRecentArticles from './BlogPostRecentArticles';
 import blogPostType from '../../../../types/components/pages/blog/blogPostType';
 
-const BlogPost = ({ post }) => (
+const BlogPost = ({ post, recentArticlesHeading, shareHeading }) => (
   <div className="blog-post">
     <div className="blog-post__layout">
       <BlogPostHeader
@@ -30,10 +30,12 @@ const BlogPost = ({ post }) => (
       <div className="blog-post__layout">
         <BlogPostTags tags={post.tags.nodes} />
 
-        {post.acf.enableShare && <BlogPostShare share={post.acf.share} />}
+        {post.acf.enableShare && (
+          <BlogPostShare share={post.acf.share} heading={shareHeading} />
+        )}
       </div>
 
-      <BlogPostRecentArticles />
+      <BlogPostRecentArticles heading={recentArticlesHeading} />
     </div>
   </div>
 );
