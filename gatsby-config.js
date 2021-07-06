@@ -3,6 +3,69 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+const blogSearchQuery = `
+  {
+    wpgraphql {
+      themeGeneralSettings {
+        themeGeneralSettings {
+          pages {
+            blog {
+              slug
+            }
+          }
+        }
+      }
+      posts(
+        where: {
+          orderby: { field: DATE, order: DESC }
+        }
+      ) {
+        nodes {
+          id
+          title
+          slug
+          excerpt
+          date
+          featuredImage {
+            node {
+              altText
+              sourceUrl
+              imageFile {
+                childImageSharp {
+                  gatsbyImageData(width: 1200, quality: 100)
+                }
+              }
+            }
+          }
+          categories {
+            nodes {
+              id
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const queries = [
+  {
+    query: blogSearchQuery,
+    transformer: ({ data }) =>
+      data.wpgraphql.posts.nodes.map((post) => {
+        const prefix =
+          data.wpgraphql.themeGeneralSettings.themeGeneralSettings.pages.blog
+            .slug;
+
+        const dateTimestamp = Math.floor(new Date(post.date) / 1000);
+
+        return { ...post, prefix, dateTimestamp };
+      }),
+  },
+];
+
 module.exports = {
   siteMetadata: {
     lang: 'en',
@@ -49,6 +112,17 @@ module.exports = {
         fieldName: 'wpgraphql',
         // Url to query from
         url: process.env.GATSBY_API_URL,
+      },
+    },
+    {
+      // This plugin must be placed last in your list of plugins to ensure that it can query all the GraphQL data
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.GATSBY_ALGOLIA_API_KEY,
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
+        queries,
+        chunkSize: 1000,
       },
     },
     {

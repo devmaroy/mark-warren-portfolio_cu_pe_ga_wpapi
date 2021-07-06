@@ -36,7 +36,8 @@
     }
   }
 
-  figure {
+  figure,
+  .wp-caption {
     margin-top: 4.8rem;
 
     @include breakpoint-up(large) {
@@ -45,10 +46,12 @@
 
     img {
       margin-bottom: 0;
+      border-radius: $border-radius;
     }
   }
 
-  figcaption {
+  figcaption,
+  .wp-caption p {
     @include typography(
       $font-size: 1.4rem,
       $font-weight: $fw-bold,
@@ -66,6 +69,10 @@
         $color: $clr-iron
       );
     }
+  }
+
+  .wp-caption img {
+    margin: 0;
   }
 
   p:not(:last-child),

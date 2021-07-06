@@ -1,0 +1,32 @@
+/*------------------------------------*\
+  # Blog Sub Heading
+\*------------------------------------*/
+
+.blog-sub-heading {
+  @include typography(
+    $font-size: 2.4rem,
+    $line-height: 1.2,
+    $font-weight: $fw-medium,
+    $color: $clr-iron
+  );
+
+  margin: 0 0 4rem 0;
+  padding-bottom: 0.8rem;
+  position: relative;
+
+  border-bottom: 0.1rem solid $clr-white-lilac;
+  border-radius: $border-radius;
+}
+
+.blog-sub-heading__highlight {
+  font-style: italic;
+  color: $clr-royal-blue;
+
+  &::before {
+    content: '\201C';
+  }
+
+  &::after {
+    content: '\201D';
+  }
+}

@@ -15,6 +15,18 @@ const APIQuery = graphql`
               perPage
             }
           }
+          pages {
+            blog {
+              slug
+              buttonText
+            }
+            blogCategories {
+              slug
+            }
+            blogTags {
+              slug
+            }
+          }
         }
       }
     }
@@ -27,7 +39,10 @@ const GlobalContextProvider = ({ children }) => {
   const data = useStaticQuery(APIQuery);
   const { themeGeneralSettings } = data.wpgraphql.themeGeneralSettings;
 
-  const providerData = { sections: themeGeneralSettings.sections };
+  const providerData = {
+    sections: themeGeneralSettings.sections,
+    pages: themeGeneralSettings.pages,
+  };
 
   return (
     <GlobalContext.Provider value={providerData}>

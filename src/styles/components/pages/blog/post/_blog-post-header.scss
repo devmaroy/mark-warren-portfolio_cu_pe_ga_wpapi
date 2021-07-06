@@ -1,0 +1,75 @@
+/*------------------------------------*\
+  # Blog Post Header
+\*------------------------------------*/
+
+.blog-post-header__title {
+  @include typography(
+    $font-family: $ff-heading,
+    $font-size: 3.2rem,
+    $font-weight: $fw-bold,
+    $line-height: 1.2,
+    $color: $clr-outer-space
+  );
+  margin: 0;
+  text-align: center;
+
+  @include breakpoint-up(large) {
+    @include typography(
+      $font-family: $ff-heading,
+      $font-size: 3.8rem,
+      $font-weight: $fw-bold,
+      $line-height: 1.2,
+      $color: $clr-outer-space
+    );
+  }
+}
+
+.blog-post-header__meta {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.4rem;
+}
+
+.blog-post-header-categories {
+  @include list-unstyled;
+  line-height: 1;
+}
+
+.blog-post-header-categories__category {
+  @include typography(
+    $font-size: 1.6rem,
+    $font-weight: $fw-bold,
+    $line-height: 1,
+    $color: $clr-royal-blue
+  );
+}
+
+.blog-post-header-categories__category-link {
+  @include link-reset;
+  @include link($clr-royal-blue, darken($clr-royal-blue, 10%));
+  text-transform: uppercase;
+}
+
+.blog-post-header__date {
+  @include typography(
+    $font-family: $ff-base,
+    $font-size: 1.6rem,
+    $font-weight: $fw-bold,
+    $line-height: 1,
+    $color: $clr-iron
+  );
+
+  margin-left: 1.6rem;
+
+  &::before {
+    content: '';
+    position: relative;
+    top: -0.1rem;
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    margin-right: 1.6rem;
+    background: $clr-perano;
+  }
+}

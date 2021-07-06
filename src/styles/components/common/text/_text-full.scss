@@ -5,6 +5,8 @@
 .text-full {
   @include text;
 
+  overflow-x: hidden;
+
   h1 {
     @include typography(
       $font-family: $ff-heading,

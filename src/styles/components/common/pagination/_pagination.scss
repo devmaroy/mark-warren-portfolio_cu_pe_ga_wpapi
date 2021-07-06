@@ -15,6 +15,7 @@
 }
 
 .pagination__link {
+  @include reset-appearance;
   @include typography($font-weight: $fw-bold, $line-height: 1);
   @include link-reset;
   @include link($clr-iron, darken($clr-perano, 10%));

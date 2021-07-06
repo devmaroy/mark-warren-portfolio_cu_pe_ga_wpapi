@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import BlogPostTeaser from './BlogPostTeaser';
+import BlogPostTeaser from './post/BlogPostTeaser';
 
 // API Query
 const APIQuery = graphql`

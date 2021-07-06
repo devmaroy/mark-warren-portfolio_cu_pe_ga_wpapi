@@ -3,9 +3,10 @@ import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Slider from 'react-slick';
 import BlogSidebarHeader from './BlogSidebarHeader';
+import InstagramFeedMock from '../../../common/InstagramFeedMock';
 import blogSidebarInstagramFeedType from '../../../../types/components/pages/blog/sidebar/blogSidebarInstagramFeedType';
 
-const BlogSidebarInstagramFeed = ({ items }) => {
+const BlogSidebarInstagramFeed = ({ heading }) => {
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -18,18 +19,24 @@ const BlogSidebarInstagramFeed = ({ items }) => {
 
   return (
     <div className="blog-sidebar__panel blog-sidebar-instagram-feed">
-      <BlogSidebarHeader heading="Follow Me" />
+      <BlogSidebarHeader heading={heading} />
 
-      <Slider {...sliderSettings}>
-        {items.map(({ id, childImageSharp }) => (
-          <div key={id} className="blog-sidebar-instagram-feed__item">
-            <GatsbyImage
-              image={childImageSharp.gatsbyImageData}
-              alt="Instagram feed image"
-            />
-          </div>
-        ))}
-      </Slider>
+      <InstagramFeedMock>
+        {(items) =>
+          items && (
+            <Slider {...sliderSettings}>
+              {items.map(({ id, acf }) => (
+                <div key={id} className="instagram-feed__item">
+                  <GatsbyImage
+                    image={acf.image.imageFile.childImageSharp.gatsbyImageData}
+                    alt="Instagram feed image"
+                  />
+                </div>
+              ))}
+            </Slider>
+          )
+        }
+      </InstagramFeedMock>
     </div>
   );
 };

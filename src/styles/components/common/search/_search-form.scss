@@ -1,0 +1,26 @@
+/*------------------------------------*\
+  # Search Form
+\*------------------------------------*/
+
+.search-form {
+  position: relative;
+
+  .form-field__group {
+    margin: 0;
+  }
+}
+
+.search-form__control {
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+}
+
+.search-form__reset {
+  @include reset-appearance;
+  position: absolute;
+  top: 25%;
+  bottom: 25%;
+  right: 35%;
+  color: $clr-perano;
+  cursor: pointer;
+}

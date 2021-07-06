@@ -1,4 +1,4 @@
-import { string, arrayOf, shape } from 'prop-types';
+import { arrayOf, shape, string, bool } from 'prop-types';
 import imageType from '../../common/imageType';
 
 // Post Type
@@ -8,6 +8,7 @@ export default {
   title: string.isRequired,
   excerpt: string,
   date: string.isRequired,
+  prefix: string,
   featuredImage: shape({
     node: shape({
       altText: string.isRequired,
@@ -24,6 +25,15 @@ export default {
         name: string.isRequired,
         slug: string.isRequired,
       }),
+    ).isRequired,
+  }),
+  acf: shape({
+    enableShare: bool.isRequired,
+    share: arrayOf(
+      shape({
+        name: string.isRequired,
+        quote: string,
+      }).isRequired,
     ).isRequired,
   }),
 };

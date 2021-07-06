@@ -1,0 +1,27 @@
+/*------------------------------------*\
+  # Blog List
+\*------------------------------------*/
+
+@keyframes aniVertical {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.blog-list--dummy {
+  .blog-list__item {
+    animation: aniVertical 3s ease;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    width: 100%;
+  }
+}
