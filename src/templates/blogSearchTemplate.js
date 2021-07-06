@@ -4,7 +4,7 @@ import algoliasearch from 'algoliasearch/lite';
 import { Configure, InstantSearch } from 'react-instantsearch-dom';
 import algoliaSearchClientSettings from '../utils/algoliaSearchClientSettings';
 import SubPage from '../components/common/SubPage';
-import SectionHeader from '../components/common/SectionHeader';
+import SiteHeader from '../components/common/SiteHeader';
 import BlogSearchPosts from '../components/pages/blog/search/BlogSearchPosts';
 import BlogSearchPagination from '../components/pages/blog/search/BlogSearchPagination';
 import BlogSidebar from '../components/pages/blog/sidebar/BlogSidebar';
@@ -29,7 +29,7 @@ const BlogSearchTemplate = ({ data, location }) => {
       className="blog blog-search"
       classNameInner="blog blog-search__inner"
     >
-      <SectionHeader
+      <SiteHeader
         heading={APIBlogSearchHeadingsData.heading}
         subHeading={APIBlogSearchHeadingsData.subHeading}
       />

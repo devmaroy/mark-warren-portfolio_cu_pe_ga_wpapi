@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import SectionHeader from '../../common/SectionHeader';
+import SiteHeader from '../../common/SiteHeader';
 import AboutImage from './AboutImage';
 import AboutInfo from './AboutInfo';
 
@@ -52,7 +52,7 @@ const About = () => {
     <section id="about" className="section about">
       <div className="container">
         <div className="section__inner about__inner">
-          <SectionHeader
+          <SiteHeader
             heading={APISectionHeadingsData.heading}
             subHeading={APISectionHeadingsData.subHeading}
           />
