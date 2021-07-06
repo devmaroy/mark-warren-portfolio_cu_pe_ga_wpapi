@@ -2,17 +2,37 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import SubPage from '../components/common/SubPage';
 import BlogPost from '../components/pages/blog/post/BlogPost';
+import blogPostTemplateType from '../types/templates/blogPostTemplateType';
 
-const BlogPostTemplate = ({ data }) => (
-  <SubPage className="post" classNameInner="post__inner">
-    <BlogPost post={data.wpgraphql.post} />
-  </SubPage>
-);
+const BlogPostTemplate = ({ data }) => {
+  const generalPostData =
+    data.wpgraphql.themeGeneralSettings.themeGeneralSettings.pages.post;
+
+  return (
+    <SubPage className="post" classNameInner="post__inner">
+      <BlogPost
+        post={data.wpgraphql.post}
+        recentArticlesHeading={generalPostData.recentArticlesHeading}
+        shareHeading={generalPostData.shareHeading}
+      />
+    </SubPage>
+  );
+};
 
 // Template API Query
 export const BlogPostTemplateQuery = graphql`
   query BlogPostTemplateQuery($id: ID!) {
     wpgraphql {
+      themeGeneralSettings {
+        themeGeneralSettings {
+          pages {
+            post {
+              recentArticlesHeading
+              shareHeading
+            }
+          }
+        }
+      }
       post(id: $id) {
         id
         title
@@ -55,5 +75,9 @@ export const BlogPostTemplateQuery = graphql`
     }
   }
 `;
+
+BlogPostTemplate.propTypes = {
+  ...blogPostTemplateType,
+};
 
 export default BlogPostTemplate;
