@@ -1,6 +1,6 @@
 import { string } from 'prop-types';
 
-// Section Header Type
+// Site Header Type
 export default {
   heading: string,
   subHeading: string,

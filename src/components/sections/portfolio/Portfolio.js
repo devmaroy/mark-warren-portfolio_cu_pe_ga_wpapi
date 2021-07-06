@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GlobalContext } from '../../../context/GlobalContextProvider';
-import SectionHeader from '../../common/SectionHeader';
+import SiteHeader from '../../common/SiteHeader';
 import PortfolioMenu from './PortfolioMenu';
 import PortfolioContent from './PortfolioContent';
 
@@ -73,7 +73,7 @@ const Portfolio = () => {
     <section id="portfolio" className="section portfolio">
       <div className="container">
         <div className="section__inner portfolio__inner">
-          <SectionHeader
+          <SiteHeader
             heading={APISectionHeadingsData.heading}
             subHeading={APISectionHeadingsData.subHeading}
           />

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { graphql } from 'gatsby';
 import { GlobalContext } from '../context/GlobalContextProvider';
 import SubPage from '../components/common/SubPage';
-import SectionHeader from '../components/common/SectionHeader';
+import SiteHeader from '../components/common/SiteHeader';
 import BlogMain from '../components/pages/blog/BlogMain';
 import BlogSidebar from '../components/pages/blog/sidebar/BlogSidebar';
 import blogTemplateType from '../types/templates/blogTemplateType';
@@ -23,7 +23,7 @@ const BlogTemplate = ({ data, pageContext }) => {
 
   return (
     <SubPage className="blog" classNameInner="blog__inner">
-      <SectionHeader
+      <SiteHeader
         heading={APIBlogHeadingsData.heading}
         subHeading={APIBlogHeadingsData.subHeading}
       />

@@ -3,7 +3,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Slider from 'react-slick';
-import SectionHeader from '../../common/SectionHeader';
+import SiteHeader from '../../common/SiteHeader';
 import InstagramFeedMock from '../../common/InstagramFeedMock';
 
 // API Query
@@ -64,7 +64,7 @@ const InstagramFeed = () => {
   return (
     <section id="instagram-feed" className="section instagram-feed">
       <div className="section__inner instagram-feed__inner">
-        <SectionHeader
+        <SiteHeader
           heading={APISectionHeadingsData.heading}
           subHeading={APISectionHeadingsData.subHeading}
         />

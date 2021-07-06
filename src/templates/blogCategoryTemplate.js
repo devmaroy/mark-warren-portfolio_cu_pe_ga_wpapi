@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { graphql } from 'gatsby';
 import { GlobalContext } from '../context/GlobalContextProvider';
 import SubPage from '../components/common/SubPage';
-import SectionHeader from '../components/common/SectionHeader';
+import SiteHeader from '../components/common/SiteHeader';
 import BlogMain from '../components/pages/blog/BlogMain';
 import BlogSidebar from '../components/pages/blog/sidebar/BlogSidebar';
 import BlogSubHeading from '../components/pages/blog/BlogSubHeading';
@@ -32,7 +32,7 @@ const BlogCategoryTemplate = ({ data, pageContext }) => {
       className="blog blog-categories"
       classNameInner="blog blog-categories__inner"
     >
-      <SectionHeader
+      <SiteHeader
         heading={APIBlogCategoryHeadingsData.heading}
         subHeading={APIBlogCategoryHeadingsData.subHeading}
       />

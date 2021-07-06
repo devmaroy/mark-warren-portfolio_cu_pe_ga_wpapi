@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import SectionHeader from '../../common/SectionHeader';
+import SiteHeader from '../../common/SiteHeader';
 import Card from '../../common/Card';
 
 // API Query
@@ -45,7 +45,7 @@ const Services = () => {
     <section id="services" className="section services">
       <div className="container">
         <div className="section__inner services__inner">
-          <SectionHeader
+          <SiteHeader
             heading={APISectionHeadingsData.heading}
             subHeading={APISectionHeadingsData.subHeading}
           />
