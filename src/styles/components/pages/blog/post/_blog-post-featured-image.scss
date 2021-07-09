@@ -10,15 +10,15 @@
   }
 
   img {
-    height: 22.4rem;
+    height: 22.4rem !important;
     border-radius: $border-radius;
 
     @media (min-width: 400px) {
-      height: 35.2rem;
+      height: 35.2rem !important;
     }
 
     @include breakpoint-up(medium) {
-      height: 44.8rem;
+      height: 44.8rem !important;
     }
   }
 }

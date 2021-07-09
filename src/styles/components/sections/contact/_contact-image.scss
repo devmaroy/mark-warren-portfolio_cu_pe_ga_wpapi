@@ -4,7 +4,6 @@
 
 .contact-image {
   margin-top: 4.8rem;
-  @include bordered-image($height: 41.6rem);
   position: relative;
 
   &::before {
@@ -12,7 +11,28 @@
   }
 
   @include breakpoint-up(large) {
-    @include bordered-image($height: 51.2rem);
     margin: 0;
+  }
+}
+
+.contact-image__wrapper {
+  background: $clr-alabaster;
+  height: 41.6rem;
+  width: 100%;
+  border-radius: $border-radius;
+
+  @include breakpoint-up(large) {
+    height: 51.2rem;
+  }
+
+  img {
+    // Thank you gatsby image plugin for not allowing to override styles...
+    height: 41.6rem !important;
+    padding: 0.8rem !important;
+    border-radius: $border-radius * 2 !important;
+
+    @include breakpoint-up(large) {
+      height: 51.2rem !important;
+    }
   }
 }
