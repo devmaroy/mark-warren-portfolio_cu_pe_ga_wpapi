@@ -12,7 +12,7 @@
     right: 0;
 
     img {
-      width: 40rem;
+      width: 40rem !important;
     }
 
     &::before {
@@ -26,7 +26,7 @@
 
   @include breakpoint-up(xlarge) {
     img {
-      width: 50rem;
+      width: 50rem !important;
     }
 
     &::before {

@@ -27,7 +27,7 @@ import SocialIcon from '../../../common/social/SocialIcon';
 import blogPostShareType from '../../../../types/components/pages/blog/post/blogPostShareType';
 
 const BlogPostShare = ({ share, heading }) => {
-  const shareUrl = window && window.location.href;
+  const shareUrl = typeof window !== 'undefined' && window.location.href;
 
   const shareButtons = {
     facebook: FacebookShareButton,

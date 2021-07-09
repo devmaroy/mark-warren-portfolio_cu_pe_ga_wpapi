@@ -4,10 +4,12 @@ import contactImageType from '../../../types/components/sections/contact/contact
 
 const ContactImage = ({ image }) => (
   <div className="contact-image">
-    <GatsbyImage
-      image={image.imageFile.childImageSharp.gatsbyImageData}
-      alt={image.altText}
-    />
+    <div className="contact-image__wrapper">
+      <GatsbyImage
+        image={image.imageFile.childImageSharp.gatsbyImageData}
+        alt={image.altText}
+      />
+    </div>
   </div>
 );
 

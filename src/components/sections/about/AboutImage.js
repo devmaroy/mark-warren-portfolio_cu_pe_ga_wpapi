@@ -4,10 +4,12 @@ import aboutImageType from '../../../types/components/sections/about/aboutImageT
 
 const AboutImage = ({ image }) => (
   <div className="about-image">
-    <GatsbyImage
-      image={image.imageFile.childImageSharp.gatsbyImageData}
-      alt={image.altText}
-    />
+    <div className="about-image__wrapper">
+      <GatsbyImage
+        image={image.imageFile.childImageSharp.gatsbyImageData}
+        alt={image.altText}
+      />
+    </div>
   </div>
 );
 
