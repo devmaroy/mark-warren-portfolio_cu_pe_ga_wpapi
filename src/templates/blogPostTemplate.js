@@ -5,13 +5,14 @@ import BlogPost from '../components/pages/blog/post/BlogPost';
 import blogPostTemplateType from '../types/templates/blogPostTemplateType';
 
 const BlogPostTemplate = ({ data }) => {
+  const blogPostData = data.wpgraphql.post;
   const generalPostData =
     data.wpgraphql.themeGeneralSettings.themeGeneralSettings.pages.post;
 
   return (
-    <SubPage className="post" classNameInner="post__inner">
+    <SubPage seo={blogPostData} className="post" classNameInner="post__inner">
       <BlogPost
-        post={data.wpgraphql.post}
+        post={blogPostData}
         recentArticlesHeading={generalPostData.recentArticlesHeading}
         shareHeading={generalPostData.shareHeading}
       />
@@ -70,6 +71,35 @@ export const BlogPostTemplateQuery = graphql`
             quote
           }
           enableShare
+        }
+        seo {
+          title
+          metaDesc
+          focuskw
+          metaKeywords
+          metaRobotsNoindex
+          metaRobotsNofollow
+          opengraphTitle
+          opengraphDescription
+          opengraphImage {
+            altText
+            sourceUrl
+            srcSet
+          }
+          twitterTitle
+          twitterDescription
+          twitterImage {
+            altText
+            sourceUrl
+            srcSet
+          }
+          canonical
+          cornerstone
+          schema {
+            articleType
+            pageType
+            raw
+          }
         }
       }
     }

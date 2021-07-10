@@ -1,5 +1,6 @@
 import { arrayOf, shape, string, bool } from 'prop-types';
 import imageType from '../../common/imageType';
+import seoType from '../../common/seoType';
 
 // Post Type
 export default {
@@ -35,5 +36,8 @@ export default {
         quote: string,
       }).isRequired,
     ).isRequired,
+  }),
+  seo: shape({
+    ...seoType,
   }),
 };

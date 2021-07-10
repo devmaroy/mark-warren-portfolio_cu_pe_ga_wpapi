@@ -29,6 +29,7 @@ const BlogCategoryTemplate = ({ data, pageContext }) => {
 
   return (
     <SubPage
+      seo={APIBlogCategoryData}
       className="blog blog-categories"
       classNameInner="blog blog-categories__inner"
     >
@@ -86,10 +87,38 @@ export const BlogCategoryTemplateQuery = graphql`
           }
         }
       }
+
       category(id: $id) {
         id
         name
         slug
+        seo {
+          title
+          metaDesc
+          focuskw
+          metaKeywords
+          metaRobotsNoindex
+          metaRobotsNofollow
+          opengraphTitle
+          opengraphDescription
+          opengraphImage {
+            altText
+            sourceUrl
+            srcSet
+          }
+          twitterTitle
+          twitterDescription
+          twitterImage {
+            altText
+            sourceUrl
+            srcSet
+          }
+          canonical
+          cornerstone
+          schema {
+            raw
+          }
+        }
       }
       posts(
         where: {
