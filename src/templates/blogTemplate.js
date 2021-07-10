@@ -11,6 +11,7 @@ const BlogTemplate = ({ data, pageContext }) => {
   const APIBlogHeadingsData =
     data.wpgraphql.themeHeadingsSettings.themeHeadingsSettings.pages.blog;
   const APIBlogData = data.wpgraphql.posts.nodes;
+  const APIBlogSEOData = data.wpgraphql.seoForPage;
 
   const globalContextData = useContext(GlobalContext);
   const { slug: blogSlug } = globalContextData.pages.blog;
@@ -22,7 +23,7 @@ const BlogTemplate = ({ data, pageContext }) => {
   };
 
   return (
-    <SubPage className="blog" classNameInner="blog__inner">
+    <SubPage seo={APIBlogSEOData} className="blog" classNameInner="blog__inner">
       <SiteHeader
         heading={APIBlogHeadingsData.heading}
         subHeading={APIBlogHeadingsData.subHeading}
@@ -49,6 +50,37 @@ export const BlogTemplateQuery = graphql`
               heading
               subHeading
             }
+          }
+        }
+      }
+      seoForPage(id: "cG9zdDozNjc=") {
+        seo {
+          title
+          metaDesc
+          focuskw
+          metaKeywords
+          metaRobotsNoindex
+          metaRobotsNofollow
+          opengraphTitle
+          opengraphDescription
+          opengraphImage {
+            altText
+            sourceUrl
+            srcSet
+          }
+          twitterTitle
+          twitterDescription
+          twitterImage {
+            altText
+            sourceUrl
+            srcSet
+          }
+          canonical
+          cornerstone
+          schema {
+            articleType
+            pageType
+            raw
           }
         }
       }

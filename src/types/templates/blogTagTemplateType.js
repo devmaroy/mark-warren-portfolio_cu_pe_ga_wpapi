@@ -1,6 +1,7 @@
 import { arrayOf, shape, string } from 'prop-types';
 import postType from '../components/pages/blog/postType';
 import blogPaginationType from '../components/pages/blog/blogPaginationType';
+import seoType from '../components/common/seoType';
 
 // Blog Category Template Type
 export default {
@@ -30,6 +31,9 @@ export default {
         id: string.isRequired,
         name: string.isRequired,
         slug: string.isRequired,
+        seo: shape({
+          ...seoType,
+        }).isRequired,
       }).isRequired,
       posts: shape({
         nodes: arrayOf(
