@@ -104,6 +104,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               search {
                 slug
               }
+              page {
+                slug
+              }
             }
           }
         }
@@ -127,6 +130,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             databaseId
             slug
             count
+          }
+        }
+        pages {
+          nodes {
+            id
+            slug
           }
         }
       }
@@ -153,6 +162,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   );
   const blogTagTemplate = path.resolve('src/templates/blogTagTemplate.js');
   const blogPostTemplate = path.resolve('src/templates/blogPostTemplate.js');
+  const pageTemplate = path.resolve('src/templates/pageTemplate.js');
   /* END Templates */
 
   //
@@ -164,9 +174,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const blogCategoriesSettings = themeGeneralSettings.pages.blogCategories;
   const blogTagsSettings = themeGeneralSettings.pages.blogTags;
   const searchSettings = themeGeneralSettings.pages.search;
+  const pageSettings = themeGeneralSettings.pages.page;
   const posts = results.data.wpgraphql.posts.nodes;
   const categories = results.data.wpgraphql.categories.nodes;
   const tags = results.data.wpgraphql.tags.nodes;
+  const pages = results.data.wpgraphql.pages.nodes;
 
   /* END Data */
 
@@ -227,7 +239,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   //
 
   /* Generate Dynamic Paginated Post Categories */
-
   categories.forEach(({ id, databaseId, slug, count }) => {
     const paginatedPostCategoriesSlug = blogCategoriesSettings.slug;
     const paginatedPostCategoriesPerPage = blogCategoriesSettings.perPage;
@@ -265,13 +276,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       });
     });
   });
-
   /* END Generate Dynamic Paginated Post Categories */
 
   //
 
   /* Generate Dynamic Paginated Post Tags */
-
   tags.forEach(({ id, slug, count }) => {
     const paginatedPostTagsSlug = blogTagsSettings.slug;
     const paginatedPostTagsPerPage = blogTagsSettings.perPage;
@@ -321,4 +330,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     component: blogSearchTemplate,
   });
   /* END Generate Dynamic Search Page */
+
+  //
+
+  /* Generate Pages */
+  pages.forEach(({ id, slug }) => {
+    const pageSlug = pageSettings.slug;
+    const pageCompleteSlug = generateSlug(undefined, pageSlug);
+
+    createPage({
+      path: `${pageCompleteSlug}/${slug}`,
+      component: pageTemplate,
+      context: {
+        id,
+        slug,
+      },
+    });
+  });
+  /* END Generate Pages */
 };
