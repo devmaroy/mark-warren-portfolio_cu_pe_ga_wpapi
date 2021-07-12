@@ -1,0 +1,27 @@
+/*------------------------------------*\
+  # Page
+\*------------------------------------*/
+
+.page__featured-image {
+  img {
+    height: 22.4rem !important;
+    border-radius: $border-radius;
+
+    @media (min-width: 400px) {
+      height: 35.2rem !important;
+    }
+
+    @include breakpoint-up(medium) {
+      height: 44.8rem !important;
+    }
+  }
+}
+
+.page__content {
+  margin-top: 4rem;
+  margin-bottom: 5.6rem;
+
+  @include breakpoint-up(large) {
+    margin-top: 5.6rem;
+  }
+}

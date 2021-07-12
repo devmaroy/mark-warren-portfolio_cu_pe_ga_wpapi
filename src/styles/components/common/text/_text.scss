@@ -36,6 +36,12 @@
     }
   }
 
+  a {
+    @include link-reset;
+    @include link($clr-royal-blue, darken($clr-royal-blue, 15%));
+    text-decoration: underline;
+  }
+
   figure,
   .wp-caption {
     margin-top: 4.8rem;
