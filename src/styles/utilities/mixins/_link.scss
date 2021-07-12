@@ -13,6 +13,7 @@
   &:focus,
   &.active {
     color: $colorHover;
+    outline: none;
   }
 }
 
