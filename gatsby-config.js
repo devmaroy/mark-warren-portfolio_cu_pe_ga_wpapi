@@ -32,7 +32,7 @@ const blogSearchQuery = `
               sourceUrl
               imageFile {
                 childImageSharp {
-                  gatsbyImageData(width: 1200, quality: 100)
+                  gatsbyImageData(width: 1200, quality: 90, placeholder: BLURRED)
                 }
               }
             }
@@ -88,6 +88,7 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-anchor-links',
     {
       resolve: `gatsby-plugin-sass`,
       options: {

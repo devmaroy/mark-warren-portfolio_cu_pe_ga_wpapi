@@ -76,12 +76,24 @@ const InstagramFeed = () => {
                 <Slider {...sliderSettings}>
                   {items.map(({ id, acf }) => (
                     <div key={id} className="instagram-feed__item">
-                      <GatsbyImage
-                        image={
-                          acf.image.imageFile.childImageSharp.gatsbyImageData
-                        }
-                        alt="Instagram feed image"
-                      />
+                      {acf.link ? (
+                        <a href={acf.link}>
+                          <GatsbyImage
+                            image={
+                              acf.image.imageFile.childImageSharp
+                                .gatsbyImageData
+                            }
+                            alt={acf.image.altText}
+                          />
+                        </a>
+                      ) : (
+                        <GatsbyImage
+                          image={
+                            acf.image.imageFile.childImageSharp.gatsbyImageData
+                          }
+                          alt={acf.image.altText}
+                        />
+                      )}
                     </div>
                   ))}
                 </Slider>

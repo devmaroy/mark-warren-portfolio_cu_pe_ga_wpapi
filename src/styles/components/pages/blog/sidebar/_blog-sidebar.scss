@@ -4,7 +4,7 @@
 
 .blog-sidebar {
   margin-top: 9.6rem;
-  overflow: hidden;
+  overflow: hidden !important;
 
   @include breakpoint-up(medium) {
     display: grid;

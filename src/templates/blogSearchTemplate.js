@@ -35,26 +35,24 @@ const BlogSearchTemplate = ({ data, location }) => {
       />
       <div className="blog__content">
         <div className="blog__layout">
-          <div>
-            <BlogSubHeading
-              heading={APIBlogSearchData.search.metaSubHeading}
-              highlight={searchQuery}
+          <BlogSubHeading
+            heading={APIBlogSearchData.search.metaSubHeading}
+            highlight={searchQuery}
+          />
+
+          <InstantSearch searchClient={searchClient} indexName="blog">
+            <Configure
+              query={searchQuery}
+              hitsPerPage={APIBlogSearchData.blog.perPage}
             />
-            <InstantSearch searchClient={searchClient} indexName="blog">
-              <Configure
-                query={searchQuery}
-                hitsPerPage={APIBlogSearchData.blog.perPage}
-              />
-              <BlogSearchPosts perPage={APIBlogSearchData.blog.perPage} />
+            <BlogSearchPosts perPage={APIBlogSearchData.blog.perPage} />
 
-              <BlogSearchPagination
-                wrapper={(children) => (
-                  <div className="blog__pagination">{children}</div>
-                )}
-              />
-            </InstantSearch>
-          </div>
-
+            <BlogSearchPagination
+              wrapper={(children) => (
+                <div className="blog__pagination">{children}</div>
+              )}
+            />
+          </InstantSearch>
           <BlogSidebar />
         </div>
       </div>

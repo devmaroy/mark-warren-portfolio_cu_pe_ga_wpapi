@@ -37,15 +37,11 @@ const BlogTagTemplate = ({ data, pageContext }) => {
       />
       <div className="blog__content">
         <div className="blog__layout">
-          <div>
-            <BlogSubHeading
-              heading={APIBlogTagSettingsData.metaSubHeading}
-              highlight={APIBlogTagData.name}
-            />
-
-            <BlogMain posts={APIBlogTagPostsData} pagination={pagination} />
-          </div>
-
+          <BlogSubHeading
+            heading={APIBlogTagSettingsData.metaSubHeading}
+            highlight={APIBlogTagData.name}
+          />
+          <BlogMain posts={APIBlogTagPostsData} pagination={pagination} />
           <BlogSidebar />
         </div>
       </div>
@@ -133,7 +129,11 @@ export const BlogTagTemplateQuery = graphql`
               sourceUrl
               imageFile {
                 childImageSharp {
-                  gatsbyImageData(width: 1200, quality: 100)
+                  gatsbyImageData(
+                    width: 1200
+                    quality: 90
+                    placeholder: BLURRED
+                  )
                 }
               }
             }
@@ -163,3 +163,16 @@ BlogTagTemplate.propTypes = {
 };
 
 export default BlogTagTemplate;
+
+// <Timeline>
+//             <div>
+//               <BlogSubHeading
+//                 heading={APIBlogTagSettingsData.metaSubHeading}
+//                 highlight={APIBlogTagData.name}
+//               />
+
+//               <BlogMain posts={APIBlogTagPostsData} pagination={pagination} />
+//             </div>
+
+//             <BlogSidebar />
+//           </Timeline>

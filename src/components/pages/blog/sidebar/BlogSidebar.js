@@ -94,7 +94,11 @@ const APIQuery = graphql`
               sourceUrl
               imageFile {
                 childImageSharp {
-                  gatsbyImageData(width: 660, quality: 100)
+                  gatsbyImageData(
+                    width: 660
+                    quality: 100
+                    placeholder: BLURRED
+                  )
                 }
               }
             }
@@ -124,6 +128,10 @@ const BlogSidebar = () => {
   const blogSidebarCategoriesData = data.wpgraphql.categories.nodes;
   const blogSidebarTagsData = data.wpgraphql.tags.nodes;
 
+  const hasCategories =
+    blogSidebarCategoriesData && blogSidebarCategoriesData.length !== 0;
+  const hasTags = blogSidebarTagsData && blogSidebarTagsData.length !== 0;
+
   return (
     <div className="blog-sidebar">
       <div className="blog-sidebar__layout">
@@ -150,14 +158,19 @@ const BlogSidebar = () => {
       </div>
 
       <div className="blog-sidebar__layout">
-        <BlogSidebarCategories
-          heading={APIBlogSidebarHeadingsData.categories.heading}
-          categories={blogSidebarCategoriesData}
-        />
-        <BlogSidebarTags
-          heading={APIBlogSidebarHeadingsData.tags.heading}
-          tags={blogSidebarTagsData}
-        />
+        {hasCategories && (
+          <BlogSidebarCategories
+            heading={APIBlogSidebarHeadingsData.categories.heading}
+            categories={blogSidebarCategoriesData}
+          />
+        )}
+
+        {hasTags && (
+          <BlogSidebarTags
+            heading={APIBlogSidebarHeadingsData.tags.heading}
+            tags={blogSidebarTagsData}
+          />
+        )}
       </div>
 
       <div className="blog-sidebar__layout">

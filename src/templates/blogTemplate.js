@@ -102,7 +102,11 @@ export const BlogTemplateQuery = graphql`
               sourceUrl
               imageFile {
                 childImageSharp {
-                  gatsbyImageData(width: 1200, quality: 100)
+                  gatsbyImageData(
+                    width: 1200
+                    quality: 90
+                    placeholder: BLURRED
+                  )
                 }
               }
             }

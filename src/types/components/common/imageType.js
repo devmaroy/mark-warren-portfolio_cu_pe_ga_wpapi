@@ -3,7 +3,7 @@ import { shape, string, number, arrayOf } from 'prop-types';
 // Image Fluid Type
 export default {
   gatsbyImageData: shape({
-    backgroundColor: string.isRequired,
+    backgroundColor: string,
     height: number.isRequired,
     width: number.isRequired,
     layout: string.isRequired,

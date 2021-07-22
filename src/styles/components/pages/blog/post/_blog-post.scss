@@ -13,6 +13,10 @@
   background-repeat: repeat-x;
   height: 0.1rem;
   margin-bottom: 4rem;
+
+  &.nospacing {
+    margin: 0;
+  }
 }
 
 .blog-post__layout {

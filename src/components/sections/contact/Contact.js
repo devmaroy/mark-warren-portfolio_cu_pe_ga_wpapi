@@ -69,7 +69,7 @@ const APIQuery = graphql`
             sourceUrl
             imageFile {
               childImageSharp {
-                gatsbyImageData(width: 1200, quality: 100)
+                gatsbyImageData(width: 1200, quality: 90, placeholder: BLURRED)
               }
             }
           }
@@ -91,6 +91,7 @@ const Contact = () => {
             <ContactInfo text={APISectionContactData.content} />
             <ContactForm formData={APISectionContactData.acf.form} />
           </div>
+
           <ContactImage image={APISectionContactData.acf.image} />
         </div>
       </div>

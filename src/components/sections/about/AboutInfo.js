@@ -8,6 +8,7 @@ const AboutInfo = ({ text, technologies }) => (
       className="about-info__text text-basic"
       dangerouslySetInnerHTML={{ __html: text }}
     />
+
     {technologies && (
       <div className="about-info-technologies">
         <h4

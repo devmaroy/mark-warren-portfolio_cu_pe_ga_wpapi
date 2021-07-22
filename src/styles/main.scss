@@ -31,14 +31,11 @@
 @import './components/common/info-banner';
 @import './components/common/text/text';
 @import './components/common/section';
-@import './components/common/section-header';
+@import './components/common/site-header';
 @import './components/common/subpage';
 @import './components/common/error-page';
 @import './components/common/pagination/pagination';
 @import './components/common/wordpress-core-styles';
-
-// Shared
-// @import './components/shared/blog/blog-post-teaser';
 
 // Layout
 @import './components/layout/header/header';
@@ -65,6 +62,7 @@
 // Section - Portfolio
 @import './components/sections/portfolio/portfolio-menu';
 @import './components/sections/portfolio/portfolio-content';
+@import './components/sections/portfolio/portfolio-gallery';
 //
 // Section - Contact
 @import './components/sections/contact/contact-form/contact-form';
