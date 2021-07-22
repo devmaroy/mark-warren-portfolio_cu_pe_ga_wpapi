@@ -39,18 +39,11 @@ const BlogCategoryTemplate = ({ data, pageContext }) => {
       />
       <div className="blog__content">
         <div className="blog__layout">
-          <div>
-            <BlogSubHeading
-              heading={APIBlogCategorySettingsData.metaSubHeading}
-              highlight={APIBlogCategoryData.name}
-            />
-
-            <BlogMain
-              posts={APIBlogCategoryPostsData}
-              pagination={pagination}
-            />
-          </div>
-
+          <BlogSubHeading
+            heading={APIBlogCategorySettingsData.metaSubHeading}
+            highlight={APIBlogCategoryData.name}
+          />
+          <BlogMain posts={APIBlogCategoryPostsData} pagination={pagination} />
           <BlogSidebar />
         </div>
       </div>
@@ -139,7 +132,11 @@ export const BlogCategoryTemplateQuery = graphql`
               sourceUrl
               imageFile {
                 childImageSharp {
-                  gatsbyImageData(width: 1200, quality: 100)
+                  gatsbyImageData(
+                    width: 1200
+                    quality: 90
+                    placeholder: BLURRED
+                  )
                 }
               }
             }

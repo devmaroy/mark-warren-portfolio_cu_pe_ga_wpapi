@@ -35,7 +35,7 @@ export default {
         name: string.isRequired,
         quote: string,
       }).isRequired,
-    ).isRequired,
+    ),
   }),
   seo: shape({
     ...seoType,

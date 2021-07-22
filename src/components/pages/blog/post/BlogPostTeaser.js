@@ -13,6 +13,8 @@ const BlogPostTeaser = ({ post, large }) => {
   const { slug: blogSlug, buttonText } = globalContextData.pages.blog;
   const { slug: blogCategorySlug } = globalContextData.pages.blogCategories;
 
+  const hasCategories = post.categories && post.categories.nodes.length !== 0;
+
   return (
     <div
       className={classNames('blog-post-teaser', {
@@ -41,33 +43,35 @@ const BlogPostTeaser = ({ post, large }) => {
             'blog-post-teaser__meta--large': large,
           })}
         >
-          <ul className="blog-post-teaser-categories">
-            {post.categories &&
-              post.categories.nodes.length !== 0 &&
-              post.categories.nodes.map(({ id, name, slug }) => (
-                <li
-                  key={id}
-                  className={classNames(
-                    'blog-post-teaser-categories__category',
-                    {
-                      'blog-post-teaser-categories__category--large': large,
-                    },
-                  )}
-                >
-                  <Link
-                    to={`/${blogCategorySlug}/${slug}`}
-                    className="blog-post-teaser-categories__category-link"
+          {hasCategories && (
+            <ul className="blog-post-teaser-categories">
+              {hasCategories &&
+                post.categories.nodes.map(({ id, name, slug }) => (
+                  <li
+                    key={id}
+                    className={classNames(
+                      'blog-post-teaser-categories__category',
+                      {
+                        'blog-post-teaser-categories__category--large': large,
+                      },
+                    )}
                   >
-                    {name}
-                  </Link>
-                </li>
-              ))}
-          </ul>
+                    <Link
+                      to={`/${blogCategorySlug}/${slug}`}
+                      className="blog-post-teaser-categories__category-link"
+                    >
+                      {name}
+                    </Link>
+                  </li>
+                ))}
+            </ul>
+          )}
 
           {large && (
             <div
               className={classNames('blog-post-teaser__date', {
                 'blog-post-teaser__date--large': large,
+                hidden: !hasCategories,
               })}
             >
               {format(post.date)}

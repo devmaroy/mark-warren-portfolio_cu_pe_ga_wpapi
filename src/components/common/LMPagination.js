@@ -1,5 +1,6 @@
 /* eslint-disable arrow-body-style */
 import React, { useState, useEffect } from 'react';
+import debounce from 'lodash.debounce';
 import Button from './Button';
 import lmPaginationType from '../../types/components/common/lmPaginationType';
 
@@ -41,14 +42,14 @@ const LMPagination = ({
    *
    * @return {undefined}.
    */
-  const loadMoreItems = () => {
+  const loadMoreItems = debounce(() => {
     // Get total pages number
     const totalPages = Math.ceil(items.length / perPage);
 
     // Update state - move to another page basically
     setPage((currentPage) => currentPage + 1);
     setIsAllLoaded(totalPages === page + 1);
-  };
+  }, 300);
 
   /**
    * Resets everything.
@@ -69,7 +70,7 @@ const LMPagination = ({
 
   return (
     <>
-      {children(paginateItems())}
+      {children(paginateItems(), page)}
 
       <div className={`load-more-pagination ${paginationClassName}`}>
         {!isAllLoaded && hasItemsToPaginate() && (

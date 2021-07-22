@@ -8,7 +8,7 @@ export default {
       id: string.isRequired,
       name: string.isRequired,
       slug: string.isRequired,
-      count: number.isRequired,
+      count: number,
     }).isRequired,
   ).isRequired,
 };

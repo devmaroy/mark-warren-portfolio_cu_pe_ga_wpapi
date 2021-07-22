@@ -72,15 +72,17 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="container">
-        <div className="header__inner">
-          <Logo logo={APIHeaderData.logo} />
-          <Navigation
-            items={APIHeaderNavigationData}
-            isOpen={isOpen}
-            toggleNavigation={toggleNavigation}
-            cta={APIHeaderData.cta}
-          />
+      <div className="header__wrapper">
+        <div className="container">
+          <div className="header__inner">
+            <Logo logo={APIHeaderData.logo} />
+            <Navigation
+              items={APIHeaderNavigationData}
+              isOpen={isOpen}
+              toggleNavigation={toggleNavigation}
+              cta={APIHeaderData.cta}
+            />
+          </div>
         </div>
       </div>
     </header>

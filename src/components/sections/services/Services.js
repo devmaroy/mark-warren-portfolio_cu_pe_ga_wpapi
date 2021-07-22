@@ -53,13 +53,14 @@ const Services = () => {
           <div className="section__content">
             <div className="card__responsive-layout services__cards">
               {APISectionServicesData.map(({ id, acf }, i) => (
-                <Card
-                  key={id}
-                  number={i + 1}
-                  icon={acf.icon}
-                  heading={acf.heading}
-                  text={acf.text}
-                />
+                <div key={id}>
+                  <Card
+                    number={i + 1}
+                    icon={acf.icon}
+                    heading={acf.heading}
+                    text={acf.text}
+                  />
+                </div>
               ))}
             </div>
           </div>

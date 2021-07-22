@@ -33,20 +33,6 @@ body {
   &.is-open {
     overflow: hidden;
   }
-}
-
-.site-content {
-  // background: gray !important;
-
-  overflow-x: hidden;
-
-  /* Unnecessary IMHO, uncomment next line to force hidden behavior */
-
-  /* overflow-x: hidden !important; */
-
-  /* Additional tunning proposed by the community */
-
-  width: 100%;
 
   &::before {
     @include shape-dots($top: 42rem, $right: -6.2rem, $secondary: true);
@@ -63,6 +49,16 @@ body {
       @include shape-dots($top: 60rem, $left: -5.2rem, $secondary: true);
     }
   }
+}
+
+.site-content {
+  /* Unnecessary IMHO, uncomment next line to force hidden behavior */
+
+  overflow-x: hidden !important;
+
+  /* Additional tunning proposed by the community */
+
+  width: 100%;
 }
 
 img {
@@ -91,4 +87,8 @@ img {
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;
+}
+
+.gatsby-image-wrapper {
+  border-radius: $border-radius !important;
 }

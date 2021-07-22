@@ -13,19 +13,20 @@ const PageTemplate = ({ data }) => {
 
   return (
     <SubPage seo={APIPageData} className="page" classNameInner="page__inner">
-      {showFeaturedImage && (
-        <div className="page__featured-image">
-          <GatsbyImage
-            image={featuredImage.imageFile.childImageSharp.gatsbyImageData}
-            alt={featuredImage.altText}
-          />
-        </div>
-      )}
-
-      <div
-        className="text text-full page__content"
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
+      <div>
+        {showFeaturedImage && (
+          <div className="page__featured-image">
+            <GatsbyImage
+              image={featuredImage.imageFile.childImageSharp.gatsbyImageData}
+              alt={featuredImage.altText}
+            />
+          </div>
+        )}
+        <div
+          className="text text-full page__content"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+      </div>
     </SubPage>
   );
 };
@@ -45,7 +46,7 @@ export const PageTemplateQuery = graphql`
             sourceUrl
             imageFile {
               childImageSharp {
-                gatsbyImageData(width: 1200, quality: 100)
+                gatsbyImageData(width: 1200, quality: 90, placeholder: BLURRED)
               }
             }
           }

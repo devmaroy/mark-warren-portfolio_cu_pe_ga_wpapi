@@ -18,7 +18,7 @@ const APIQuery = graphql`
               sourceUrl
               imageFile {
                 childImageSharp {
-                  gatsbyImageData(width: 660, quality: 100)
+                  gatsbyImageData(width: 660, quality: 90, placeholder: BLURRED)
                 }
               }
             }
@@ -44,7 +44,9 @@ const BlogPostRecent = () => {
     <div className="blog-posts-recent">
       <div className="blog-posts-recent__inner">
         {APISectionRecentBlogData.map((post) => (
-          <BlogPostTeaser key={post.id} post={post} />
+          <div key={post.id}>
+            <BlogPostTeaser post={post} />
+          </div>
         ))}
       </div>
     </div>

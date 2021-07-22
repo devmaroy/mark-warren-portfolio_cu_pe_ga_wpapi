@@ -20,6 +20,9 @@
 
   &::before {
     content: url('../images/icons/polygon.svg');
+    display: inline-block;
+    width: 12px;
+    height: 14px;
     margin-right: 0.8rem;
     vertical-align: middle;
   }

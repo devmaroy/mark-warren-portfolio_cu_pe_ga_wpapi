@@ -2,7 +2,7 @@
   # Blog List
 \*------------------------------------*/
 
-@keyframes aniVertical {
+@keyframes animationOpacity {
   0% {
     opacity: 0;
   }
@@ -18,7 +18,7 @@
 
 .blog-list--dummy {
   .blog-list__item {
-    animation: aniVertical 3s ease;
+    animation: animationOpacity 3s ease;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
     opacity: 0;

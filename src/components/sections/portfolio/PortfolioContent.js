@@ -1,6 +1,6 @@
 import React from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import LMPagination from '../../common/LMPagination';
+import PortfolioGallery from './PortfolioGallery';
 import portfolioContentType from '../../../types/components/sections/portfolio/portfolioContentType';
 
 const PortfolioContent = ({
@@ -13,12 +13,15 @@ const PortfolioContent = ({
   const hasItems = items && items.length !== 0;
 
   const getFilteredItems = () => {
-    // Check if we should show all items.
-    if (showAll) return items;
+    // Check if we have items.
+    if (!hasItems) return null;
 
-    // We have items and selected category.
+    // Check if we need to show all items.
+    if (showAll) {
+      return items;
+    }
 
-    // Filter items based on the category and return them.
+    // Filter items based on the category.
     return items.filter(({ categories }) =>
       categories.nodes.some(({ slug }) => slug === selectedCategory),
     );
@@ -29,21 +32,16 @@ const PortfolioContent = ({
       <LMPagination
         perPage={perPage}
         items={getFilteredItems(items)}
-        paginationClassName="portfolio-content-gallery__meta"
+        paginationClassName="portfolio-content__meta"
         buttonText={buttonText}
       >
-        {(paginatedProjects) => (
+        {(paginatedProjects, currentPage) => (
           <div className="portfolio-content">
-            <div className="portfolio-content-gallery">
-              {paginatedProjects.map(({ id, acf }) => (
-                <div key={id} className="portfolio-content-gallery__item">
-                  <GatsbyImage
-                    image={acf.image.imageFile.childImageSharp.gatsbyImageData}
-                    alt={acf.image.altText}
-                  />
-                </div>
-              ))}
-            </div>
+            <PortfolioGallery
+              items={paginatedProjects}
+              selectedCategory={selectedCategory}
+              currentPage={currentPage}
+            />
           </div>
         )}
       </LMPagination>

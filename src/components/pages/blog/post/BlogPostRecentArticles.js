@@ -9,6 +9,7 @@ const BlogPostRecentArticles = ({ heading }) => (
       className="blog-post-recent-articles__heading"
       dangerouslySetInnerHTML={{ __html: heading }}
     />
+
     <BlogPostsRecent />
   </div>
 );

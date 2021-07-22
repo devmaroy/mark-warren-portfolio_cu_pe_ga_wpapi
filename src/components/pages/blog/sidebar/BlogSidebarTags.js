@@ -13,19 +13,23 @@ const BlogSidebarTags = ({ heading, tags }) => {
       <BlogSidebarHeader heading={heading} />
 
       <ul className="blog-sidebar-tags-list">
-        {tags.map(({ id, name, slug, count }) => (
-          <li key={id} className="blog-sidebar-tags-list__tag">
-            <Button
-              to={`/${blogTagSlug}/${slug}`}
-              variant="tertiary"
-              size="sm"
-              showIcon={false}
-              className="blog-sidebar-tags-list__tag-link"
-            >
-              {name} ({count})
-            </Button>
-          </li>
-        ))}
+        {tags.map(
+          ({ id, name, slug, count }) =>
+            count &&
+            count !== 0 && (
+              <li key={id} className="blog-sidebar-tags-list__tag">
+                <Button
+                  to={`/${blogTagSlug}/${slug}`}
+                  variant="tertiary"
+                  size="sm"
+                  showIcon={false}
+                  className="blog-sidebar-tags-list__tag-link"
+                >
+                  {name} ({count})
+                </Button>
+              </li>
+            ),
+        )}
       </ul>
     </div>
   );

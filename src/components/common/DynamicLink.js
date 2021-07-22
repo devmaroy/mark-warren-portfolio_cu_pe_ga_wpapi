@@ -1,8 +1,9 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import { useLocation } from '@reach/router';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 import { Link as ScrollLink } from 'react-scroll';
-import { useLocation } from '@reach/router';
 import dynamicLinkType from '../../types/components/common/dynamicLinkType';
 import { isWordpressExternalLink, createLocalLink } from '../../utils/link';
 
@@ -30,15 +31,33 @@ const DynamicLink = ({
   const { url: wordpressUrl } = dynamicLinkData;
   const location = useLocation();
 
+  const dynamicLinkClassName = 'dynamic-link';
+  const dynamicLinkClassNameActive = 'dynamic-link--active';
+
   // Helper function for rendering a link.
   const renderLink = () => {
+    // e.g. facebook.com/handle
+    const isExternalLink = isWordpressExternalLink(to, wordpressUrl);
+
     // e.g. example.com#services
     const isLocalLinkWithHash = to.includes('#') && location.pathname === '/';
 
     // e.g. example.com/blog#services
     const isSubpageLocalLinkWithHash =
-      (to.includes('#') && location.pathname !== '/') ||
-      isWordpressExternalLink(to, wordpressUrl);
+      to.includes('#') && location.pathname !== '/';
+
+    // Check if the link is an external url.
+    if (isExternalLink) {
+      return (
+        <a
+          className={`${dynamicLinkClassName} ${className}`}
+          href={to}
+          onClick={onClick}
+        >
+          {children}
+        </a>
+      );
+    }
 
     if (isLocalLinkWithHash) {
       return (
@@ -47,8 +66,8 @@ const DynamicLink = ({
           smooth
           offset={-180}
           duration={500}
-          className={className}
-          activeClass={activeClassName}
+          className={`${dynamicLinkClassName} ${className}`}
+          activeClass={`${dynamicLinkClassNameActive} ${activeClassName}`}
           onClick={onClick}
         >
           {children}
@@ -58,13 +77,13 @@ const DynamicLink = ({
 
     if (isSubpageLocalLinkWithHash) {
       return (
-        <a
-          href={to.charAt(0) === '#' ? `/${to}` : to}
-          className={className}
+        <AnchorLink
+          to={to.charAt(0) === '#' ? `/${to}` : to}
+          className={`${dynamicLinkClassName} ${className}`}
           onClick={onClick}
         >
           {children}
-        </a>
+        </AnchorLink>
       );
     }
 
@@ -75,8 +94,8 @@ const DynamicLink = ({
         <Link
           to={createLocalLink(to, wordpressUrl)}
           partiallyActive={partiallyActive}
-          className={className}
-          activeClassName={activeClassName}
+          className={`${dynamicLinkClassName} ${className}`}
+          activeClassName={`${dynamicLinkClassNameActive} ${activeClassName}`}
           onClick={onClick}
         >
           {children}
@@ -88,8 +107,8 @@ const DynamicLink = ({
     return (
       <Link
         to={createLocalLink(to, wordpressUrl)}
-        className={className}
-        activeClassName={activeClassName}
+        className={`${dynamicLinkClassName} ${className}`}
+        activeClassName={`${dynamicLinkClassNameActive} ${activeClassName}`}
         onClick={onClick}
         partiallyActive={false}
       >

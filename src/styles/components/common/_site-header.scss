@@ -1,18 +1,19 @@
 /*------------------------------------*\
-  # Section Header
+  # Site Header
 \*------------------------------------*/
 
-.section-header {
+.site-header {
   text-transform: uppercase;
   text-align: center;
 }
 
-.section-header__subheading {
+.site-header__subheading {
   @include typography($font-size: 1.8rem, $font-weight: $fw-bold);
+  display: block;
   margin: 0;
 }
 
-.section-header__heading {
+.site-header__heading {
   @include typography(
     $font-family: $ff-heading,
     $font-size: 3rem,
