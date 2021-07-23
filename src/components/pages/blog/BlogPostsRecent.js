@@ -44,9 +44,7 @@ const BlogPostRecent = () => {
     <div className="blog-posts-recent">
       <div className="blog-posts-recent__inner">
         {APISectionRecentBlogData.map((post) => (
-          <div key={post.id}>
-            <BlogPostTeaser post={post} />
-          </div>
+          <BlogPostTeaser key={post.id} post={post} />
         ))}
       </div>
     </div>

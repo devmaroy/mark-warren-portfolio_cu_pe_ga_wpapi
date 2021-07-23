@@ -61,14 +61,13 @@ const Reviews = () => {
           <div className="section__content">
             <div className="card__responsive-layout reviews__cards">
               {APISectionReviewsData.map(({ id, acf }) => (
-                <div key={id}>
-                  <Card
-                    icon={acf.icon}
-                    iconSize="lg"
-                    text={acf.text}
-                    author={acf.author}
-                  />
-                </div>
+                <Card
+                  key={id}
+                  icon={acf.icon}
+                  iconSize="lg"
+                  text={acf.text}
+                  author={acf.author}
+                />
               ))}
             </div>
           </div>

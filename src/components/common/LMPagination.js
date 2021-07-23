@@ -72,20 +72,22 @@ const LMPagination = ({
     <>
       {children(paginateItems(), page)}
 
-      <div className={`load-more-pagination ${paginationClassName}`}>
-        {!isAllLoaded && hasItemsToPaginate() && (
-          <Button
-            type="button"
-            variant={buttonVariant}
-            to="#"
-            showIcon={false}
-            className={`load-more-pagination__button ${buttonClassName}`}
-            onClick={loadMoreItems}
-          >
-            {buttonText}
-          </Button>
-        )}
-      </div>
+      {hasItemsToPaginate() && (
+        <div className={`load-more-pagination ${paginationClassName}`}>
+          {!isAllLoaded && hasItemsToPaginate() && (
+            <Button
+              type="button"
+              variant={buttonVariant}
+              to="#"
+              showIcon={false}
+              className={`load-more-pagination__button ${buttonClassName}`}
+              onClick={loadMoreItems}
+            >
+              {buttonText}
+            </Button>
+          )}
+        </div>
+      )}
     </>
   );
 };
