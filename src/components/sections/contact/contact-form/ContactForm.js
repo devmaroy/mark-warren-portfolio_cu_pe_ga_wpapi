@@ -63,25 +63,21 @@ const ContactForm = ({ formData }) => {
 
   // Submit data to the server
   const submitToMailServer = async (fieldsToSend) => {
-    // setLoading(true);
+    setLoading(true);
 
-    // TODO: Remove on production build
-    // eslint-disable-next-line no-alert
-    alert('Submitted successfuly!', fieldsToSend, URIEncode);
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: URIEncode({ 'form-name': 'contact', ...fieldsToSend }),
+      });
 
-    // try {
-    //   await fetch('/', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    //     body: URIEncode({ 'form-name': 'contact', ...fieldsToSend }),
-    //   });
-
-    //   setSuccess(true);
-    //   setLoading(false);
-    // } catch {
-    //   setError(true);
-    //   setLoading(false);
-    // }
+      setSuccess(true);
+      setLoading(false);
+    } catch {
+      setError(true);
+      setLoading(false);
+    }
   };
 
   // Check if fields are ALL true Boolean values.
