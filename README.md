@@ -31,17 +31,8 @@ Use these commands to install the dependencies and start the server.
    ```
    $ cd my-folder
    ```
-
-5. **Add license for Font Awesome PRO**
-
-   Add the environment variable to your .bashrc or other startup shell file
-   using terminal.
-
-   ```
-   export FA_NPM_TOKEN=my_token_goes_here_foo_bar
-   ```
    
-6. **Add WP API URL for fetching dynamic data**
+5. **Add WP API URL for fetching dynamic data**
 
    Add the environment variable.
 
@@ -49,7 +40,7 @@ Use these commands to install the dependencies and start the server.
    GATSBY_API_URL=wp_api_url_goes_here_foo_bar
    ```
 
-7. **Add Algolia Search for searching data**
+6. **Add Algolia Search for searching data**
 
    Add the environment variables.
 
