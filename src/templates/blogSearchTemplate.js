@@ -14,12 +14,13 @@ import blogSearchTemplateType from '../types/templates/blogSearchTemplateType';
 const BlogSearchTemplate = ({ data, location }) => {
   const APIBlogSearchHeadingsData =
     data.wpgraphql.themeHeadingsSettings.themeHeadingsSettings.pages.search;
-  const APIBlogSearchData =
+  const APIBlogSearchGeneralData =
     data.wpgraphql.themeGeneralSettings.themeGeneralSettings.pages;
+  const APIBlogSearchSEOData = data.wpgraphql.seoForPage;
   const searchQuery = new URLSearchParams(location.search).get('q') || '';
   const searchClient = algoliasearch(...algoliaSearchClientSettings);
 
-  // Check if we have search query
+  // Check if we have search query.
   if (!searchQuery && typeof window !== `undefined`) {
     navigate('/');
   }
@@ -28,6 +29,7 @@ const BlogSearchTemplate = ({ data, location }) => {
     <SubPage
       className="blog blog-search"
       classNameInner="blog blog-search__inner"
+      seo={APIBlogSearchSEOData}
     >
       <SiteHeader
         heading={APIBlogSearchHeadingsData.heading}
@@ -35,24 +37,29 @@ const BlogSearchTemplate = ({ data, location }) => {
       />
       <div className="blog__content">
         <div className="blog__layout">
-          <BlogSubHeading
-            heading={APIBlogSearchData.search.metaSubHeading}
-            highlight={searchQuery}
-          />
-
-          <InstantSearch searchClient={searchClient} indexName="blog">
-            <Configure
-              query={searchQuery}
-              hitsPerPage={APIBlogSearchData.blog.perPage}
+          <div>
+            <BlogSubHeading
+              heading={APIBlogSearchGeneralData.search.metaSubHeading}
+              highlight={searchQuery}
             />
-            <BlogSearchPosts perPage={APIBlogSearchData.blog.perPage} />
 
-            <BlogSearchPagination
-              wrapper={(children) => (
-                <div className="blog__pagination">{children}</div>
-              )}
-            />
-          </InstantSearch>
+            <InstantSearch searchClient={searchClient} indexName="blog">
+              <Configure
+                query={searchQuery}
+                hitsPerPage={APIBlogSearchGeneralData.blog.perPage}
+              />
+              <BlogSearchPosts
+                perPage={APIBlogSearchGeneralData.blog.perPage}
+              />
+
+              <BlogSearchPagination
+                wrapper={(children) => (
+                  <div className="blog__pagination">{children}</div>
+                )}
+              />
+            </InstantSearch>
+          </div>
+
           <BlogSidebar />
         </div>
       </div>
@@ -83,6 +90,37 @@ export const BlogSearchTemplateQuery = graphql`
               heading
               subHeading
             }
+          }
+        }
+      }
+      seoForPage(id: "cG9zdDo0MzE=") {
+        seo {
+          title
+          metaDesc
+          focuskw
+          metaKeywords
+          metaRobotsNoindex
+          metaRobotsNofollow
+          opengraphTitle
+          opengraphDescription
+          opengraphImage {
+            altText
+            sourceUrl
+            srcSet
+          }
+          twitterTitle
+          twitterDescription
+          twitterImage {
+            altText
+            sourceUrl
+            srcSet
+          }
+          canonical
+          cornerstone
+          schema {
+            articleType
+            pageType
+            raw
           }
         }
       }
