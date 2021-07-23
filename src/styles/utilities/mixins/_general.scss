@@ -48,6 +48,9 @@
   right: $right;
   left: $left;
   z-index: -1;
+  display: block;
+  width: if($secondary, 104px, 39px);
+  height: if($secondary, 39px, 104px);
 }
 
 @mixin slick-item(

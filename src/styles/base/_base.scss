@@ -30,6 +30,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  &.is-open {
+    overflow: hidden;
+  }
+}
+
+.site-content {
+  /* Unnecessary IMHO, uncomment next line to force hidden behavior */
+
+  overflow-x: hidden !important;
+
+  /* Additional tunning proposed by the community */
+
+  position: relative;
+  width: 100%;
+
   &::before {
     @include shape-dots($top: 42rem, $right: -6.2rem, $secondary: true);
 
@@ -45,20 +60,6 @@ body {
       @include shape-dots($top: 60rem, $left: -5.2rem, $secondary: true);
     }
   }
-
-  &.is-open {
-    overflow: hidden;
-  }
-}
-
-.site-content {
-  /* Unnecessary IMHO, uncomment next line to force hidden behavior */
-
-  overflow-x: hidden !important;
-
-  /* Additional tunning proposed by the community */
-
-  width: 100%;
 }
 
 img {
