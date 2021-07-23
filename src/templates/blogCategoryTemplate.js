@@ -39,11 +39,17 @@ const BlogCategoryTemplate = ({ data, pageContext }) => {
       />
       <div className="blog__content">
         <div className="blog__layout">
-          <BlogSubHeading
-            heading={APIBlogCategorySettingsData.metaSubHeading}
-            highlight={APIBlogCategoryData.name}
-          />
-          <BlogMain posts={APIBlogCategoryPostsData} pagination={pagination} />
+          <div>
+            <BlogSubHeading
+              heading={APIBlogCategorySettingsData.metaSubHeading}
+              highlight={APIBlogCategoryData.name}
+            />
+            <BlogMain
+              posts={APIBlogCategoryPostsData}
+              pagination={pagination}
+            />
+          </div>
+
           <BlogSidebar />
         </div>
       </div>
