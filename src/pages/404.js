@@ -12,6 +12,42 @@ const APIQuery = graphql`
           heading
           subHeading
           text
+          nsocial {
+            name
+            type
+            url
+          }
+        }
+      }
+      seoForPage(id: "cG9zdDo0MzA=") {
+        seo {
+          title
+          metaDesc
+          focuskw
+          metaKeywords
+          metaRobotsNoindex
+          metaRobotsNofollow
+          opengraphTitle
+          opengraphDescription
+          opengraphImage {
+            altText
+            sourceUrl
+            srcSet
+          }
+          twitterTitle
+          twitterDescription
+          twitterImage {
+            altText
+            sourceUrl
+            srcSet
+          }
+          canonical
+          cornerstone
+          schema {
+            articleType
+            pageType
+            raw
+          }
         }
       }
     }
@@ -22,13 +58,14 @@ const NotFoundPage = () => {
   const data = useStaticQuery(APIQuery);
   const APINotFoundPageData =
     data.wpgraphql.themeNotFoundPageSettings.themeNotFoundPageSettings;
-  const APINotFoundPageSEOData = {};
+  const APINotFoundPageSEOData = data.wpgraphql.seoForPage;
 
   return (
     <Layout showPartials={false}>
       <ErrorPage
         heading={APINotFoundPageData.heading}
         subHeading={APINotFoundPageData.subHeading}
+        social={APINotFoundPageData.nsocial}
         seo={APINotFoundPageSEOData}
       >
         {APINotFoundPageData.text}
