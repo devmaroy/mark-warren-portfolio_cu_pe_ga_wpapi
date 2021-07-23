@@ -166,16 +166,3 @@ BlogTagTemplate.propTypes = {
 };
 
 export default BlogTagTemplate;
-
-// <Timeline>
-//             <div>
-//               <BlogSubHeading
-//                 heading={APIBlogTagSettingsData.metaSubHeading}
-//                 highlight={APIBlogTagData.name}
-//               />
-
-//               <BlogMain posts={APIBlogTagPostsData} pagination={pagination} />
-//             </div>
-
-//             <BlogSidebar />
-//           </Timeline>

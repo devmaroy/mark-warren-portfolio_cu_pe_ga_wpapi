@@ -1,6 +1,5 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
-
 import aboutImageType from '../../../types/components/sections/about/aboutImageType';
 
 const AboutImage = ({ image }) => (

@@ -30,25 +30,25 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  &::before {
+    @include shape-dots($top: 42rem, $right: -6.2rem, $secondary: true);
+
+    @include breakpoint-up(xlarge) {
+      @include shape-dots($top: 52rem, $left: -7rem, $secondary: true);
+    }
+  }
+
+  &:after {
+    @include shape-dots($top: 50rem, $right: -8rem, $secondary: true);
+
+    @include breakpoint-up(xlarge) {
+      @include shape-dots($top: 60rem, $left: -5.2rem, $secondary: true);
+    }
+  }
+
   &.is-open {
     overflow: hidden;
   }
-
-  // &::before {
-  //   @include shape-dots($top: 42rem, $right: -6.2rem, $secondary: true);
-
-  //   @include breakpoint-up(xlarge) {
-  //     @include shape-dots($top: 52rem, $left: -7rem, $secondary: true);
-  //   }
-  // }
-
-  // &:after {
-  //   @include shape-dots($top: 50rem, $right: -8rem, $secondary: true);
-
-  //   @include breakpoint-up(xlarge) {
-  //     @include shape-dots($top: 60rem, $left: -5.2rem, $secondary: true);
-  //   }
-  // }
 }
 
 .site-content {
