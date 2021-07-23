@@ -37,11 +37,14 @@ const BlogTagTemplate = ({ data, pageContext }) => {
       />
       <div className="blog__content">
         <div className="blog__layout">
-          <BlogSubHeading
-            heading={APIBlogTagSettingsData.metaSubHeading}
-            highlight={APIBlogTagData.name}
-          />
-          <BlogMain posts={APIBlogTagPostsData} pagination={pagination} />
+          <div>
+            <BlogSubHeading
+              heading={APIBlogTagSettingsData.metaSubHeading}
+              highlight={APIBlogTagData.name}
+            />
+            <BlogMain posts={APIBlogTagPostsData} pagination={pagination} />
+          </div>
+
           <BlogSidebar />
         </div>
       </div>
