@@ -20,7 +20,7 @@ const BlogSearchTemplate = ({ data, location }) => {
   const searchQuery = new URLSearchParams(location.search).get('q') || '';
   const searchClient = algoliasearch(...algoliaSearchClientSettings);
 
-  // Check if we have search query
+  // Check if we have search query.
   if (!searchQuery && typeof window !== `undefined`) {
     navigate('/');
   }
