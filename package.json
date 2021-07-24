@@ -3,7 +3,7 @@
   "private": true,
   "license": "UNLICENSED",
   "keywords": [],
-  "description": "Portfolio website for Mark Warren",
+  "description": "Personal web developer portfolio",
   "version": "0.1.0",
   "author": "Marek Matejovic <hello@devmaroy.com>",
   "dependencies": {
