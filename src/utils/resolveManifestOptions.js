@@ -3,25 +3,25 @@ const resolveManifestOptions = async (graphql) => {
     query {
       wpgraphql {
         themeManifestSettings {
-          themeSettingsManifest {
-            tsManifestName
-            tsManifestShortName
-            tsManifestStartUrl
-            tsManifestBackgroundColor
-            tsManifestThemeColor
-            tsManifestDisplay
-            tsManifestIcon {
+          themeManifestSettings {
+            name
+            shortName
+            startUrl
+            backgroundColor
+            themeColor
+            display
+            icon {
               altText
               sourceUrl
               imageFile {
                 absolutePath
               }
             }
-            tsManifestCrossorigin
-            tsManifestIconOptions {
-              tsManifestIconOptionsPurpose
+            crossorigin
+            iconOptions {
+              purpose
             }
-            tsManifestLegacy
+            legacy
           }
         }
       }
@@ -29,29 +29,29 @@ const resolveManifestOptions = async (graphql) => {
   `);
 
   const data =
-    result.data.wpgraphql.themeManifestSettings.themeSettingsManifest;
+    result.data.wpgraphql.themeManifestSettings.themeManifestSettings;
 
   const manifestOptions = {
-    name: data.tsManifestName,
-    short_name: data.tsManifestShortName,
-    start_url: data.tsManifestStartUrl,
-    background_color: data.tsManifestBackgroundColor,
-    theme_color: data.tsManifestThemeColor,
+    name: data.name,
+    short_name: data.shortName,
+    start_url: data.startUrl,
+    background_color: data.backgroundColor,
+    theme_color: data.themeColor,
     // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
     // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
-    display: data.tsManifestDisplay,
-    icon: `${data.tsManifestIcon.imageFile.absolutePath}`, // This path is relative to the root of the site.
+    display: data.display,
+    icon: `${data.icon.imageFile.absolutePath}`, // This path is relative to the root of the site.
     // An optional attribute which provides support for CORS check.
     // If you do not provide a crossOrigin option, it will skip CORS for manifest.
     // Any invalid keyword or empty string defaults to `anonymous`
-    crossOrigin: data.tsManifestCrossorigin,
+    crossOrigin: data.crossorigin,
     icon_options: {
       // For all the options available, please see:
       // https://developer.mozilla.org/en-US/docs/Web/Manifest
       // https://w3c.github.io/manifest/#purpose-member
-      purpose: data.tsManifestIconOptions.tsManifestIconOptionsPurpose,
+      purpose: data.iconOptions.purpose,
     },
-    legacy: data.tsManifestLegacy,
+    legacy: data.legacy,
   };
 
   return manifestOptions;

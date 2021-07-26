@@ -1,11 +1,10 @@
 if (process.env.NODE_ENV === 'development') {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 }
-// REMOVE
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 const path = require('path');
 const slugify = require('slugify');
+const resolveManifestOptions = require('./src/utils/resolveManifestOptions');
 
 const slugifySettings = {
   lower: true,
@@ -77,8 +76,24 @@ exports.createResolvers = async ({
 // Generate Dynamic Pages
 //
 //
-exports.createPages = async ({ graphql, actions, reporter }) => {
+exports.createPages = async ({ graphql, actions, reporter, store }) => {
   const { createPage, createRedirect } = actions;
+  const state = store.getState();
+
+  //
+
+  /* Generate Site Manifest (Favicon) */
+
+  const plugin = state.flattenedPlugins.find(
+    (pluginToFind) => pluginToFind.name === 'gatsby-plugin-manifest',
+  );
+  if (plugin) {
+    const manifestOptions = await resolveManifestOptions(graphql);
+
+    plugin.pluginOptions = { ...plugin.pluginOptions, ...manifestOptions };
+  }
+
+  /* END Generate Site Manifest (Favicon) */
 
   //
 
