@@ -43,7 +43,7 @@ const resolveManifestOptions = async (graphql) => {
     icon: `${data.icon.imageFile.absolutePath}`, // This path is relative to the root of the site.
     // An optional attribute which provides support for CORS check.
     // If you do not provide a crossOrigin option, it will skip CORS for manifest.
-    // Any invalid keyword or empty string defaults to `anonymous`
+    // Any invalid keyword or empty string defaults to `anonymous`.
     crossOrigin: data.crossorigin,
     icon_options: {
       // For all the options available, please see:
