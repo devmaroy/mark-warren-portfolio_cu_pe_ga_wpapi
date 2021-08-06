@@ -12,7 +12,10 @@ const BlogSearchPagination = ({
   createURL,
 }) =>
   nbPages > 1 && (
-    <ConditionalWrap condition={wrapper} wrap={(children) => wrapper(children)}>
+    <ConditionalWrap
+      condition={!!wrapper}
+      wrap={(children) => wrapper(children)}
+    >
       <ul className="pagination">
         {Array.from({ length: nbPages }).map((_, i) => {
           const page = i + 1;
